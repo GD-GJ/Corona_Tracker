@@ -19,6 +19,8 @@ var zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 function setMarker(lat, lon){
+    // lat : 위도
+    // lon : 경도
     // 마커가 표시될 위치입니다 
     let markerPosition = new kakao.maps.LatLng(lat, lon);
 
@@ -63,27 +65,27 @@ if (navigator.geolocation) {
     displayMarker(locPosition, message);
 }
 
-// // 지도에 마커와 인포윈도우를 표시하는 함수입니다
-// function displayMarker(locPosition, message) {
+// 지도에 마커와 인포윈도우를 표시하는 함수입니다
+function displayMarker(locPosition, message) {
 
-//     // 마커를 생성합니다
-//     var marker = new kakao.maps.Marker({  
-//         map: map, 
-//         position: locPosition
-//     }); 
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({  
+        map: map, 
+        position: locPosition
+    }); 
     
-//     var iwContent = message, // 인포윈도우에 표시할 내용
-//         iwRemoveable = true;
+    var iwContent = message, // 인포윈도우에 표시할 내용
+        iwRemoveable = true;
 
-//     // 인포윈도우를 생성합니다
-//     var infowindow = new kakao.maps.InfoWindow({
-//         content : iwContent,
-//         removable : iwRemoveable
-//     });
+    // 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+    });
     
-//     // 인포윈도우를 마커위에 표시합니다 
-//     infowindow.open(map, marker);
+    // 인포윈도우를 마커위에 표시합니다 
+    infowindow.open(map, marker);
     
-//     // 지도 중심좌표를 접속위치로 변경합니다
-//     map.setCenter(locPosition);      
-// } 
+    // 지도 중심좌표를 접속위치로 변경합니다
+    map.setCenter(locPosition);      
+} 
