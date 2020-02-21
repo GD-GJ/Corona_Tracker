@@ -6,6 +6,7 @@ function path(date, time, name, method,lat, lng){
     this.method = method;
     this.lat = lat;
     this.lng = lng;
+    this.latLng = new kakao.maps.LatLng(lat, lng);
     this.setLatLng = function(lat, lng){
         this.lat = lat;
         this.lng = lng;

@@ -10,7 +10,6 @@ function newVisitedArea(){
     console.log(userPath);
 }
 
-
 function save(item) {
 	var visitedAreaArray = getStoreArray("visitedList");
 	visitedAreaArray.push(item);
@@ -52,3 +51,5 @@ function clearAll()
   var emptyList = new Array();
   localStorage.setItem("visitedList", JSON.stringify(emptyList));
 }
+
+loadPaths();
