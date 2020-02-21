@@ -18,11 +18,11 @@ map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 var zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-function setMarker(lat, lon){
+function setMarker(path){
     // lat : 위도
     // lon : 경도
     // 마커가 표시될 위치입니다 
-    let markerPosition = new kakao.maps.LatLng(lat, lon);
+    let markerPosition = path;
 
     // 마커를 생성합니다
     let marker = new kakao.maps.Marker({
@@ -89,3 +89,4 @@ function displayMarker(locPosition, message) {
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition);      
 } 
+
