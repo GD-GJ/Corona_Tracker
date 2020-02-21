@@ -19,10 +19,8 @@ var zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 function setMarker(path){
-    // lat : 위도
-    // lon : 경도
     // 마커가 표시될 위치입니다 
-    let markerPosition = path;
+    let markerPosition = new kakao.maps.LatLng(path.lat, path.lng);
 
     // 마커를 생성합니다
     let marker = new kakao.maps.Marker({
@@ -90,3 +88,19 @@ function displayMarker(locPosition, message) {
     map.setCenter(locPosition);      
 } 
 
+function lineDrawer(paths, lineColor='#db4040'){
+    //paths      : 경로 배열
+    //lineColor  : 선의 색깔
+
+    line = new kakao.maps.Polyline({
+        endArrow : true,
+        map: map,
+        path: paths,
+        strokeWeight : 3,
+        strokeColor : lineColor, //'#db4040'
+        strokeOpacity : 1,
+        strokeStyle : 'solid'
+    });
+
+
+}
