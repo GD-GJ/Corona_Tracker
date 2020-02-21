@@ -8,9 +8,6 @@ paths = [
 ]
 lineDrawer(paths);
 
-for(var date of number25.paths){
-    for(var path of date.paths){
-        console.log(path)
-        setMarker(path)
-    }
+for(var path of number25.paths){
+    console.log(path)
 }
