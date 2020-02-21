@@ -21,9 +21,22 @@
 
 <body>
     <h1>COVID-19 Tracker</h1>
-    <div id='map' style="width:500px;height:400px;"></div>
+    <div id='map' style="width:100%; height:100%;"></div>
+
+    <form class="inputForm" action="index.html" method="post">
+        <input id = "visitLat" type="text" class="inputItems" value="" placeholder="방문 위도">
+        <input id = "visitLng" type="text" class="inputItems" value="" placeholder="방문 경도">
+        <label>방문일</label>
+        
+        <input id="visitDate" type="date" class="inputItems"  value="" placeholder="방문일">
+        <input id="visitTime" type="text" class="inputItems"  value="" placeholder="방문시간">
+        <input id = "addNew" type="button" class="inputItems" value="추가">
+        <input id = "clearAll" type="button" class="inputItems" name="" value="모두삭제">
+    </form>
+
     <p>by 변우섭, 홍진우</p>
     <script src="data.js"></script>
+    <script src="userVisit.js"></script>
     <script src="map.js"></script>
     <script src="main.js"></script>
 </body>
