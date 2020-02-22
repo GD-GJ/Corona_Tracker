@@ -30,24 +30,18 @@ function checkMatched(userPath){
     }
 }
 
-function selectPlace(places) {
-    console.log(places);
-    for(let place of places){
-        if(place.place_name == $(this).text()){
-            map.panTo(new kakao.maps.LatLng(place.y, place.x));
-            $("#placeName").val(place.place_name);
-            userLat = place.y;
-            userLng = place.x;
-        }
-    }
+function setUserLatLng(lat, lng){
+    userLat = lat;
+    userLng = lng;
 }
 
 function newVisitedArea(){
     let placeName = $("#placeName").val();
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
+    let method = $("#visitMethod").val();
 
-    let userPath = new path(date, time, placeName, "", userLat, userLng);
+    let userPath = new path(date, time, placeName, method, userLat, userLng);
     checkMatched(userPath);
     save(userPath);
     console.log(userPath);
