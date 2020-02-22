@@ -26,28 +26,23 @@ function newVisitedArea(){
     let time = $("#visitTime").val();
 
     //플레이스
-    var callback = function(result, status) {
-        if (status === kakao.maps.services.Status.OK) {
-            console.log(result);
-        }
-    };
-    
-    places.keywordSearch(placeName, callback);
-
+    searchPalce(placeName)
     console.log(placeName)
     //방문장소 지오코딩
-    geocoder.addressSearch(placeName, function(result, status) {
-        console.log(result);
-        if (status === kakao.maps.services.Status.OK) {
-            console.log("성공");
-        }
-    });
+    // geocoder.addressSearch(placeName, function(result, status) {
+    //     console.log(result);
+    //     if (status === kakao.maps.services.Status.OK) {
+    //         console.log("성공");
+    //     }
+    // });
 
     let userPath = new path(date, time, placeName, "", lat, lng);
     checkMatched(userPath);
     save(userPath);
     console.log(userPath);
 }
+
+
 
 function calcDistance(lat1, lon1, lat2, lon2){
     let theta = lon1 - lon2;
