@@ -5,12 +5,13 @@ function checkMatched(userPath){
 
     for(let person of Datas){
         for(let path of person.paths){
+
             if(calcDistance(userPath.lat, userPath.lng, path.lat, path.lng) < DANGER_ZONE){
                 //확진자의 방문지와 사용자의 방문지의 거리가 DANGER_ZONE 이하일경우
                 console.log(userPath, path)
                 console.log("유저가 다녀간 곳이 확진자의 이동 경로와 겹칩니다.")
-                if(path.date == userPath.date){
-                    //이동 동선이 겹치고 방문일도 겹칠경우
+                if(path.date == userPath.date && path.time <= userPath.time){
+                    //확진자가 방문했을때 동시에 유저가 거기 있었거나 해당일에 나중에라도 방문한경우
                     console.log("확진자가 이곳을 다녀간 시점에 유저도 거기에 있었습니다.")
                 }
             }

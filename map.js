@@ -124,6 +124,9 @@ function searchPlace(){
         if (status === kakao.maps.services.Status.OK) {
             places = result;
 
+            //기존 목록 제거
+            $(".list-group-item-action").remove();
+
             //목록 생성하기
             for(let place of result){
                 $("#SelectPlace").append('<a class="list-group-item list-group-item-action ">' + place.place_name + '</a>');
