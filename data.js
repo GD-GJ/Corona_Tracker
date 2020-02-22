@@ -21,6 +21,7 @@ function person(id, date, hospital, paths){
     this.paths = paths;
 }
 
+//테스트 데이터
 //확진자가 격리될때 까지의 전체 이동경로 만들기
 var paths = new Array()
 paths.push(
@@ -31,7 +32,14 @@ paths.push(
     new path("0208", "ALL_DAY", "새로난 한방병원", "", 33.45178067090639, 126.5726886938753),
     new path("0209", "0730", "신천지예수교증거장막성전 다대오지파대구교회", "자차", 33.412739313807456, 126.1009308145358),
     new path("0209", "0930", "새로난 한방병원", "자차", 33.45178067090639, 126.5726886938753),
-    )
+);
+var number25 = new person(25, "2.9", "분당서울대병원", paths);
+
+
+//모든 확진자의 데이터를 담고있는 배열
+var Datas = new Array();
+Datas.push(number25);
+
 
 // var person = {
 //     id : 25,
@@ -56,6 +64,3 @@ paths.push(
 //         }
 //     ]
 // }
-var number25 = new person(25, "2.9", "분당서울대병원", paths);
-
-

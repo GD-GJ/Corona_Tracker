@@ -1,5 +1,5 @@
 //시작지점            
-console.log(number25.paths);
+console.log(number25);
 $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
 
@@ -13,7 +13,7 @@ $("#clearAll").click(clearAll);
 
 for(var path of number25.paths){
     console.log(path)
-    setMarker(path)
+    //setMarker(path)
 
 }
 
