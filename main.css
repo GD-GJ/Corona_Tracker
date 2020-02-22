@@ -5,5 +5,6 @@
     width: 100%;
     z-index: 1000;
     border-radius: 8px;
+    position: fixed;
     border: 1px solid blue;
 }
