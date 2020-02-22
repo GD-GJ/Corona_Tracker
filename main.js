@@ -2,7 +2,7 @@
 
 $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
-$("#search_place").click(searchPalce);
+$("#search_place").click(searchPlace);
 drawPaths();
 
 function drawPaths(){

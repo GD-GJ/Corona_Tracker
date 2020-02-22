@@ -22,10 +22,14 @@
 </head>
 
 <body style="height: 100%;">
-    <h1>COVID-19 Tracker</h1>
-    <p>by 변우섭, 홍진우
-        진우 앱키 0f3246a53de1721097337bb659f08d3b
-    </p>
+    <nav class="navbar navbar-light bg-light" style="width: 100%; position: fixed;">
+        <a class="navbar-brand">COVID-19 Tracker</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    
     <div id = 'map' style="width: 100%; height: 100%;"></div>
 
     <div id = "userPath">

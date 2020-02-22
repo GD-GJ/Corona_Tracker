@@ -117,7 +117,7 @@ var geocoder = new kakao.maps.services.Geocoder();
 var kakaoPlaces = new kakao.maps.services.Places();
 
 //장소 키워드로 해당하는 장소들을 찾는 함수
-function searchPalce(){
+function searchPlace(){
     let placeName = $("#placeName").val();
     var places;
     kakaoPlaces.keywordSearch(placeName, function(result, status) {
