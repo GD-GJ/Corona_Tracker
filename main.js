@@ -4,12 +4,12 @@ $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
 $("#search_place").click(searchPlace);
 $("#show_urp").click(function(){
-    $("#user_route_panel").animate({bottom: "0px"}, 300, function(){
+    $("#user_route_panel").animate({bottom: "0px"}, 250, function(){
         console.log("panel visible");
     })
 });
 $("#hide_urp").click(function(){
-    $("#user_route_panel").animate({bottom: "-500px"}, 300, function(){
+    $("#user_route_panel").animate({bottom: "-800px"}, 250, function(){
         console.log("panel invisible");
     })
 });

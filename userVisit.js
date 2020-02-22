@@ -1,13 +1,21 @@
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
 function checkMatched(userPath){
-    const DANGER_ZONE = 100;
+    //위험지역 : 반경 500m
+    const DANGER_ZONE = 500;
+    let inNearBy = false;
+    let inSamePlace = false;
 
     for(let person of Datas){
         for(let path of person.paths){
 
-            if(calcDistance(userPath.lat, userPath.lng, path.lat, path.lng) < DANGER_ZONE){
-                //확진자의 방문지와 사용자의 방문지의 거리가 DANGER_ZONE 이하일경우
+            if(userPath.name == path.name){
+                //동일한 장소에 간 경우.
+                inSamePlace = true;
+
+            }else if(calcDistance(userPath.lat, userPath.lng, path.lat, path.lng) <= DANGER_ZONE){
+                //사용자의 방문지와 확진자의 방문지 거리가 DANGER_ZONE 이하일경우
+
                 console.log(userPath, path)
                 console.log("유저가 다녀간 곳이 확진자의 이동 경로와 겹칩니다.")
                 if(path.date == userPath.date && path.time <= userPath.time){
