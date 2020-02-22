@@ -112,3 +112,6 @@ function lineDrawer(paths, lineColor='#db4040'){
 
 //카카오 지오코더
 var geocoder = new kakao.maps.services.Geocoder();
+
+//카카오 플레이스
+var places = new kakao.maps.services.Places();

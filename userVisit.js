@@ -25,6 +25,26 @@ function newVisitedArea(){
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
 
+    // callback의 세 번째 인자로 Pagination의 인스턴스가 넘어온다.
+    var callback = function(result, status, pagination) {
+        if (status === kakao.maps.services.Status.OK) {
+            // do something
+    
+            // 특정 엘리먼트를 클릭했을 경우 다음 페이지 검색을 시도하는 예제
+            var nextBtn = document.getElementById('nextBtn');
+    
+            nextBtn.click(function() {
+                // 속성 값으로 다음 페이지가 있는지 확인하고
+                if (pagination.hasNextPage) {
+                    // 있으면 다음 페이지를 검색한다.
+                    pagination.nextPage();
+                }
+            });
+        }
+    };
+    
+    places.keywordSearch(placeName, callback);
+
     console.log(placeName)
     //방문장소 지오코딩
     geocoder.addressSearch(placeName, function(result, status) {
