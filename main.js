@@ -1,7 +1,20 @@
 //시작지점            
-console.log(number25);
+
 $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
+
+drawPaths();
+
+function drawPaths(){
+    for(let person of Datas){
+        console.log(person);
+        lineDrawer(person.paths);
+
+        for(let path of person.paths){
+            setMarker(path);
+        }
+    }
+}
 
 // paths = [
 //     new kakao.maps.LatLng(33.452344169439975, 126.56878163224233),
@@ -9,13 +22,6 @@ $("#clearAll").click(clearAll);
 //     new kakao.maps.LatLng(33.45178067090639, 126.5726886938753) 
 // ]
 // lineDrawer(paths);
-
-
-for(let path of number25.paths){
-    console.log(path)
-    setMarker(path)
-
-}
 
 // console.log(number25.paths);
 

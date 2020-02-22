@@ -13,7 +13,6 @@ function checkMatched(userPath){
                     //이동 동선이 겹치고 방문일도 겹칠경우
                     console.log("확진자가 이곳을 다녀간 시점에 유저도 거기에 있었습니다.")
                 }
-
             }
         }
     }
