@@ -11,9 +11,9 @@ $("#clearAll").click(clearAll);
 // lineDrawer(paths);
 
 
-for(var path of number25.paths){
+for(let path of number25.paths){
     console.log(path)
-    //setMarker(path)
+    setMarker(path)
 
 }
 

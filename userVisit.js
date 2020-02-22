@@ -3,8 +3,8 @@
 function checkMatched(userPath){
     const DANGER_ZONE = 100;
 
-    for(var person of Datas){
-        for(var path of person.paths){
+    for(let person of Datas){
+        for(let path of person.paths){
             if(calcDistance(userPath.lat, userPath.lng, path.lat, path.lng) < DANGER_ZONE){
                 //확진자의 방문지와 사용자의 방문지의 거리가 DANGER_ZONE 이하일경우
                 console.log(userPath, path)
@@ -20,7 +20,7 @@ function checkMatched(userPath){
 }
 
 function calcDistance(lat1, lon1, lat2, lon2){
-    var theta = lon1 - lon2;
+    let theta = lon1 - lon2;
     dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1))
         * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
     dist = Math.acos(dist);
@@ -39,12 +39,12 @@ function rad2deg(rad) {
 
 //새로운 유저 경로를 추가하는 함수입니다.
 function newVisitedArea(){
-    var lat = $("#visitLat").val();
-    var lng = $("#visitLng").val();
-    var date = $("#visitDate").val();
-    var time = $("#visitTime").val();
+    let lat = $("#visitLat").val();
+    let lng = $("#visitLng").val();
+    let date = $("#visitDate").val();
+    let time = $("#visitTime").val();
     
-    var userPath = new path(date, time, "", "", lat, lng);
+    let userPath = new path(date, time, "", "", lat, lng);
     checkMatched(userPath);
     save(userPath);
     console.log(userPath);
@@ -59,7 +59,7 @@ function save(item) {
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadPaths() {
-    var userPaths = getSavedItems();
+    let userPaths = getSavedItems();
 
 	if (userPaths != null) {
 
@@ -78,7 +78,7 @@ function getSavedItems() {
 
 
 function getStoreArray(key) {
-    var visitedAreaArray = localStorage.getItem(key);
+    let visitedAreaArray = localStorage.getItem(key);
     
 	if (visitedAreaArray == null || visitedAreaArray == "") {
 		visitedAreaArray = new Array();
@@ -94,7 +94,7 @@ function clearAll()
 {
   //마커들을 모두 지우는 로직 추가해야함.
 
-  var emptyList = new Array();
+  let emptyList = new Array();
   localStorage.setItem("visitedList", JSON.stringify(emptyList));
 }
 
