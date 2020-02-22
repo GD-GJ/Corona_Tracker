@@ -108,6 +108,7 @@ function lineDrawer(paths, lineColor='#db4040'){
         strokeOpacity : 1,
         strokeStyle : 'solid'
     });
-
-
 }
+
+//카카오 지오코더
+var geocoder = new kakao.maps.services.Geocoder();

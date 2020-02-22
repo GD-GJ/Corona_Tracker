@@ -18,6 +18,26 @@ function checkMatched(userPath){
     }
 }
 
+function newVisitedArea(){
+    let placeName = $("palceName").val();
+    let lat = $("#visitLat").val();
+    let lng = $("#visitLng").val();
+    let date = $("#visitDate").val();
+    let time = $("#visitTime").val();
+
+    //방문장소 지오코딩
+    geocoder.addressSearch( placeName, function(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+            console.log(result);
+        }
+    });
+
+    let userPath = new path(date, time, placeName, "", lat, lng);
+    checkMatched(userPath);
+    save(userPath);
+    console.log(userPath);
+}
+
 function calcDistance(lat1, lon1, lat2, lon2){
     let theta = lon1 - lon2;
     dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1))
@@ -37,17 +57,7 @@ function rad2deg(rad) {
 }
 
 //새로운 유저 경로를 추가하는 함수입니다.
-function newVisitedArea(){
-    let lat = $("#visitLat").val();
-    let lng = $("#visitLng").val();
-    let date = $("#visitDate").val();
-    let time = $("#visitTime").val();
-    
-    let userPath = new path(date, time, "", "", lat, lng);
-    checkMatched(userPath);
-    save(userPath);
-    console.log(userPath);
-}
+
 
 //유저 경로를 로컬스토리지에 저장하는 함수입니다.
 function save(item) {
