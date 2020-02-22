@@ -116,18 +116,29 @@ var geocoder = new kakao.maps.services.Geocoder();
 //카카오 플레이스
 var kakaoPlaces = new kakao.maps.services.Places();
 
+//장소 키워드로 해당하는 장소들을 찾는 함수
 function searchPalce(){
-
     let placeName = $("#placeName").val();
-    
+    var places;
     kakaoPlaces.keywordSearch(placeName, function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
             places = result;
 
+            //목록 생성하기
             for(let place of result){
-                $("#SelectPlace").append('<a class="list-group-item list-group-item-action">' + place.place_name + '</a>')
-
+                $("#SelectPlace").append('<a class="list-group-item list-group-item-action ">' + place.place_name + '</a>');
             }
+
+            //항목 클릭 리스너
+            $("a.list-group-item.list-group-item-action").click(function () {
+                for(let place of places){
+                    if(place.place_name == $(this).text()){
+                        $("#placeName").val(place.place_name);
+                        $("#visitLat").val(place.y);
+                        $("#visitLng").val(place.x);
+                    }
+                }
+            });
         }
     });
 }

@@ -31,8 +31,6 @@ function newVisitedArea(){
     console.log(userPath);
 }
 
-
-
 function calcDistance(lat1, lon1, lat2, lon2){
     let theta = lon1 - lon2;
     dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1))
