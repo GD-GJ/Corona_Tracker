@@ -19,13 +19,14 @@ function checkMatched(userPath){
 }
 
 function newVisitedArea(){
-    let placeName = $("#palceName").val();
+    let placeName = $("#placeName").val();
     let lat = $("#visitLat").val();
     let lng = $("#visitLng").val();
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
 
     //방문장소 지오코딩
+
     geocoder.addressSearch(placeName, function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
             console.log(result);
