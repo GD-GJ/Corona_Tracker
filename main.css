@@ -1,8 +1,9 @@
 #user_route_panel {
     bottom: -500px;
-    left: 10px;
+    left: 0px;
     right: 10px;
     width: 100%;
+    padding: 15px 15px 15px 15px;
     z-index: 1000;
     border-radius: 8px;
     position: fixed;

@@ -133,16 +133,7 @@ function searchPlace(){
             }
 
             //항목 클릭 리스너
-            $("a.list-group-item.list-group-item-action").click(function () {
-                for(let place of places){
-                    if(place.place_name == $(this).text()){
-                        map.panTo(new kakao.maps.LatLng(place.y, place.x));
-                        $("#placeName").val(place.place_name);
-                        $("#visitLat").val(place.y);
-                        $("#visitLng").val(place.x);
-                    }
-                }
-            });
+            $("a.list-group-item.list-group-item-action").click(selectPlace(places));
         }
     });
 }

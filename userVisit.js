@@ -1,3 +1,6 @@
+var userLat,
+    userLng;
+
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
 function checkMatched(userPath){
@@ -27,14 +30,23 @@ function checkMatched(userPath){
     }
 }
 
+function selectPlace(places) {
+    for(let place of places){
+        if(place.place_name == $(this).text()){
+            map.panTo(new kakao.maps.LatLng(place.y, place.x));
+            $("#placeName").val(place.place_name);
+            userLat = place.y;
+            userLng = place.x;
+        }
+    }
+}
+
 function newVisitedArea(){
     let placeName = $("#placeName").val();
-    let lat = $("#visitLat").val();
-    let lng = $("#visitLng").val();
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
 
-    let userPath = new path(date, time, placeName, "", lat, lng);
+    let userPath = new path(date, time, placeName, "", userLat, userLng);
     checkMatched(userPath);
     save(userPath);
     console.log(userPath);
