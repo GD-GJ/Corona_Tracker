@@ -25,11 +25,12 @@ function newVisitedArea(){
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
 
+    console.log(placeName)
     //방문장소 지오코딩
-
     geocoder.addressSearch(placeName, function(result, status) {
+        console.log(result);
         if (status === kakao.maps.services.Status.OK) {
-            console.log(result);
+            console.log("성공");
         }
     });
 
