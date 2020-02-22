@@ -31,6 +31,7 @@ function checkMatched(userPath){
 }
 
 function selectPlace(places) {
+    console.log(places);
     for(let place of places){
         if(place.place_name == $(this).text()){
             map.panTo(new kakao.maps.LatLng(place.y, place.x));
