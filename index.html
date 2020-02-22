@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="main.css"/>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
     <!-- jQuery library --> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper JS --> 
@@ -21,20 +23,27 @@
 
 <body>
     <h1>COVID-19 Tracker</h1>
-    <div id='map' style="width:500px; height:500px;"></div>
+    <div id='map' style="widows: 100%; height:100%;"></div>
 
-    <form class="inputForm" action="index.html" method="post">
-        <input id = "placeName" type="text" class="inputItems" value="" placeholder="방문지">
+    <div id = "userPath">
+        <p>장소 찾기</p>
+        <form class="inputForm" action="index.html" method="post">
+            <input id = "placeName" type="text" class="inputItems" value="" placeholder="방문지">
+            <input id = "search_place" type="button" class="inputItems" value="장소검색">
+        </form>
 
-        <input id = "visitLat" type="text" class="inputItems" value="" placeholder="방문 위도">
-        <input id = "visitLng" type="text" class="inputItems" value="" placeholder="방문 경도">
-        <label>방문일</label>
-        
-        <input id="visitDate" type="date" class="inputItems"  value="" placeholder="방문일">
-        <input id="visitTime" type="text" class="inputItems"  value="" placeholder="방문시간">
-        <input id = "addNew" type="button" class="inputItems" value="추가">
-        <input id = "clearAll" type="button" class="inputItems" name="" value="모두삭제">
-    </form>
+        <p>장소 입력</p>
+        <form class="inputForm" action="index.html" method="post">
+            <input id = "visitLat" type="text" class="inputItems" value="" placeholder="방문 위도">
+            <input id = "visitLng" type="text" class="inputItems" value="" placeholder="방문 경도">
+            <label>방문일</label>
+            <input id="visitDate" type="date" class="inputItems"  value="" placeholder="방문일">
+            <input id="visitTime" type="text" class="inputItems"  value="" placeholder="방문시간">
+            <input id = "addNew" type="button" class="inputItems" value="추가">
+            <input id = "clearAll" type="button" class="inputItems" name="" value="모두삭제">
+        </form>
+    </div>
+    
 
     <div id="SelectPlace" class="list-group">
 

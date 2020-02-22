@@ -25,17 +25,6 @@ function newVisitedArea(){
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
 
-    //플레이스
-    searchPalce(placeName)
-    console.log(placeName)
-    //방문장소 지오코딩
-    // geocoder.addressSearch(placeName, function(result, status) {
-    //     console.log(result);
-    //     if (status === kakao.maps.services.Status.OK) {
-    //         console.log("성공");
-    //     }
-    // });
-
     let userPath = new path(date, time, placeName, "", lat, lng);
     checkMatched(userPath);
     save(userPath);

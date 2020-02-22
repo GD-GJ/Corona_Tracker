@@ -2,7 +2,7 @@
 
 $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
-
+$("#search_place").click(searchPalce);
 drawPaths();
 
 function drawPaths(){
@@ -15,6 +15,7 @@ function drawPaths(){
         }
     }
 }
+
 
 // paths = [
 //     new kakao.maps.LatLng(33.452344169439975, 126.56878163224233),

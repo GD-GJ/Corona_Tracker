@@ -114,16 +114,20 @@ function lineDrawer(paths, lineColor='#db4040'){
 var geocoder = new kakao.maps.services.Geocoder();
 
 //카카오 플레이스
-var places = new kakao.maps.services.Places();
+var kakaoPlaces = new kakao.maps.services.Places();
 
-function searchPalce(placeName){
-    var callback = function(result, status) {
+function searchPalce(){
+
+    let placeName = $("#placeName").val();
+    
+    kakaoPlaces.keywordSearch(placeName, function(result, status) {
         if (status === kakao.maps.services.Status.OK) {
-            console.log(result);
+            places = result;
+
             for(let place of result){
                 $("#SelectPlace").append('<a class="list-group-item list-group-item-action">' + place.place_name + '</a>')
+
             }
         }
-    };
-    places.keywordSearch(placeName, callback);
+    });
 }
