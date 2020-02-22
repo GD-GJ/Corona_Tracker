@@ -136,7 +136,7 @@ function searchPlace(){
             $("a.list-group-item.list-group-item-action").click(function () {
                 for(let place of places){
                     if(place.place_name == $(this).text()){
-                        map.panTo(new kakao.maps.LatLng(y, x));
+                        map.panTo(new kakao.maps.LatLng(place.y, place.x));
                         $("#placeName").val(place.place_name);
                         $("#visitLat").val(place.y);
                         $("#visitLng").val(place.x);
