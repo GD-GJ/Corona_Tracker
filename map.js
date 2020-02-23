@@ -109,7 +109,7 @@ function searchPlace(){
             }
 
             //항목 클릭 리스너
-            $("a.list-group-item.list-group-item-action").click(function() {
+            $("div.list-group-item.list-group-item-action").click(function() {
                 console.log(places);
                 for(let place of places){
                     if(place.place_name == $(this).find("#itemTitle").text()){
