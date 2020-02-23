@@ -106,7 +106,6 @@ function lineDrawer(paths, lineColor='#db4040'){
         }else{
             console.log("카카오맵 LatLng 객체가 아닙니다. " + paths[i]);
         }
-        
     }
 
     line = new kakao.maps.Polyline({

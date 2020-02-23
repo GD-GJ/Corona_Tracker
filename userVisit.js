@@ -1,5 +1,6 @@
 var userLat,
     userLng;
+var visitedAreaArray;
 
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
@@ -96,9 +97,9 @@ function setUserLatLng(lat, lng){
 
 //새로운 사용자 경로를 추가하는 함수.
 function newVisitedArea(){
-    let placeName = $("#placeName").val();
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
+    let placeName = $("#placeName").val();
     let method = $("#visitMethod").val();
 
     let userPath = new path(date, time, placeName, method, userLat, userLng);
@@ -129,9 +130,7 @@ function rad2deg(rad) {
 
 
 //유저 경로를 로컬스토리지에 저장하는 함수입니다.
-function save(item) {
-    var visitedAreaArray = getStoreArray("visitedList");
-    
+function save(item) {    
     //경로들을 시간순으로 정렬해서 저장한다.
     let i;
     for(i = 0; i < visitedAreaArray.length; i++){
@@ -149,10 +148,10 @@ function save(item) {
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadUserPaths() {
-    let userPaths = getSavedItems();
+    visitedAreaArray = getSavedItems();
 
-	if (userPaths != null) {
-        drawPaths(userPaths);
+	if (visitedAreaArray != null) {
+        drawPaths(visitedAreaArray);
     }
 }
 
@@ -163,14 +162,14 @@ function getSavedItems() {
 
 
 function getStoreArray(key) {
-    let visitedAreaArray = localStorage.getItem(key);
+    let dataArray = localStorage.getItem(key);
     
-	if (visitedAreaArray == null || visitedAreaArray == "") {
-		visitedAreaArray = new Array();
+	if (dataArray == null || dataArray == "") {
+		dataArray = new Array();
 	} else {
-		visitedAreaArray = JSON.parse(visitedAreaArray);
+		dataArray = JSON.parse(dataArray);
 	}
-	return visitedAreaArray;
+	return dataArray;
 }
 
 //로컬스토리지내 데이터를 지우는 함수입니다.
@@ -179,5 +178,6 @@ function clearAll()
   //마커들을 모두 지우는 로직 추가해야함.
 
   let emptyList = new Array();
+  visitedAreaArray = emptyList;
   localStorage.setItem("visitedList", JSON.stringify(emptyList));
 }
