@@ -168,7 +168,7 @@ function getStoreArray(key) {
 	if (dataArray != null && dataArray != ""){
 		dataArray = JSON.parse(dataArray);
         for(let item of dataArray){
-            restoredData.push(new path(itme.date, item.time, item.name, item.method, item.lat, item.lng));
+            restoredData.push(new path(item.date, item.time, item.name, item.method, item.lat, item.lng));
         }
     }
     

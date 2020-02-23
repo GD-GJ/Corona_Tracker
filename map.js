@@ -101,8 +101,8 @@ function lineDrawer(paths, lineColor='#db4040'){
 
     var array = []
     for (let i = 0; i < paths.length; i++){
-        if(paths[i].latLng instanceof kakao.maps.LatLng){
-            array.push(paths[i].latLng);
+        if(paths[i].LatLng instanceof kakao.maps.LatLng){
+            array.push(paths[i].LatLng);
         }else{
             console.log("카카오맵 LatLng 객체가 아닙니다. " + paths[i]);
         }
