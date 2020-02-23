@@ -6,28 +6,82 @@ var userLat,
 function checkMatched(userPath){
     //위험지역 : 반경 500m
     const DANGER_ZONE = 500;
-    let inNearBy = false;
-    let inSamePlace = false;
+    const TIME_DANGER_LEVEL_1 = 6*60;       //6시간
+    const TIME_DANGER_LEVEL_2 = 24*60;      //하루
+    const TIME_DANGER_LEVEL_3 = 7*24*60;    //1주일
+
+    let group_by_level = new Array(Array, Array);
 
     for(let person of Datas){
         for(let path of person.paths){
 
-            if(userPath.name == path.name){
+            let inNearBy = false;
+            let inSamePlace = false;
+
+            // 장소 검증
+            if(calcDistance(userPath.lat, userPath.lng, path.lat, path.lng) <= DANGER_ZONE){
+                //사용자의 방문지와 확진자의 방문지 거리가 DANGER_ZONE 이하일경우
+                inNearBy = true;
+
+            }else if(userPath.name == path.name){
                 //동일한 장소에 간 경우.
                 inSamePlace = true;
+            }
 
-            }else if(calcDistance(userPath.lat, userPath.lng, path.lat, path.lng) <= DANGER_ZONE){
-                //사용자의 방문지와 확진자의 방문지 거리가 DANGER_ZONE 이하일경우
-
-                console.log(userPath, path)
-                console.log("유저가 다녀간 곳이 확진자의 이동 경로와 겹칩니다.")
-                if(path.date == userPath.date && path.time <= userPath.time){
-                    //확진자가 방문했을때 동시에 유저가 거기 있었거나 해당일에 나중에라도 방문한경우
-                    console.log("확진자가 이곳을 다녀간 시점에 유저도 거기에 있었습니다.")
+            //시간 검증
+            if(inNearBy || inSamePlace){
+                let timeDiff = timeDiff2Min(userPath, path);
+                if(timeDiff < 0){
+                    //음수일경우 고려x
+                    break;
                 }
+
+                let DangerLevel;
+                if(timeDiff < TIME_DANGER_LEVEL_1){
+                    // 6시간 이내로 동선이 겹칠경우
+                    DangerLevel = 0;
+                }else if(timeDiff < TIME_DANGER_LEVEL_2){
+                    // 6시간 ~ 하루 이내로 동선이 겹칠경우
+                    DangerLevel = 1;
+                }else if(timeDiff < TIME_DANGER_LEVEL_3){
+                    // 하루 ~ 일주일 이내로 동선이 겹칠경우
+                    DangerLevel = 2;
+                }else{
+                    // 일주일 ~ 이상으로 동선이 겹칠경우
+                    DangerLevel = 3;
+                }
+                group_by_level[DangerLevel].push(path);
             }
         }
     }
+
+    for(let level in group_by_level){
+        console.log(level);
+        for(let path of group_by_level[level]){
+            console.log(path);
+        }
+    }
+}
+
+//유저 시간 - 대상 시간을 분단위로 리턴하는 함수.
+//음수일경우 확진자가 다녀가기 전에 유저가 방문한 경우이므로 고려하지않음
+function timeDiff2Min(user, target){
+    //유저 시간 -> 분
+    let uDateArray = user.date.split("-");
+    let userHour = Number(user.time.substring(0, 2));
+    let userMin = Number(user.time.substring(2, 4));
+    let userDate = new Date(uDateArray[0], Number(uDateArray[1]) -1, uDateArray[2], userHour, userMin);
+
+    //대상 시간 -> 분
+    let tDateArray = target.date.split("-");
+    let targetHour = Number(target.time.substring(0, 2));
+    let targetMin = Number(target.time.substring(2, 4));
+    let targetDate = new Date(tDateArray[0], Number(tDateArray[1]) -1, tDateArray[2], targetHour, targetMin);
+
+    //유저 시간 - 대상 시간
+    let timeDiff2Min = userDate.getMinutes - targetDate.getMinutes();
+    console.log(timeDiff2Min);
+    return timeDiff2Min;
 }
 
 function setUserLatLng(lat, lng){
