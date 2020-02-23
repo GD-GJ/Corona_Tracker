@@ -67,8 +67,8 @@ paths.push(
     new path("2020-02-09", "0730", "신천지예수교증거장막성전 다대오지파대구교회", "자차", 33.412739313807456, 126.1009308145358),
     new path("2020-02-09", "0930", "새로난 한방병원", "자차", 33.45178067090639, 126.5726886938753),
 );
-var number31 = new person(31, "2020-02-18", "대구의료원").setPaths(paths);
-Datas.push(number31);
+var number31 = new person(31, "2020-02-18", "대구의료원");
+number31.setPaths(paths);
 
 paths = new Array();
 paths.push(
@@ -77,8 +77,10 @@ paths.push(
     new path("2020-02-06", "0800", "중구 소재 회사", "도보", 37.5600030088843, 126.975313124237),
     new path("2020-02-06", "UKNOWN", "자택", "도보", 37.7600030088843, 126.475313124237),
 );
-var number30 = new person(30, "2020-02-16", "서울대학교병원").setPaths(paths);
-Datas.push(number30);
+var number30 = new person(30, "2020-02-16", "서울대학교병원")
+number30.setPaths(paths);
+
+Datas.push(number30, number31);
 
 
 

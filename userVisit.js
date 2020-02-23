@@ -153,7 +153,9 @@ function save(item) {
 function loadUserPaths() {
     let pathArray = getRestoredPath();
 
-    User = new person(0, null, null).setPaths(pathArray);
+    User = new person(0, null, null);
+    User.setPaths(pathArray);
+    //마커, 라인 그리기
     User.drawMarkerAndLine(map);
 }
 
