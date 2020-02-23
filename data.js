@@ -31,7 +31,29 @@ function person(id, date, hospital, paths){
             }
         }
     }
+    this.addPath = function(item, lineColor='#db4040'){
+        for(var i = 0; i < this.paths.length; i++){
+            let timeDiff = timeDiff2Min(item, dataArray[i]);
+            if(timeDiff < 0 ){
+                break;
+            }else if(timeDiff == 0){
+                alert("이미 동일한 시간대에 경로가 존재합니다.");
+            }
+        }
+        this.paths.splice(i, 0, item);
 
+        let r = new Array();
+        r.push(this.paths[i], this.paths[i + 1]);
+
+        path.line = new kakao.maps.Polyline({
+            endArrow : true,
+            path: r,
+            strokeWeight : 3,
+            strokeColor : lineColor, //'#db4040'
+            strokeOpacity : 1,
+            strokeStyle : 'solid'
+        });
+    }
     this.drawLines = function(map, lineColor='#db4040'){
         if(paths.length < 2){
             return;
@@ -57,7 +79,7 @@ function person(id, date, hospital, paths){
         if(this.paths.length > 2){
             for(let i = 0; i < this.paths.length - 1; i++){
                 let r = new Array();
-                r.push(this.paths[i], this.paths[i + 1]);
+                r.push(this.paths[i].LatLng, this.paths[i + 1].LatLng);
 
                 path.line = new kakao.maps.Polyline({
                     endArrow : true,
