@@ -107,10 +107,8 @@ function newVisitedArea(){
     save(userPath);
 
     //테스트코드. 로직 최적화할것
-    User.drawMarkers(null);
-    User.drawLines(null);
-    User.drawMarkers(map);
-    User.drawLines(map);
+    User.drawMarkerAndLine(null);
+    User.drawMarkerAndLine(map);
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -153,13 +151,11 @@ function save(item) {
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadUserPaths() {
-    let visitedAreaArray = getRestoredPath();
-    
-	if (visitedAreaArray != null) {
-        User = new person(0, null, null, visitedAreaArray);
-        User.drawMarkers(map);
-        User.drawLines(map);
-    }
+    let pathArray = getRestoredPath();
+
+    User = new person(0, null, null, pathArray);
+    User.setLines();
+    User.drawMarkerAndLine(map);
 }
 
 //path 배열로 반환하는 함수
@@ -190,8 +186,7 @@ function getStoredArray() {
 
 //로컬스토리지내 데이터를 지우는 함수입니다.
 function clearAll(){
-    User.drawMarkers(null);
-    User.drawLines(null);
+    User.drawMarkerAndLine(null);
 
     let emptyList = new Array();
     User.paths = emptyList;

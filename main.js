@@ -15,8 +15,9 @@ $("#hide_urp").click(function(){
 
 //모든 확진자 경로 그려주기
 for(let person of Datas){
-    person.drawMarkers(map);
-    person.drawLines(map);
+    person.setLines();
+
+    person.drawMarkerAndLine(map);
 }
 
 //사용자 경로 그려주기

@@ -23,11 +23,15 @@ function person(id, date, hospital, paths){
     this.date = date;
     this.hospital = hospital;
     this.paths = paths;
-    this.drawMarkers = function(map){
+    this.drawMarkerAndLine = function(map){
         for(let path of this.paths){
             path.marker.setMap(map);
+            if(path.line != null){
+                path.line.setMap(map);
+            }
         }
     }
+
     this.drawLines = function(map, lineColor='#db4040'){
         if(paths.length < 2){
             return;
@@ -38,7 +42,7 @@ function person(id, date, hospital, paths){
             array.push(path.LatLng)
         }
     
-        line = new kakao.maps.Polyline({
+        this.lines = new kakao.maps.Polyline({
             endArrow : true,
             map: map,
             path: array,
@@ -47,6 +51,24 @@ function person(id, date, hospital, paths){
             strokeOpacity : 1,
             strokeStyle : 'solid'
         });
+    }
+
+    this.setLines = function(lineColor='#db4040'){
+        if(this.paths.length > 2){
+            for(let i = 0; i < this.paths.length - 1; i++){
+                let r = new Array();
+                r.push(this.paths[i], this.paths[i + 1]);
+
+                path.line = new kakao.maps.Polyline({
+                    endArrow : true,
+                    path: r,
+                    strokeWeight : 3,
+                    strokeColor : lineColor, //'#db4040'
+                    strokeOpacity : 1,
+                    strokeStyle : 'solid'
+                })
+            }
+        }
     }
 }
 

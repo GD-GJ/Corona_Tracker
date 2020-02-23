@@ -92,35 +92,6 @@ function displayMarker(locPosition, message) {
     map.setCenter(locPosition);      
 } 
 
-function drawMarkers(paths, map){
-    for(let path of paths){
-        path.marker.setMap(map);
-    }
-}
-
-function lineDrawer(paths, lineColor='#db4040'){
-    //paths      : 경로 배열
-    //lineColor  : 선의 색깔
-    if(paths.length < 2){
-        return;
-    }
-
-    var array = []
-    for(let path of paths){
-        array.push(path.LatLng)
-    }
-
-    line = new kakao.maps.Polyline({
-        endArrow : true,
-        map: map,
-        path: array,
-        strokeWeight : 3,
-        strokeColor : lineColor, //'#db4040'
-        strokeOpacity : 1,
-        strokeStyle : 'solid'
-    });
-}
-
 //장소 키워드로 해당하는 장소들을 찾는 함수
 function searchPlace(){
     let placeName = $("#placeName").val();
@@ -150,14 +121,4 @@ function searchPlace(){
             });
         }
     });
-}
-
-
-
-//넘겨받은 경로들의 집합을 지도에 그려주는 함수.
-function drawPaths(Target){
-    lineDrawer(Target);
-    for(let path of Target){
-        path.marker.setMap(map);
-    }    
 }
