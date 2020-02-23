@@ -7,6 +7,9 @@ function path(date, time, name, method, lat, lng){
     this.lat = lat;
     this.lng = lng;
     this.latLng = new kakao.maps.LatLng(lat, lng);
+    this.marker = new kakao.maps.Marker({
+        position: this.latLng
+    });
     this.setLatLng = function(lat, lng){
         this.lat = lat;
         this.lng = lng;

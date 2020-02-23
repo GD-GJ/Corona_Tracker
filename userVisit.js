@@ -106,7 +106,7 @@ function newVisitedArea(){
     save(userPath);
 
     //테스트코드. 로직 최적화할것
-    drawPaths(userPaths);
+    //drawPaths(userPaths);
 }
 
 //두 위치 사이의 거리를 반환하는 함수.

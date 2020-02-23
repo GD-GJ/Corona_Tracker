@@ -101,8 +101,11 @@ function lineDrawer(paths, lineColor='#db4040'){
 
     var array = []
     for (let i = 0; i < paths.length; i++){
-        array.push(paths[i].latLng);
-        console.log(paths[i].latLng);
+        if(paths[i].latLng instanceof kakao.maps.LatLng){
+            array.push(paths[i].latLng);
+        }else{
+            console.log("카카오맵 LatLng 객체가 아닙니다. " + paths[i]);
+        }
         
     }
 
@@ -152,6 +155,6 @@ function searchPlace(){
 function drawPaths(Target){
     lineDrawer(Target);
     for(let path of Target){
-        setMarker(path);
+        path.marker.setMap(map);
     }    
 }
