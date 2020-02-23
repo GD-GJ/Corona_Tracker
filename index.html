@@ -36,26 +36,31 @@
 
     <div id="user_route_panel">
         <button type="button" id="hide_urp" class="btn btn-primary">닫기</button>
-        <p>장소 찾기</p>
-        <form class="inputForm" action="index.html" method="post">
-            <input id="placeName" type="text" class="inputItems" value="" placeholder="방문지">
-            <input id="search_place" type="button" class="inputItems" value="장소검색">
-        </form>
 
-        <p>장소 입력</p>
-        <form class="inputForm" action="index.html" method="post">
-            <input id="visitLat" type="hidden" class="inputItems" value="" placeholder="방문 위도">
-            <input id="visitLng" type="hidden" class="inputItems" value="" placeholder="방문 경도">
-            <label>방문일</label>
-            <input id="visitDate" type="date" class="inputItems"  value="" placeholder="방문일">
-            <input id="visitTime" type="text" class="inputItems"  value="" placeholder="방문시간">
-            <input id="visitMethod" type="text" class="inputItems"  value="" placeholder="이동수단">
-            <input id="addNew" type="button" class="inputItems" value="추가">
-            <input id="clearAll" type="button" class="inputItems" name="" value="모두삭제">
-        </form>
-
-        <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:35vh; overflow: auto;">
+        <div class="search_view">
+            <p>장소 찾기</p>
+            <form class="inputForm" action="index.html" method="post">
+                <input id="placeName" type="text" class="inputItems" value="" placeholder="방문지">
+                <input id="search_place" type="button" class="inputItems" value="장소검색">
+            </form>
+            <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:35vh; overflow: auto;"></div>
+            <button type="button" id="select_place" class="btn btn-primary" style="display: none;">확인</button>
         </div>
+        
+        <div class="add_view" style="display: none;">
+            <p>장소 입력</p>
+            <form class="inputForm" action="index.html" method="post">
+                <input id="visitLat" type="hidden" class="inputItems" value="" placeholder="방문 위도">
+                <input id="visitLng" type="hidden" class="inputItems" value="" placeholder="방문 경도">
+                <label>방문일</label>
+                <input id="visitDate" type="date" class="inputItems"  value="" placeholder="방문일">
+                <input id="visitTime" type="text" class="inputItems"  value="" placeholder="방문시간">
+                <input id="visitMethod" type="text" class="inputItems"  value="" placeholder="이동수단">
+                <input id="addNew" type="button" class="inputItems" value="추가">
+                <input id="clearAll" type="button" class="inputItems" name="" value="모두삭제">
+            </form>
+        </div>
+        
     </div>
     
     <script src="map.js"></script>

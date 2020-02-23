@@ -2,6 +2,10 @@
 $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
 $("#search_place").click(searchPlace);
+$("#select_place").click(function(){
+    $(".search_view").css("display","none");
+    $(".add_view").css("display","block");
+});
 $("#show_urp").click(function(){
     $("#user_route_panel").animate({bottom: "0px"}, 250, function(){
         console.log("panel visible");
