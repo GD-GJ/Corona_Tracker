@@ -77,20 +77,15 @@ function timeDiff2Min(user, target){
     let userHour = Number(user.time.substring(0, 2));
     let userMin = Number(user.time.substring(2, 4));
     let userDate = new Date(uDateArray[0], Number(uDateArray[1]) -1, uDateArray[2], userHour, userMin);
-    console.log("유저시간");
-    console.log(userHour, userMin, userDate);
 
     //대상 시간 -> 분
     var tDateArray = target.date.split("-");
     var targetHour = Number(target.time.substring(0, 2));
     var targetMin = Number(target.time.substring(2, 4));
     var targetDate = new Date(tDateArray[0], Number(tDateArray[1]) -1, tDateArray[2], targetHour, targetMin);
-    console.log("대상 시간");
-    console.log(targetHour, targetMin, targetDate);
 
     //유저 시간 - 대상 시간
     let timeDiff2Min = (userDate.getTime() - targetDate.getTime())/1000/60;
-    console.log(timeDiff2Min);
     return timeDiff2Min;
 }
 
@@ -108,7 +103,9 @@ function newVisitedArea(){
     let userPath = new path(date, time, placeName, method, userLat, userLng);
     checkMatched(userPath);
     save(userPath);
-    console.log(userPath);
+
+    //테스트코드. 로직 최적화할것
+    loadPaths();
 }
 
 function calcDistance(lat1, lon1, lat2, lon2){
@@ -134,7 +131,19 @@ function rad2deg(rad) {
 
 //유저 경로를 로컬스토리지에 저장하는 함수입니다.
 function save(item) {
-	var visitedAreaArray = getStoreArray("visitedList");
+    var visitedAreaArray = getStoreArray("visitedList");
+    
+    //경로들을 시간순으로 정렬해서 저장한다.
+    for(let i = 0; i < visitedAreaArray.length; i++){
+        let timeDiff = timeDiff2Min(item, visitedAreaArray[i]);
+        if(timeDiff < 0 ){
+            break;
+        }else if(timeDiff == 0){
+            alert("이미 동일한 시간대에 경로가 존재합니다.");
+        }
+    }
+    visitedAreaArray.splice(i, 0, item);
+
 	visitedAreaArray.push(item);
 	localStorage.setItem("visitedList", JSON.stringify(visitedAreaArray));
 }
@@ -144,12 +153,7 @@ function loadPaths() {
     let userPaths = getSavedItems();
 
 	if (userPaths != null) {
-
-        //test
-        for(var path of userPaths){
-            console.log(path)
-        }
-		//setMarker(userPaths);
+        drawPaths(userPaths);
     }
 }
 

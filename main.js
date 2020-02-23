@@ -13,12 +13,12 @@ $("#hide_urp").click(function(){
         console.log("panel invisible");
     })
 });
-drawPaths();
+
+drawPaths(Datas);
 
 
-
-function drawPaths(){
-    for(let person of Datas){
+function drawPaths(Target){
+    for(let person of Target){
         console.log(person);
         lineDrawer(person.paths);
 
