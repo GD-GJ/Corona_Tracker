@@ -15,7 +15,7 @@ $("#hide_urp").click(function(){
 });
 
 for(let person of Datas){
-    drawPaths(person);
+    drawPaths(person.paths);
 }
 
 
