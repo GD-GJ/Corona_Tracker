@@ -91,13 +91,16 @@ function displayMarker(locPosition, message) {
 function lineDrawer(paths, lineColor='#db4040'){
     //paths      : 경로 배열
     //lineColor  : 선의 색깔
+    if(paths.length < 2){
+        return;
+    }
+
     var array = []
     for (let i = 0; i < paths.length; i++){
         array.push(paths[i].latLng);
         console.log(paths[i].latLng);
         
     }
-
 
     line = new kakao.maps.Polyline({
         endArrow : true,
