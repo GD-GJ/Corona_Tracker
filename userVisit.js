@@ -133,7 +133,8 @@ function save(item) {
     var visitedAreaArray = getStoreArray("visitedList");
     
     //경로들을 시간순으로 정렬해서 저장한다.
-    for(let i = 0; i < visitedAreaArray.length; i++){
+    let i;
+    for(i = 0; i < visitedAreaArray.length; i++){
         let timeDiff = timeDiff2Min(item, visitedAreaArray[i]);
         if(timeDiff < 0 ){
             break;
@@ -143,14 +144,13 @@ function save(item) {
     }
     visitedAreaArray.splice(i, 0, item);
 
-	visitedAreaArray.push(item);
 	localStorage.setItem("visitedList", JSON.stringify(visitedAreaArray));
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadPaths() {
     let userPaths = getSavedItems();
-    
+
 	if (userPaths != null) {
         drawPaths(userPaths);
     }
