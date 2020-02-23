@@ -89,7 +89,7 @@ function timeDiff2Min(user, target){
     console.log(targetHour, targetMin, targetDate);
 
     //유저 시간 - 대상 시간
-    let timeDiff2Min = (userDate.getTime - targetDate.getTime)/1000/60;
+    let timeDiff2Min = (userDate.getTime() - targetDate.getTime())/1000/60;
     console.log(timeDiff2Min);
     return timeDiff2Min;
 }
