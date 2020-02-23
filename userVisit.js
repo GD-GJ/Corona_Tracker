@@ -74,7 +74,7 @@ function checkMatched(userPath){
             $(".result_content").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
-                + '확진자가 '+ DESCRIPTION[level] + '다녀간 지역입니다.' + '</a></div>'
+                + '확진자가 '+ DESCRIPTION[level] + ' 다녀간 지역입니다.' + '</a></div>'
             );
         }
     }

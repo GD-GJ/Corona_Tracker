@@ -10,6 +10,16 @@ function path(date, time, name, method, lat, lng){
     this.marker = new kakao.maps.Marker({
         position: this.LatLng
     });
+    this.infowindow = new kakao.maps.InfoWindow({
+        //컨텐츠 ui 수정할것.
+        content : '<div style="padding:5px;">'
+                + this.name + '<br>' 
+                + this.date + this.time + '<br>'
+                + this.method 
+                + '</div>',
+        removable : true
+      });
+    
     this.setLatLng = function(lat, lng){
         this.lat = lat;
         this.lng = lng;
@@ -26,6 +36,10 @@ function person(id, date, hospital){
     this.drawMarkerAndLine = function(map){
         for(let path of this.paths){
             path.marker.setMap(map);
+            kakao.maps.event.addListener(path.marker, 'click', function() {
+                // 마커 클릭시 인포윈도우 오픈
+                path.infowindow.open(map, path.marker);
+            });
         }
         if(this.lines != null){
             this.lines.setMap(map);
