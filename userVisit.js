@@ -10,6 +10,7 @@ function checkMatched(userPath){
     const TIME_DANGER_LEVEL_1 = 6*60;       //6시간
     const TIME_DANGER_LEVEL_2 = 24*60;      //하루
     const TIME_DANGER_LEVEL_3 = 7*24*60;    //1주일
+    const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상'];
 
     var group_by_level = new Array();
     let level1 = new Array();
@@ -58,13 +59,23 @@ function checkMatched(userPath){
                     DangerLevel = 3;
                 }
                 group_by_level[DangerLevel].push(path);
+                
+                $(".search_view").css("display","none");
+                $(".add_view").css("display","none");
+                $(".result_view").css("display","block");
             }
         }
     }
 
+    
     for(let level in group_by_level){
         for(let path of group_by_level[level]){
             path.marker.setMap(map);
+            $(".result_content").append(
+                '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
+                + path.name + '</a><br><a class="itemDesc">'
+                + '확진자가 '+ DESCRIPTION[level] + '다녀간 지역입니다.' + '</a></div>'
+            );
         }
     }
 }
@@ -158,6 +169,9 @@ function loadUserPaths() {
     User.setPaths(pathArray);
     //마커, 라인 그리기
     User.drawMarkerAndLine(map);
+    for(let path of User.paths){
+        checkMatched(path);
+    }
 }
 
 //path 배열로 반환하는 함수

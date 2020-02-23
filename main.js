@@ -5,8 +5,12 @@ $("#search_place").click(searchPlace);
 $("#select_place").click(function(){
     $(".search_view").css("display","none");
     $(".add_view").css("display","block");
+    $(".result_view").css("display","none");
 });
 $("#show_urp").click(function(){
+    $(".search_view").css("display","block");
+    $(".add_view").css("display","none");
+    $(".result_view").css("display","none");
     $("#user_route_panel").animate({bottom: "0px"}, 250, function(){
         console.log("panel visible");
     })
