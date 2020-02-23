@@ -132,47 +132,56 @@ function rad2deg(rad) {
 //유저 경로를 로컬스토리지에 저장하는 함수입니다.
 function save(item) {    
     //경로들을 시간순으로 정렬해서 저장한다.
-    let i;
-    for(i = 0; i < visitedAreaArray.length; i++){
-        let timeDiff = timeDiff2Min(item, visitedAreaArray[i]);
+    let dataArray = getStoredArray();
+
+    for(var i = 0; i < dataArray.length; i++){
+        let timeDiff = timeDiff2Min(item, dataArray[i]);
         if(timeDiff < 0 ){
             break;
         }else if(timeDiff == 0){
             alert("이미 동일한 시간대에 경로가 존재합니다.");
         }
     }
-    visitedAreaArray.splice(i, 0, item);
+    dataArray.splice(i, 0, item);
 
-	localStorage.setItem("visitedList", JSON.stringify(visitedAreaArray));
+    localStorage.setItem("visitedList", JSON.stringify(dataArray));
+    visitedAreaArray = getRestoredPath();
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadUserPaths() {
-    visitedAreaArray = getSavedItems();
+    visitedAreaArray = getRestoredPath();
 
 	if (visitedAreaArray != null) {
         drawPaths(visitedAreaArray);
     }
 }
 
-//로컬스토리지에 있는 유저 경로를 반환하는 함수입니다.
-function getSavedItems() {
-	return getStoreArray("visitedList");
-}
+//path 배열로 반환하는 함수
+function getRestoredPath() {
+    let dataArray = getStoredArray();
 
+    if (dataArray != null && dataArray != ""){
+        let restoredData = new Array();
 
-function getStoreArray(key) {
-    let dataArray = localStorage.getItem(key);
-    let restoredData = new Array;
-
-	if (dataArray != null && dataArray != ""){
-		dataArray = JSON.parse(dataArray);
         for(let item of dataArray){
             restoredData.push(new path(item.date, item.time, item.name, item.method, item.lat, item.lng));
         }
     }
-    
 	return restoredData;
+}
+
+
+function getStoredArray() {
+    let dataArray = localStorage.getItem("visitedList");
+
+    if (dataArray == null && dataArray == ""){
+        dataArray = new Array();
+    }else{
+        dataArray = JSON.parse(dataArray);
+    }
+
+    return dataArray;
 }
 
 //로컬스토리지내 데이터를 지우는 함수입니다.
