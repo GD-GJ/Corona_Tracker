@@ -107,7 +107,7 @@ function newVisitedArea(){
     save(userPath);
 
     //테스트코드. 로직 최적화할것
-    //drawPaths(userPaths);
+    drawPaths(visitedAreaArray);
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -163,13 +163,16 @@ function getSavedItems() {
 
 function getStoreArray(key) {
     let dataArray = localStorage.getItem(key);
-    
-	if (dataArray == null || dataArray == "") {
-		dataArray = new Array();
-	} else {
+    let restoredData = new Array;
+
+	if (dataArray != null && dataArray != ""){
 		dataArray = JSON.parse(dataArray);
-	}
-	return dataArray;
+        for(let item of dataArray){
+            restoredData.push(new path(itme.date, item.time, item.name, item.method, item.lat, item.lng));
+        }
+    }
+    
+	return restoredData;
 }
 
 //로컬스토리지내 데이터를 지우는 함수입니다.
