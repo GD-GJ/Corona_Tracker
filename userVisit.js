@@ -16,7 +16,7 @@ function checkMatched(userPath){
     let level3 = new Array();
     let level4 = new Array();
     group_by_level.push(level1, level2, level3, level4);
-    
+
 
     for(let person of Datas){
         for(let path of person.paths){
@@ -73,16 +73,20 @@ function checkMatched(userPath){
 //음수일경우 확진자가 다녀가기 전에 유저가 방문한 경우이므로 고려하지않음
 function timeDiff2Min(user, target){
     //유저 시간 -> 분
-    var uDateArray = user.date.split("-");
-    var userHour = Number(user.time.substring(0, 2));
-    var userMin = Number(user.time.substring(2, 4));
-    var userDate = new Date(uDateArray[0], Number(uDateArray[1]) -1, uDateArray[2], userHour, userMin);
+    let uDateArray = user.date.split("-");
+    let userHour = Number(user.time.substring(0, 2));
+    let userMin = Number(user.time.substring(2, 4));
+    let userDate = new Date(uDateArray[0], Number(uDateArray[1]) -1, uDateArray[2], userHour, userMin);
+    console.log("유저시간");
+    console.log(userHour, userMin, userDate);
 
     //대상 시간 -> 분
     var tDateArray = target.date.split("-");
     var targetHour = Number(target.time.substring(0, 2));
     var targetMin = Number(target.time.substring(2, 4));
     var targetDate = new Date(tDateArray[0], Number(tDateArray[1]) -1, tDateArray[2], targetHour, targetMin);
+    console.log("대상 시간");
+    console.log(targetHour, targetMin, targetDate);
 
     //유저 시간 - 대상 시간
     let timeDiff2Min = userDate.getMinutes - targetDate.getMinutes();
