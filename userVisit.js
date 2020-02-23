@@ -146,15 +146,14 @@ function save(item) {
     dataArray.splice(i, 0, item);
 
     localStorage.setItem("visitedList", JSON.stringify(dataArray));
-    User.paths = getRestoredPath();
+    User.setPaths(getRestoredPath());
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadUserPaths() {
     let pathArray = getRestoredPath();
 
-    User = new person(0, null, null, pathArray);
-    User.setLines();
+    User = new person(0, null, null).setPaths(pathArray);
     User.drawMarkerAndLine(map);
 }
 

@@ -26,26 +26,22 @@ function person(id, date, hospital, paths){
     this.drawMarkerAndLine = function(map){
         for(let path of this.paths){
             path.marker.setMap(map);
-            if(path.line != null){
-                path.line.setMap(map);
-            }
         }
+        this.lines.setMap(map);
     }
-    this.addPath = function(item, lineColor='#db4040'){
-        for(var i = 0; i < this.paths.length; i++){
-            let timeDiff = timeDiff2Min(item, dataArray[i]);
-            if(timeDiff < 0 ){
-                break;
-            }else if(timeDiff == 0){
-                alert("이미 동일한 시간대에 경로가 존재합니다.");
-            }
+    this.setPaths = function(paths, lineColor='#db4040'){
+        this.paths = paths;
+
+        if(paths.length < 2){
+            return;
         }
-        this.paths.splice(i, 0, item);
 
         let r = new Array();
-        r.push(this.paths[i], this.paths[i + 1]);
+        for(let path of paths){
+            r.push(path.LatLng);
+        }
 
-        path.line = new kakao.maps.Polyline({
+        this.lines = new kakao.maps.Polyline({
             endArrow : true,
             path: r,
             strokeWeight : 3,
@@ -53,44 +49,6 @@ function person(id, date, hospital, paths){
             strokeOpacity : 1,
             strokeStyle : 'solid'
         });
-    }
-    this.drawLines = function(map, lineColor='#db4040'){
-        if(paths.length < 2){
-            return;
-        }
-        
-        var array = new Array();
-        for(let path of this.paths){
-            array.push(path.LatLng)
-        }
-    
-        this.lines = new kakao.maps.Polyline({
-            endArrow : true,
-            map: map,
-            path: array,
-            strokeWeight : 3,
-            strokeColor : lineColor, //'#db4040'
-            strokeOpacity : 1,
-            strokeStyle : 'solid'
-        });
-    }
-
-    this.setLines = function(lineColor='#db4040'){
-        if(this.paths.length > 2){
-            for(let i = 0; i < this.paths.length - 1; i++){
-                let r = new Array();
-                r.push(this.paths[i].LatLng, this.paths[i + 1].LatLng);
-
-                path.line = new kakao.maps.Polyline({
-                    endArrow : true,
-                    path: r,
-                    strokeWeight : 3,
-                    strokeColor : lineColor, //'#db4040'
-                    strokeOpacity : 1,
-                    strokeStyle : 'solid'
-                })
-            }
-        }
     }
 }
 
@@ -109,7 +67,7 @@ paths.push(
     new path("2020-02-09", "0730", "신천지예수교증거장막성전 다대오지파대구교회", "자차", 33.412739313807456, 126.1009308145358),
     new path("2020-02-09", "0930", "새로난 한방병원", "자차", 33.45178067090639, 126.5726886938753),
 );
-var number31 = new person(31, "2020-02-18", "대구의료원", paths);
+var number31 = new person(31, "2020-02-18", "대구의료원").setPaths(paths);
 Datas.push(number31);
 
 paths = new Array();
@@ -119,7 +77,7 @@ paths.push(
     new path("2020-02-06", "0800", "중구 소재 회사", "도보", 37.5600030088843, 126.975313124237),
     new path("2020-02-06", "UKNOWN", "자택", "도보", 37.7600030088843, 126.475313124237),
 );
-var number30 = new person(30, "2020-02-16", "서울대학교병원", paths);
+var number30 = new person(30, "2020-02-16", "서울대학교병원").setPaths(paths);
 Datas.push(number30);
 
 
