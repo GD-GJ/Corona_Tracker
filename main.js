@@ -14,19 +14,10 @@ $("#hide_urp").click(function(){
     })
 });
 
-drawPaths(Datas);
-
-
-function drawPaths(Target){
-    for(let person of Target){
-        console.log(person);
-        lineDrawer(person.paths);
-
-        for(let path of person.paths){
-            setMarker(path);
-        }
-    }
+for(let person of Datas){
+    drawPaths(person);
 }
+
 
 
 // paths = [

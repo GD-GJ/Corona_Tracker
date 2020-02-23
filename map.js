@@ -146,3 +146,11 @@ function searchPlace(){
         }
     });
 }
+
+//넘겨받은 경로들의 집합을 지도에 그려주는 함수.
+function drawPaths(Target){
+    lineDrawer(Target);
+    for(let path of Target){
+        setMarker(path);
+    }    
+}

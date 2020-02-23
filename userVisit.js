@@ -94,6 +94,7 @@ function setUserLatLng(lat, lng){
     userLng = lng;
 }
 
+//새로운 사용자 경로를 추가하는 함수.
 function newVisitedArea(){
     let placeName = $("#placeName").val();
     let date = $("#visitDate").val();
@@ -108,6 +109,7 @@ function newVisitedArea(){
     loadPaths();
 }
 
+//두 위치 사이의 거리를 반환하는 함수.
 function calcDistance(lat1, lon1, lat2, lon2){
     let theta = lon1 - lon2;
     dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1))
@@ -118,15 +120,12 @@ function calcDistance(lat1, lon1, lat2, lon2){
     dist = dist * 1.609344;
     return Number(dist*1000).toFixed(2);
 }
-
 function deg2rad(deg) {
     return (deg * Math.PI / 180);
 }
 function rad2deg(rad) {
     return (rad * 180 / Math.PI);
 }
-
-//새로운 유저 경로를 추가하는 함수입니다.
 
 
 //유저 경로를 로컬스토리지에 저장하는 함수입니다.
@@ -151,7 +150,7 @@ function save(item) {
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadPaths() {
     let userPaths = getSavedItems();
-
+    
 	if (userPaths != null) {
         drawPaths(userPaths);
     }
