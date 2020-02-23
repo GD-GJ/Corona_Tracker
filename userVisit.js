@@ -11,7 +11,7 @@ function checkMatched(userPath){
     const TIME_DANGER_LEVEL_2 = 24*60;      //하루
     const TIME_DANGER_LEVEL_3 = 7*24*60;    //1주일
 
-    let group_by_level = new Array();
+    var group_by_level = new Array();
     let level1 = new Array();
     let level2 = new Array();
     let level3 = new Array();
@@ -63,9 +63,8 @@ function checkMatched(userPath){
     }
 
     for(let level in group_by_level){
-        console.log(level);
         for(let path of group_by_level[level]){
-            console.log(path);
+            path.marker.setMap(map);
         }
     }
 }

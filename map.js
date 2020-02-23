@@ -105,7 +105,7 @@ function searchPlace(){
 
             //목록 생성하기
             for(let place of result){
-                $("#SelectPlace").append('<a class="list-group-item list-group-item-action ">' + place.place_name + '</a>');
+                $("#SelectPlace").append('<a class="list-group-item list-group-item-action ">' + place.place_name + '<br>' + place.address_name + '</a>');
             }
 
             //항목 클릭 리스너
