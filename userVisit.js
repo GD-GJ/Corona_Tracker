@@ -90,8 +90,8 @@ function timeDiff2Min(user, target){
 }
 
 function setUserLatLng(lat, lng){
-    userLat = lat;
-    userLng = lng;
+    userLat = Number(lat);
+    userLng = Number(lng);
 }
 
 //새로운 사용자 경로를 추가하는 함수.

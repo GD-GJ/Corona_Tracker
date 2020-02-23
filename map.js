@@ -7,8 +7,12 @@ var options = {
 }
 
 var map = new kakao.maps.Map(container, options);
-
 var mapTypeControl = new kakao.maps.MapTypeControl();
+//카카오 지오코더
+var geocoder = new kakao.maps.services.Geocoder();
+//카카오 플레이스
+var kakaoPlaces = new kakao.maps.services.Places();
+
 
 // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
 // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
@@ -112,12 +116,6 @@ function lineDrawer(paths, lineColor='#db4040'){
         strokeStyle : 'solid'
     });
 }
-
-//카카오 지오코더
-var geocoder = new kakao.maps.services.Geocoder();
-
-//카카오 플레이스
-var kakaoPlaces = new kakao.maps.services.Places();
 
 //장소 키워드로 해당하는 장소들을 찾는 함수
 function searchPlace(){
