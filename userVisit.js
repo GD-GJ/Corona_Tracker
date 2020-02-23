@@ -106,7 +106,7 @@ function newVisitedArea(){
     save(userPath);
 
     //테스트코드. 로직 최적화할것
-    loadPaths();
+    drawPaths(userPaths);
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -148,7 +148,7 @@ function save(item) {
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
-function loadPaths() {
+function loadUserPaths() {
     let userPaths = getSavedItems();
 
 	if (userPaths != null) {
@@ -167,8 +167,7 @@ function getStoreArray(key) {
     
 	if (visitedAreaArray == null || visitedAreaArray == "") {
 		visitedAreaArray = new Array();
-	}
-	else {
+	} else {
 		visitedAreaArray = JSON.parse(visitedAreaArray);
 	}
 	return visitedAreaArray;
@@ -182,5 +181,3 @@ function clearAll()
   let emptyList = new Array();
   localStorage.setItem("visitedList", JSON.stringify(emptyList));
 }
-
-loadPaths();
