@@ -14,6 +14,7 @@ function path(date, time, name, method, lat, lng){
         this.lat = lat;
         this.lng = lng;
     }
+    this.line = null;
 }
 
 //한명의 감염자에 대한 정보를 가지는 객체
@@ -22,6 +23,31 @@ function person(id, date, hospital, paths){
     this.date = date;
     this.hospital = hospital;
     this.paths = paths;
+    this.drawMarkers = function(map){
+        for(let path of this.paths){
+            path.marker.setMap(map);
+        }
+    }
+    this.drawLines = function(map, lineColor='#db4040'){
+        if(paths.length < 2){
+            return;
+        }
+        
+        var array = new Array();
+        for(let path of this.paths){
+            array.push(path.LatLng)
+        }
+    
+        line = new kakao.maps.Polyline({
+            endArrow : true,
+            map: map,
+            path: array,
+            strokeWeight : 3,
+            strokeColor : lineColor, //'#db4040'
+            strokeOpacity : 1,
+            strokeStyle : 'solid'
+        });
+    }
 }
 
 //테스트 데이터

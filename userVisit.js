@@ -1,6 +1,6 @@
 var userLat,
     userLng;
-var visitedAreaArray;
+var User;
 
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
@@ -107,7 +107,10 @@ function newVisitedArea(){
     save(userPath);
 
     //테스트코드. 로직 최적화할것
-    drawPaths(visitedAreaArray);
+    User.drawMarkers(null);
+    User.drawLines(null);
+    User.drawMarkers(map);
+    User.drawLines(map);
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -145,15 +148,17 @@ function save(item) {
     dataArray.splice(i, 0, item);
 
     localStorage.setItem("visitedList", JSON.stringify(dataArray));
-    visitedAreaArray = getRestoredPath();
+    User.paths = getRestoredPath();
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadUserPaths() {
-    visitedAreaArray = getRestoredPath();
-
+    let visitedAreaArray = getRestoredPath();
+    
 	if (visitedAreaArray != null) {
-        drawPaths(visitedAreaArray);
+        User = new person(0, null, null, visitedAreaArray);
+        User.drawMarkers(map);
+        User.drawLines(map);
     }
 }
 
@@ -170,7 +175,7 @@ function getRestoredPath() {
 	return restoredData;
 }
 
-
+//
 function getStoredArray() {
     let dataArray = localStorage.getItem("visitedList");
 
@@ -184,11 +189,11 @@ function getStoredArray() {
 }
 
 //로컬스토리지내 데이터를 지우는 함수입니다.
-function clearAll()
-{
-  //마커들을 모두 지우는 로직 추가해야함.
+function clearAll(){
+    User.drawMarkers(null);
+    User.drawLines(null);
 
-  let emptyList = new Array();
-  visitedAreaArray = emptyList;
-  localStorage.setItem("visitedList", JSON.stringify(emptyList));
+    let emptyList = new Array();
+    User.paths = emptyList;
+    localStorage.setItem("visitedList", JSON.stringify(emptyList));
 }

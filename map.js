@@ -92,6 +92,12 @@ function displayMarker(locPosition, message) {
     map.setCenter(locPosition);      
 } 
 
+function drawMarkers(paths, map){
+    for(let path of paths){
+        path.marker.setMap(map);
+    }
+}
+
 function lineDrawer(paths, lineColor='#db4040'){
     //paths      : 경로 배열
     //lineColor  : 선의 색깔
@@ -100,12 +106,8 @@ function lineDrawer(paths, lineColor='#db4040'){
     }
 
     var array = []
-    for (let i = 0; i < paths.length; i++){
-        if(paths[i].LatLng instanceof kakao.maps.LatLng){
-            array.push(paths[i].LatLng);
-        }else{
-            console.log("카카오맵 LatLng 객체가 아닙니다. " + paths[i]);
-        }
+    for(let path of paths){
+        array.push(path.LatLng)
     }
 
     line = new kakao.maps.Polyline({
@@ -149,6 +151,8 @@ function searchPlace(){
         }
     });
 }
+
+
 
 //넘겨받은 경로들의 집합을 지도에 그려주는 함수.
 function drawPaths(Target){

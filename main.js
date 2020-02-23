@@ -1,5 +1,4 @@
 //시작지점            
-
 $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
 $("#search_place").click(searchPlace);
@@ -16,7 +15,8 @@ $("#hide_urp").click(function(){
 
 //모든 확진자 경로 그려주기
 for(let person of Datas){
-    drawPaths(person.paths);
+    person.drawMarkers(map);
+    person.drawLines(map);
 }
 
 //사용자 경로 그려주기
