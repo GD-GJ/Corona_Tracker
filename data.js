@@ -18,11 +18,11 @@ function path(date, time, name, method, lat, lng){
 }
 
 //한명의 감염자에 대한 정보를 가지는 객체
-function person(id, date, hospital, paths){
+function person(id, date, hospital){
     this.id = id;
     this.date = date;
     this.hospital = hospital;
-    this.paths = paths;
+    this.paths = null;
     this.drawMarkerAndLine = function(map){
         for(let path of this.paths){
             path.marker.setMap(map);
