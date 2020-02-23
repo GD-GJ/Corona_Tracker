@@ -190,6 +190,6 @@ function clearAll(){
     User.drawMarkerAndLine(null);
 
     let emptyList = new Array();
-    User.paths = emptyList;
+    User.setPaths(emptyList);
     localStorage.setItem("visitedList", JSON.stringify(emptyList));
 }

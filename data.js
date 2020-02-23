@@ -27,12 +27,15 @@ function person(id, date, hospital){
         for(let path of this.paths){
             path.marker.setMap(map);
         }
-        this.lines.setMap(map);
+        if(this.lines != null){
+            this.lines.setMap(map);
+        }
     }
     this.setPaths = function(paths, lineColor='#db4040'){
         this.paths = paths;
 
         if(paths.length < 2){
+            this.lines = null;
             return;
         }
 
