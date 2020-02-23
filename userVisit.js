@@ -135,17 +135,18 @@ function save(item) {
     //경로들을 시간순으로 정렬해서 저장한다.
     let dataArray = getStoredArray();
 
-    for(let i = 0; i < dataArray.length; i++){
+    for(var i = 0; i < dataArray.length; i++){
         let timeDiff = timeDiff2Min(item, dataArray[i]);
 
         if(timeDiff < 0 ){
-            dataArray.splice(i, 0, item);
             break;
         }else if(timeDiff == 0){
             alert("이미 동일한 시간대에 경로가 존재합니다.");
         }
     }
-    
+    //동일한 시간대 문제 해결할것
+    dataArray.splice(i, 0, item);
+
     localStorage.setItem("visitedList", JSON.stringify(dataArray));
     User.setPaths(getRestoredPath());
 }
