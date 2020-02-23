@@ -160,10 +160,9 @@ function loadUserPaths() {
 //path 배열로 반환하는 함수
 function getRestoredPath() {
     let dataArray = getStoredArray();
+    let restoredData = new Array();
 
     if (dataArray != null && dataArray != ""){
-        let restoredData = new Array();
-
         for(let item of dataArray){
             restoredData.push(new path(item.date, item.time, item.name, item.method, item.lat, item.lng));
         }
