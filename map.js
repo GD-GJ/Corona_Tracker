@@ -105,14 +105,14 @@ function searchPlace(){
 
             //목록 생성하기
             for(let place of result){
-                $("#SelectPlace").append('<a class="list-group-item list-group-item-action ">' + place.place_name + '<br>' + place.address_name + '</a>');
+                $("#SelectPlace").append('<div class="list-group-item list-group-item-action "><a class="itemTitle">' + place.place_name + '</a><br><a class="itemDesc">' + place.address_name + '</a></div>');
             }
 
             //항목 클릭 리스너
             $("a.list-group-item.list-group-item-action").click(function() {
                 console.log(places);
                 for(let place of places){
-                    if(place.place_name == $(this).text()){
+                    if(place.place_name == $(this).find("#itemTitle").text()){
                         map.panTo(new kakao.maps.LatLng(place.y, place.x));
                         $("#placeName").val(place.place_name);
                         setUserLatLng(place.y, place.x);
