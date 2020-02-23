@@ -97,6 +97,7 @@ function setUserLatLng(lat, lng){
 
 //새로운 사용자 경로를 추가하는 함수.
 function newVisitedArea(){
+    User.drawMarkerAndLine(null);
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
     let placeName = $("#placeName").val();
@@ -107,7 +108,6 @@ function newVisitedArea(){
     save(userPath);
 
     //테스트코드. 로직 최적화할것
-    User.drawMarkerAndLine(null);
     User.drawMarkerAndLine(map);
 }
 
@@ -135,16 +135,17 @@ function save(item) {
     //경로들을 시간순으로 정렬해서 저장한다.
     let dataArray = getStoredArray();
 
-    for(var i = 0; i < dataArray.length; i++){
+    for(let i = 0; i < dataArray.length; i++){
         let timeDiff = timeDiff2Min(item, dataArray[i]);
+
         if(timeDiff < 0 ){
+            dataArray.splice(i, 0, item);
             break;
         }else if(timeDiff == 0){
             alert("이미 동일한 시간대에 경로가 존재합니다.");
         }
     }
-    dataArray.splice(i, 0, item);
-
+    
     localStorage.setItem("visitedList", JSON.stringify(dataArray));
     User.setPaths(getRestoredPath());
 }
