@@ -74,11 +74,3 @@ function person(id, desc, date, hospital, isItOfficial = false){
         });
     }
 }
-
-//테스트 데이터
-//모든 확진자의 데이터를 담고있는 배열
-var Datas = new Array();
-//확진자가 격리될때 까지의 전체 이동경로 만들기
-
-
-Datas.push(number30, number31);

@@ -25,7 +25,7 @@ $("#hide_urp").click(function(){
     })
 });
 
-var Datas
+var Datas = new Array();
 
 $.ajax({
     url: '/data.json'
