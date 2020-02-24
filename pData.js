@@ -1,4 +1,4 @@
-var positions = [
+var position = [
   [
     {
       // profile: "(중국 관광객)",
@@ -10003,7 +10003,7 @@ var positions = [
       name: "송파",
       full: "송파 확진자",
       address: "성남시 신한은행 성남공단금융센터(18~21일 근무)",
-      latlng: new naver.maps.LatLng(37.3934911, 127.0671409)
+      latlng: new naver.maps.LatLng(37.4313048, 127.1670716)
     }
   ],
   [
@@ -10395,6 +10395,137 @@ var positions = [
       full: "양산 확진자",
       address: "CU 물금나래점 방문 (2/21 20:20)",
       latlng: new naver.maps.LatLng(35.310825, 129.006257)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "-",
+      tag: "#양산 확진자",
+      month: 2,
+      day: 21,
+      name: "양산",
+      full: "양산 확진자",
+      address: "다이소 양산증산점 방문 (2/21 15:00)",
+      latlng: new naver.maps.LatLng(35.31632, 129.002477)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "-",
+      tag: "#양산 확진자",
+      month: 2,
+      day: 21,
+      name: "양산",
+      full: "양산 확진자",
+      address: "세븐일레븐 물금바젤나인점 방문 (2/21 22:00)",
+      latlng: new naver.maps.LatLng(35.310282, 129.007459)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "-",
+      tag: "#양산 확진자",
+      month: 2,
+      day: 22,
+      name: "양산",
+      full: "양산 확진자",
+      address: "서울온누리약국 증산점 (2/22 14:00)",
+      latlng: new naver.maps.LatLng(35.320423, 128.99725)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "387번",
+      tag: "#안동 확진자",
+      month: 2,
+      day: 16,
+      name: "안동",
+      full: "안동 확진자",
+      address: "천안시 무지개식당 식사(19:30~20:20)",
+      latlng: new naver.maps.LatLng(36.7663879, 127.2132427)
+    }
+  ],
+
+  [
+    {
+      solo: true,
+      profile: "387번",
+      tag: "#안동 확진자",
+      month: 2,
+      day: 16,
+      name: "안동",
+      full: "안동 확진자",
+      address: "복주여중 앞에서 자가용으로 귀가(21:30~22:50)",
+      latlng: new naver.maps.LatLng(36.5625775, 128.7158363)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "-",
+      tag: "#양산 확진자",
+      month: 2,
+      day: 23,
+      name: "양산",
+      full: "양산 확진자",
+      address: "델리랩 수제버거 양산점 (2/23 16:30)",
+      latlng: new naver.maps.LatLng(35.330144, 129.010465)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "-",
+      tag: "#양산 확진자",
+      month: 2,
+      day: 23,
+      name: "양산",
+      full: "양산 확진자",
+      address: "김영희강남동태찜 포장 (2/23 21:00)",
+      latlng: new naver.maps.LatLng(35.330467, 129.008402)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "-",
+      tag: "#고성 확진자",
+      month: 2,
+      day: 16,
+      name: "고성",
+      full: "고성 확진자",
+      address: "고성시외버스터미널(18:00)",
+      latlng: new naver.maps.LatLng(34.981394, 128.326909)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "-",
+      tag: "#고성 확진자",
+      month: 2,
+      day: 21,
+      name: "고성",
+      full: "고성 확진자",
+      address: "2호광장 파로마가구점 하차",
+      latlng: new naver.maps.LatLng(34.974449, 128.326052)
+    }
+  ],
+  [
+    {
+      solo: true,
+      profile: "-",
+      tag: "#고성 확진자",
+      month: 2,
+      day: 21,
+      name: "고성",
+      full: "고성 확진자",
+      address: "대웅뷔페를 거쳐 보경촌 돼지집까지 가로청소",
+      latlng: new naver.maps.LatLng(34.975202, 128.326767)
     }
   ]
 ];
