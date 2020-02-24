@@ -1,8 +1,7 @@
 var positions = [
   [
     {
-      // profile: "(중국 관광객)",
-      // tag: "#우한방문",
+
       month: 1,
       day: 21,
       color: "rgb(16, 181, 247)",
@@ -826,111 +825,6 @@ var positions = [
       title: "14번째 확진자",
       latlng: new naver.maps.LatLng(37.563581, 126.802056)
     },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/20",
-    //   address: "부천역 CGV 방문",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.486112, 126.781023)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/21",
-    //   address: "인천 출입국관리사무소 방문",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.4631, 126.631371)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/22",
-    //   address: "부천시 약국 방문후 서울역 이동",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.555062, 126.970618)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/22",
-    //   address: "강릉 도착",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.764239, 128.899265)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/22",
-    //   address: "강릉소재 음식점 이용",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.755252, 128.899762)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/22",
-    //   address: "강릉소재 숙소 이용",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.68365, 129.043829)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/22",
-    //   address: "강릉소재 음식점 이용",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.690782, 129.032031)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/23",
-    //   address: "강릉역 도착",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.763697, 128.897881)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/23",
-    //   address: "부천시 소재 의료기관 방문",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.483885, 126.77806)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/24",
-    //   address: "수원역 이동",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.266602, 126.999805)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/24",
-    //   address: "친척집 방문",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.283066, 127.019904)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/25",
-    //   address: "군포소재 의료기관 방문",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.359357, 126.930992)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/26",
-    //   address: "부천역 CGV 재방문",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.48587, 126.780125)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/27",
-    //   address: "서울 중구 활동",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.561192, 126.994074)
-    // },
-    // {
-    //   color: "rgb(136, 127, 177)",
-    //   date: "1/28",
-    //   address: "부천시 소재 의료기관 재방문",
-    //   title: "14번째 확진자",
-    //   latlng: new naver.maps.LatLng(37.483893, 126.778092)
-    // },
     {
       color: "rgb(136, 127, 177)",
       month: 1,
@@ -6235,16 +6129,7 @@ var positions = [
       address: "금천동 델리퀸 방문 (주소확인중)",
       latlng: ""
     },
-    // {
-    //   profile: "-",
-    //   tag: "#청주 확진자 ",
-    //   month: 2,
-    //   day: 20,
-    //   name: "청주",
-    //   full: "청주 확진자 ",
-    //   address: "청원구 율량동 GS편의점(주공9단지) 및 후레쉬 마트 방문",
-    //   latlng: new naver.maps.LatLng(36.668226, 127.482207)
-    // },
+
     {
       profile: "-",
       tag: "#청주 확진자 ",
