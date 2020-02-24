@@ -1,122 +1,94 @@
 var positions = [
   [
     {
-      // profile: "(중국 관광객)",
-      // tag: "#우한방문",
       month: 1,
       day: 21,
-      color: "rgb(16, 181, 247)",
       date: "1/21",
       address: "제주국제공항 도착<br>제주시호텔 이용",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.511165, 126.490914)
     },
     {
       month: 1,
       day: 22,
-      color: "rgb(16, 181, 247)",
       date: "1/22",
       address: "에코랜드 이동",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.447314, 126.667472)
     },
     {
       month: 1,
       day: 22,
-      color: "rgb(16, 181, 247)",
       date: "1/22",
       address: "에코랜드 이동",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.447314, 126.667472)
     },
     {
       month: 1,
       day: 22,
-      color: "rgb(16, 181, 247)",
       date: "1/22",
       address: "산굼부리 이동",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.431925, 126.690027)
     },
     {
       month: 1,
       day: 22,
-      color: "rgb(16, 181, 247)",
       date: "1/22",
       address: "우도 이동",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.505442, 126.95379)
     },
     {
       month: 1,
       day: 22,
-      color: "rgb(16, 181, 247)",
       date: "1/22",
       address: "성산일출봉 이동",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.458735, 126.942586)
     },
     {
       month: 1,
       day: 22,
-      color: "rgb(16, 181, 247)",
       date: "1/22",
       address: "신라면세점 인근에서 식사",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.486097, 126.48806)
     },
     {
       month: 1,
       day: 22,
-      color: "rgb(16, 181, 247)",
       date: "1/22",
       address: "신라면세점 인근에서 식사<br>1/23일 롯데,신라면세점 쇼핑",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.486097, 126.48806)
     },
     {
       month: 1,
       day: 23,
-      color: "rgb(16, 181, 247)",
       date: "1/23",
       address: "칠성통 이동",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.514097, 126.525514)
     },
     {
       month: 1,
       day: 24,
-      color: "rgb(16, 181, 247)",
       date: "1/24",
       address: "1100고지 이동",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.359775, 126.462876)
     },
     {
       month: 1,
       day: 24,
-      color: "rgb(16, 181, 247)",
       date: "1/24",
       address: "도두해안도로 인근 식사",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.509313, 126.47243)
     },
     {
       month: 1,
       day: 24,
-      color: "rgb(16, 181, 247)",
       date: "1/24",
       address: "느웨마루거리 산책",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.486251, 126.490708)
     },
     {
       month: 1,
       day: 25,
-      color: "rgb(16, 181, 247)",
       date: "1/25",
       address: "공항 도착후 중국행",
-      title: "제주도 중국인 관광객",
       latlng: new naver.maps.LatLng(33.50727, 126.493282)
     }
   ],
@@ -127,21 +99,15 @@ var positions = [
       status: "완치",
       profile: "(35.여.중국)",
       tag: "#우한방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>45명</span></span>",
-      color: "green",
       date: "1/19",
       address: "인천공항 도착",
-      title: "1번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
       month: 1,
       day: 20,
-      color: "green",
       date: "1/20",
       address: "인천의료원 <span style='color:red;'>격리</span>",
-      title: "1번째 확진자",
       latlng: new naver.maps.LatLng(37.478832, 126.668558)
     }
   ],
@@ -152,118 +118,92 @@ var positions = [
       status: "완치",
       profile: "(55.남.한국)",
       tag: "#우한방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>16명</span></span>",
-      color: "orange",
       date: "1/22",
       address: "김포공항 도착",
-      title: "2번째 확진자",
       latlng: new naver.maps.LatLng(37.562143, 126.801884)
     },
     {
-      color: "orange",
       month: 1,
       day: 23,
       date: "1/23",
       address:
         "보건소 선별진료<br>24일 국립중앙의료원 <span style='color:red;'>격리</span>",
-      title: "2번째 확진자",
       latlng: new naver.maps.LatLng(37.567454, 127.005627)
     }
   ],
   [
     {
       status: "완치",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>98명</span></span>",
       profile: "(54.남.한국)",
       tag: "#우한방문",
-      color: "red",
       month: 1,
       day: 20,
       date: "1/20",
       address: "인천공항 도착",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "red",
       month: 1,
       day: 22,
       date: "1/22",
       address: "강남구 성형외과 지인동행",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.524978, 127.027718)
     },
     {
-      color: "red",
       month: 1,
       day: 22,
       date: "1/22",
       address: "강남구 호텔 투숙",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.503359, 127.049177)
     },
     {
-      color: "red",
       month: 1,
       day: 23,
       date: "1/23",
       address: "한강변 편의점 이용",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.524669, 127.015911)
     },
     {
-      color: "red",
       month: 1,
       day: 23,
       date: "1/23",
       address: "강남구 일대 음식점 이용",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.5292, 127.032597)
     },
     {
-      color: "red",
       month: 1,
       day: 24,
       date: "1/24",
       address: "일산 음식점 이용",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.674192, 126.776955)
     },
     {
-      color: "red",
       month: 1,
       day: 24,
       date: "1/24",
       address: "일산 카페 이용",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.678158, 126.812165)
     },
     {
-      color: "red",
       month: 1,
       day: 24,
       date: "1/24",
       address: "일산 모친 자택 체류",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.682229, 126.770046)
     },
     {
-      color: "red",
       month: 1,
       day: 25,
       date: "1/25",
       address: "일산 명지병원에 <span style='color:red;'>격리</span>",
-      title: "3번째 확진자",
 
       latlng: new naver.maps.LatLng(37.642457, 126.831318)
     }
@@ -273,41 +213,31 @@ var positions = [
       status: "완치",
       profile: "(55.남.한국)",
       tag: "#우한방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>95명</span></span>",
-      color: "blue",
       month: 1,
       day: 20,
       date: "1/20",
       address: "인천 공항 도착",
-      title: "4번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "blue",
       month: 1,
       day: 20,
       date: "1/20",
       address: "평택 송탄터미널",
-      title: "4번째 확진자",
       latlng: new naver.maps.LatLng(37.07994, 127.058282)
     },
     {
-      color: "blue",
       month: 1,
       day: 21,
       date: "1/21",
       address: "평택 365연합의원 진료<br>21~25일 자택",
-      title: "4번째 확진자",
       latlng: new naver.maps.LatLng(37.052277, 127.057309)
     },
     {
-      color: "blue",
       month: 1,
       day: 26,
       date: "1/26",
       address: "분당서울대병원 <span style='color:red;'>격리</span>",
-      title: "4번째 확진자",
       latlng: new naver.maps.LatLng(37.350625, 127.124515)
     }
   ],
@@ -315,90 +245,70 @@ var positions = [
     {
       profile: "(33.남.한국)",
       tag: "#우한방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>31명</span></span>",
-      color: "fuchsia",
       month: 1,
       day: 24,
       date: "1/24",
       address: "인천 공항 도착",
-      title: "5번째 확진자",
 
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "fuchsia",
       month: 1,
       day: 26,
       date: "1/26",
       address: "성동구 소재 역술인 방문",
-      title: "5번째 확진자",
       latlng: new naver.maps.LatLng(37.564119, 127.029694)
     },
     {
-      color: "fuchsia",
       month: 1,
       day: 26,
       date: "1/26",
       address: "성신여대입구 CGV 방문",
-      title: "5번째 확진자",
       latlng: new naver.maps.LatLng(37.592858, 127.017016)
     },
     {
-      color: "fuchsia",
       month: 1,
       day: 28,
       date: "1/28",
       address: "성북구 소재 미용실 이용",
-      title: "5번째 확진자",
 
       latlng: new naver.maps.LatLng(37.591819, 127.018314)
     },
     {
-      color: "fuchsia",
       month: 1,
       day: 28,
       date: "1/28",
       address: "중랑구 음식점 방문",
-      title: "5번째 확진자",
 
       latlng: new naver.maps.LatLng(37.588913, 127.091112)
     },
     {
-      color: "fuchsia",
       month: 1,
       day: 28,
       date: "1/28",
       address: "중랑구 마트 방문",
-      title: "5번째 확진자",
       latlng: new naver.maps.LatLng(37.585379, 127.088581)
     },
     {
-      color: "fuchsia",
       month: 1,
       day: 28,
       date: "1/28",
       address: "강남구소재 웨딩숍 방문후 자택 이동",
-      title: "5번째 확진자",
       latlng: new naver.maps.LatLng(37.523938, 127.046554)
     },
     {
-      color: "fuchsia",
       month: 1,
       day: 29,
       date: "1/29",
       address: "중랑구 보건소 검진",
-      title: "5번째 확진자",
 
       latlng: new naver.maps.LatLng(37.60677, 127.092697)
     },
     {
-      color: "fuchsia",
       month: 1,
       day: 30,
       date: "1/30",
       address: "서울의료원 <span style='color:red;'>격리</span>",
-      title: "5번째 확진자",
 
       latlng: new naver.maps.LatLng(37.613102, 127.098658)
     }
@@ -409,32 +319,24 @@ var positions = [
 
       profile: "(55.남.한국)",
       tag: "#3번째 확진자와 접촉",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>17명</span></span>",
-      color: "black",
       month: 1,
       day: 22,
       date: "1/22",
       address: "강남구 일대 음식점 이용",
-      title: "6번째 확진자",
       latlng: new naver.maps.LatLng(37.527728, 127.03236)
     },
     {
-      color: "black",
       month: 1,
       day: 26,
       date: "1/26",
       address: "자택 근처 교회에서 예배",
-      title: "6번째 확진자",
       latlng: new naver.maps.LatLng(37.58754, 127.000047)
     },
     {
-      color: "black",
       month: 1,
       day: 30,
       date: "1/30",
       address: "서울대병원 <span style='color:red;'>격리</span>",
-      title: "6번째 확진자",
       latlng: new naver.maps.LatLng(37.579678, 126.998945)
     }
   ],
@@ -443,23 +345,17 @@ var positions = [
       status: "완치",
       profile: "(28.남.한국)",
       tag: "#우한방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>9명</span></span>",
-      color: "rgb(177, 63, 243)",
       month: 1,
       day: 23,
       date: "1/23",
       address: "인천 공항 도착",
-      title: "7번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "rgb(177, 63, 243)",
       month: 1,
       day: 31,
       date: "1/31",
       address: "서울의료원 <span style='color:red;'>격리</span>",
-      title: "7번째 확진자",
       latlng: new naver.maps.LatLng(37.613102, 127.098658)
     }
   ],
@@ -468,73 +364,57 @@ var positions = [
       status: "완치",
       profile: "(62.여.한국)",
       tag: "#우한방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>113명</span></span>",
-      color: "purple",
       month: 1,
       day: 23,
       date: "1/23",
       address: "인천 공항 도착",
-      title: "8번째 확진자",
 
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "purple",
       month: 1,
       day: 24,
       date: "1/24",
       address: "서울 자택 기거<br>1/25 서초 소재 음식점 이용",
-      title: "8번째 확진자",
       latlng: new naver.maps.LatLng(37.491149, 127.011767)
     },
     {
-      color: "purple",
       month: 1,
       day: 26,
       date: "1/26",
       address: "대중목욕탕 방문<br>군산 소재 음식점 방문",
-      title: "8번째 확진자",
 
       latlng: new naver.maps.LatLng(35.986967, 126.708147)
     },
     {
-      color: "purple",
       month: 1,
       day: 27,
       date: "1/27",
       address: "군산 소재 의료기관 내원",
-      title: "8번째 확진자",
 
       latlng: new naver.maps.LatLng(35.968603, 126.716109)
     },
     {
-      color: "purple",
       month: 1,
       day: 28,
       date: "1/28",
       address: "군산 의료원 진료<br>1/29 문화동 근방 식사",
-      title: "8번째 확진자",
 
       latlng: new naver.maps.LatLng(35.955681, 126.711961)
     },
     {
-      color: "purple",
       month: 1,
       day: 29,
       date: "1/29",
       address: "대형마트 방문",
-      title: "8번째 확진자",
 
       latlng: new naver.maps.LatLng(35.982998, 126.734919)
     },
     {
-      color: "purple",
       month: 1,
       day: 31,
       date: "1/31",
       address: "원광대병원 <span style='color:red;'>격리</span>",
-      title: "8번째 확진자",
       latlng: new naver.maps.LatLng(35.965199, 126.958853)
     }
   ],
@@ -542,14 +422,10 @@ var positions = [
     {
       profile: "(28.여.한국)",
       tag: "#5번째 확진자와 접촉",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>2명</span></span>",
-      color: "rgb(104, 40, 80)",
       month: 1,
       day: 31,
       date: "1/31",
       address: "서울의료원 <span style='color:red;'>격리</span>",
-      title: "9번째 확진자",
       latlng: new naver.maps.LatLng(37.613102, 127.098658)
     }
   ],
@@ -559,23 +435,17 @@ var positions = [
 
       profile: "(54.여.한국)",
       tag: "#6번째 확진자의 가족",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>43명</span></span>",
-      color: "rgb(78, 8, 8)",
       month: 1,
       day: 30,
       date: "1/30",
       address: "고양시 소재 미용실 방문",
-      title: "10번째 확진자",
       latlng: new naver.maps.LatLng(37.641481, 126.792022)
     },
     {
-      color: "rgb(78, 8, 8)",
       month: 1,
       day: 31,
       date: "1/31",
       address: "서울대 병원 <span style='color:red;'>격리</span>",
-      title: "10번째 확진자",
       latlng: new naver.maps.LatLng(37.579918, 126.998362)
     }
   ],
@@ -584,21 +454,17 @@ var positions = [
       status: "완치",
       profile: "(25.남.한국)",
       tag: "#6번째 확진자의 가족",
-      color: "rgb(83, 67, 23)",
       month: 1,
       day: 30,
       date: "1/30",
       address: "고양시 소재 미용실 방문",
-      title: "11번째 확진자",
       latlng: new naver.maps.LatLng(37.641736, 126.791217)
     },
     {
-      color: "rgb(83, 67, 23)",
       month: 1,
       day: 30,
       date: "1/31",
       address: "서울대 병원 <span style='color:red;'>격리</span>",
-      title: "11번째 확진자",
       latlng: new naver.maps.LatLng(37.580486, 127.000701)
     }
   ],
@@ -607,185 +473,143 @@ var positions = [
       status: "완치",
       profile: "(48.남.중국)",
       tag: "#일본 확진자와 접촉",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>420명</span></span>",
-      color: "forestgreen",
       month: 1,
       day: 19,
       date: "1/19",
       address: "김포 공항 도착",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.563581, 126.802056)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 20,
       date: "1/20",
       address: "부천역 CGV 방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.486112, 126.781023)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 21,
       date: "1/21",
       address: "인천 출입국관리사무소 방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.4631, 126.631371)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 22,
       date: "1/22",
       address: "부천시 약국 방문후 서울역 이동",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.555062, 126.970618)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 22,
       date: "1/22",
       address: "강릉 도착",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.764239, 128.899265)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 22,
       date: "1/22",
       address: "강릉소재 음식점 이용",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.755252, 128.899762)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 22,
       date: "1/22",
       address: "강릉소재 숙소 이용",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.68365, 129.043829)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 22,
       date: "1/22",
       address: "강릉소재 음식점 이용",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.690782, 129.032031)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 23,
       date: "1/23",
       address: "강릉역 도착",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.763697, 128.897881)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 23,
       date: "1/23",
       address: "부천시 소재 의료기관 방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.483885, 126.77806)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 24,
       date: "1/24",
       address: "수원역 이동",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.266602, 126.999805)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 24,
       date: "1/24",
       address: "친척집 방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.283066, 127.019904)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 25,
       date: "1/25",
       address: "군포소재 의료기관 방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.359357, 126.930992)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 26,
       date: "1/26",
       address: "부천역 CGV 재방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.48587, 126.780125)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 27,
       date: "1/27",
       address: "서울 중구 소재 면세점 방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.557078, 127.007666)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 27,
       date: "1/27",
       address: "서울 중구 활동",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.561192, 126.994074)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 27,
       date: "1/27",
       address: "부천 소재 약국 방문 후 자택 귀가",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.483614, 126.781754)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 28,
       date: "1/28",
       address: "부천시 소재 의료기관 재방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.483893, 126.778092)
     },
     {
-      color: "forestgreen",
       month: 1,
       day: 30,
       date: "1/30",
       address: "부천보건소 선별진료소 방문<br>순천향대학교 부속 부천병원 방문",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.498619, 126.762854)
     },
     {
-      color: "forestgreen",
       month: 2,
       day: 1,
       date: "2/1",
       address: "분당 서울대병원 <span style='color:red;'>격리</span>",
-      title: "12번째 확진자",
       latlng: new naver.maps.LatLng(37.348152, 127.124784)
     }
   ],
@@ -793,21 +617,17 @@ var positions = [
     {
       profile: "(28.남.한국)",
       tag: "#우한방문",
-      color: "rgb(66, 47, 150)",
       month: 1,
       day: 30,
       date: "1/31",
       address: "우한교민 1차귀국 후 격리조치",
-      title: "13번째 확진자",
       latlng: new naver.maps.LatLng(37.553381, 126.806361)
     },
     {
-      color: "rgb(66, 47, 150)",
       month: 2,
       day: 2,
       date: "2/2",
       address: "국립중앙의료원 <span style='color:red;'>격리</span>",
-      title: "13번째 확진자",
       latlng: new naver.maps.LatLng(37.566876, 127.004962)
     }
   ],
@@ -816,146 +636,136 @@ var positions = [
       status: "완치",
       profile: "(40.여.중국)",
       tag: "#12번째 확진자의 가족",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>3명</span></span>",
-      color: "rgb(136, 127, 177)",
       month: 1,
       day: 19,
       date: "1/19",
       address: "김포 공항 도착",
-      title: "14번째 확진자",
       latlng: new naver.maps.LatLng(37.563581, 126.802056)
     },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/20",
     //   address: "부천역 CGV 방문",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.486112, 126.781023)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/21",
     //   address: "인천 출입국관리사무소 방문",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.4631, 126.631371)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/22",
     //   address: "부천시 약국 방문후 서울역 이동",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.555062, 126.970618)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/22",
     //   address: "강릉 도착",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.764239, 128.899265)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/22",
     //   address: "강릉소재 음식점 이용",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.755252, 128.899762)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/22",
     //   address: "강릉소재 숙소 이용",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.68365, 129.043829)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/22",
     //   address: "강릉소재 음식점 이용",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.690782, 129.032031)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/23",
     //   address: "강릉역 도착",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.763697, 128.897881)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/23",
     //   address: "부천시 소재 의료기관 방문",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.483885, 126.77806)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/24",
     //   address: "수원역 이동",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.266602, 126.999805)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/24",
     //   address: "친척집 방문",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.283066, 127.019904)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/25",
     //   address: "군포소재 의료기관 방문",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.359357, 126.930992)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/26",
     //   address: "부천역 CGV 재방문",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.48587, 126.780125)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/27",
     //   address: "서울 중구 활동",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.561192, 126.994074)
     // },
     // {
-    //   color: "rgb(136, 127, 177)",
+    /
     //   date: "1/28",
     //   address: "부천시 소재 의료기관 재방문",
-    //   title: "14번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.483893, 126.778092)
     // },
     {
-      color: "rgb(136, 127, 177)",
       month: 1,
       day: 30,
       date: "1/30",
       address: "순천향대학교부속 부천병원 방문",
-      title: "14번째 확진자",
       latlng: new naver.maps.LatLng(37.498304, 126.762864)
     },
     {
-      color: "rgb(136, 127, 177)",
       month: 1,
       day: 30,
       date: "1/30",
       address: "부천시소재 대형마트 이용",
-      title: "14번째 확진자",
       latlng: new naver.maps.LatLng(37.484044, 126.782436)
     },
     {
-      color: "rgb(136, 127, 177)",
       month: 2,
       day: 2,
       date: "2/2",
       address: "분당서울대병원 <span style='color:red;'>격리</span>",
-      title: "14번째 확진자",
       latlng: new naver.maps.LatLng(37.347722, 127.124322)
     }
   ],
@@ -963,41 +773,31 @@ var positions = [
     {
       profile: "(43.남.한국)",
       tag: "#우한방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>15명</span></span>",
-      color: "rgb(219, 52, 74)",
       month: 1,
       day: 20,
       date: "1/20",
       address: "인천 공항 도착",
-      title: "15번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "rgb(219, 52, 74)",
       month: 1,
       day: 29,
       date: "1/29",
       address: "자택 자가격리",
-      title: "15번째 확진자",
       latlng: new naver.maps.LatLng(37.297586, 126.978377)
     },
     {
-      color: "rgb(219, 52, 74)",
       month: 2,
       day: 1,
       date: "2/1",
       address: "장안구보건소 방문",
-      title: "15번째 확진자",
       latlng: new naver.maps.LatLng(37.304558, 127.010198)
     },
     {
-      color: "rgb(219, 52, 74)",
       month: 2,
       day: 2,
       date: "2/2",
       address: "국군수도병원 <span style='color:red;'>격리</span>",
-      title: "15번째 확진자",
       latlng: new naver.maps.LatLng(37.390524, 127.149769)
     }
   ],
@@ -1007,33 +807,25 @@ var positions = [
 
       profile: "(42.여.한국)",
       tag: "#태국방문(확인중)",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>430명</span></span>",
-      color: "rgb(241, 173, 69)",
       month: 1,
       day: 19,
       date: "1/19",
       address: "무안공항 입국",
-      title: "16번째 확진자",
       latlng: new naver.maps.LatLng(34.996485, 126.387447)
     },
     {
-      color: "rgb(241, 173, 69)",
       month: 1,
       day: 27,
       date: "1/27-2/2",
       address: "21세기병원 치료<br>21세기병원 내 체류",
-      title: "16번째 확진자",
       latlng: new naver.maps.LatLng(35.175836, 126.818103)
     },
     {
       // 1/27일 전남대병원 응급실 방문<br>2/3일 전남대병원 응급실 이송<br>2/4일
-      color: "rgb(241, 173, 69)",
       month: 2,
       day: 4,
       date: "2/4",
       address: "전남대학교병원 <span style='color:red;'>격리</span>",
-      title: "16번째 확진자",
       latlng: new naver.maps.LatLng(35.142094, 126.921635)
     }
   ],
@@ -1042,140 +834,108 @@ var positions = [
       status: "완치",
       profile: "(37.남.한국)",
       tag: "#싱가폴방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>290명</span></span>",
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 24,
       date: "1/24",
       address: "인천공항 도착",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 24,
       date: "1/24",
       address: "서울역 음식점에서 식사",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.555877, 126.969728)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 24,
       date: "1/24",
       address: "동대구역 도착",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(35.879893, 128.628476)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 24,
       date: "1/24",
       address: "수성구 본가 이동",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(35.85816, 128.63054)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 25,
       date: "1/25",
       address: "북구 방문",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(35.885552, 128.582882)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 25,
       date: "1/25",
       address: "동대구역 출발",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(35.878754, 128.6254936)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 25,
       date: "1/25",
       address: "수서역 도착",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.487409, 127.10155)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 26,
       date: "1/26",
       address: "한양대 응급실 방문,진료",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.601196, 127.132803)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 27,
       date: "1/27",
       address: "삼성서울가정의원 진료<br>구리시 약국 약처방",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.606423, 127.138958)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 29,
       date: "1/29",
       address: "구리시 음식점 식사",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.587193, 127.138966)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 1,
       day: 29,
       date: "1/29",
       address: "구리시 마트 방문",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.586809, 127.138323)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 2,
       day: 3,
       date: "2/3",
       address: "서울아산내과 진료 및 근처 약국 이용",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.587102, 127.138193)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 2,
       day: 3,
       date: "2/3",
       address: "광나루역 도착 후 인근 편의점 이용",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.545354, 127.10319)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 2,
       day: 4,
       date: "2/4",
       address: "한양대 구리병원 선별진료소 방문",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.601095, 127.132179)
     },
     {
-      color: "rgb(24, 136, 71)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "명지병원 <span style='color:red;'>격리</span>",
-      title: "17번째 확진자",
       latlng: new naver.maps.LatLng(37.645413, 126.831101)
     }
   ],
@@ -1185,23 +945,17 @@ var positions = [
 
       profile: "(20.여.한국)",
       tag: "#16번째 확진자의 가족",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>8명</span></span>",
-      color: "rgb(24, 69, 136)",
       month: 1,
       day: 27,
       date: "1/27",
       address: "광주 21세기병원 입원",
-      title: "18번째 확진자",
       latlng: new naver.maps.LatLng(35.175661, 126.818743)
     },
     {
-      color: "rgb(24, 69, 136)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "전남대학교병원 <span style='color:red;'>격리</span>",
-      title: "18번째 확진자",
       latlng: new naver.maps.LatLng(35.140927, 126.922322)
     }
   ],
@@ -1210,96 +964,74 @@ var positions = [
       status: "완치",
       profile: "(36.남.한국)",
       tag: "#싱가폴 방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>67명</span></span>",
-      color: "rgb(145, 29, 139)",
       month: 1,
       day: 24,
       date: "1/24",
       address: "인천공항 도착",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "rgb(145, 29, 139)",
       month: 1,
       day: 31,
       date: "1/31",
       address: "분당 수내동 직장 출근",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.378511, 127.114316)
     },
     {
-      color: "rgb(145, 29, 139)",
       month: 1,
       day: 31,
       date: "1/31",
       address: "송파구소재 빵집 방문",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.499514, 127.11202)
     },
     {
-      color: "rgb(145, 29, 139)",
       month: 1,
       day: 31,
       date: "1/31",
       address: "송파구 소재 소재 음식점 방문",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.497001, 127.119984)
     },
     {
-      color: "rgb(145, 29, 139)",
       month: 2,
       day: 1,
       date: "2/1",
       address: "송파구소재 빵집 방문",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.499514, 127.11202)
     },
     {
-      color: "rgb(145, 29, 139)",
       month: 2,
       day: 1,
       date: "2/1",
       address: "서울시 강남구 소재 호텔 방문",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.504752, 127.027474)
     },
 
     {
-      color: "rgb(145, 29, 139)",
       month: 2,
       day: 1,
       date: "2/1",
       address: "송도 대형쇼핑몰 방문",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.381624, 126.657218)
     },
     {
-      color: "rgb(145, 29, 139)",
       month: 2,
       day: 1,
       date: "2/1",
       address: "서울시 송파구 소재 음식점 방문",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.495414, 127.117521)
     },
     {
-      color: "rgb(145, 29, 139)",
       month: 2,
       day: 3,
       date: "2/3",
       address: "분당구 소재 음식점 방문",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.377241, 127.112749)
     },
     {
-      color: "rgb(145, 29, 139)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "서울의료원 <span style='color:red;'>격리</span>",
-      title: "19번째 확진자",
       latlng: new naver.maps.LatLng(37.613102, 127.098658)
     }
   ],
@@ -1307,41 +1039,31 @@ var positions = [
     {
       profile: "(41.여.한국)",
       tag: "#15번째 확진자의 가족",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>2명</span></span>",
-      color: "rgb(145, 56, 29)",
       month: 2,
       day: 5,
       date: "",
       address: "영등포구 회사 근무",
-      title: "20번째 확진자",
       latlng: new naver.maps.LatLng(37.521024, 126.889323)
     },
     {
-      color: "rgb(145, 56, 29)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "수원 천천동 자택 기거",
-      title: "20번째 확진자",
       latlng: new naver.maps.LatLng(37.296669, 126.97957)
     },
     {
-      color: "rgb(145, 56, 29)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "수원 장안구 보건소 이동 후 검사",
-      title: "20번째 확진자",
       latlng: new naver.maps.LatLng(37.304439, 127.010123)
     },
     {
-      color: "rgb(145, 56, 29)",
       month: 2,
       day: 6,
       date: "2/6",
       address: "국군수도병원 <span style='color:red;'>격리</span>",
-      title: "20번째 확진자",
       latlng: new naver.maps.LatLng(37.391762, 127.148825)
     }
   ],
@@ -1349,32 +1071,24 @@ var positions = [
     {
       profile: "(59.여.한국)",
       tag: "#6번째 확진자의 지인",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>6명</span></span>",
-      color: "rgb(135, 29, 145)",
       month: 1,
       day: 29,
       date: "1/29",
       address: "명륜교회 예배당(본당)",
-      title: "21번째 확진자",
       latlng: new naver.maps.LatLng(37.586425, 126.9998)
     },
     {
-      color: "rgb(135, 29, 145)",
       month: 2,
       day: 3,
       date: "2/3",
       address: "성북구 보건소 방문",
-      title: "21번째 확진자",
       latlng: new naver.maps.LatLng(37.602813, 127.039582)
     },
     {
-      color: "rgb(135, 29, 145)",
       month: 2,
       day: 6,
       date: "2/6",
       address: "서울대병원 <span style='color:red;'>격리</span>",
-      title: "21번째 확진자",
       latlng: new naver.maps.LatLng(37.579747, 126.998395)
     }
   ],
@@ -1383,23 +1097,17 @@ var positions = [
       status: "완치",
       profile: "(46.남.한국)",
       tag: "#16번째 확진자의 가족",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>1명</span></span>",
-      color: "rgb(29, 145, 58)",
       month: 2,
       day: 6,
       date: "2/6",
       address: "나주 자택에서 자가격리 중 확진판정",
-      title: "22번째 확진자",
       latlng: new naver.maps.LatLng(35.015831, 126.710771)
     },
     {
-      color: "rgb(29, 145, 58)",
       month: 2,
       day: 6,
       date: "2/6",
       address: "조선대병원 <span style='color:red;'>격리</span>",
-      title: "22번째 확진자",
       latlng: new naver.maps.LatLng(35.138602, 126.92612)
     }
   ],
@@ -1407,56 +1115,44 @@ var positions = [
     {
       profile: "(57.여.중국)",
       tag: "#우한방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>23명</span></span>",
-      color: "rgb(121, 114, 54)",
       month: 1,
       day: 23,
       date: "1/23",
       address: "인천공항 도착",
-      title: "23번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "rgb(121, 114, 54)",
       month: 2,
       day: 2,
       date: "2/2",
       address: "서울시 중구 소재 호텔 퇴실",
-      title: "23번째 확진자",
       latlng: new naver.maps.LatLng(37.565707, 126.979336)
     },
     {
-      color: "rgb(121, 114, 54)",
       month: 2,
       day: 2,
       date: "2/2",
       address: "서울시 중구 소재 백화점 방문",
-      title: "23번째 확진자",
       latlng: new naver.maps.LatLng(37.565152, 126.981348)
     },
     {
-      color: "rgb(121, 114, 54)",
       month: 2,
       day: 2,
       date: "2/2",
       address: "마포구 소재 대형마트 방문(이마트 마포공덕점)",
-      title: "23번째 확진자",
       latlng: new naver.maps.LatLng(37.542533, 126.95331)
     },
     // {
-    //   color: "rgb(121, 114, 54)",
+    /
     //   address: "2/5일 서대문보건소서 진료",
-    //   title: "23번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(37.578388, 126.936193)
     // },
     {
-      color: "rgb(121, 114, 54)",
       month: 2,
       day: 6,
       date: "2/6",
       address: "국립중앙의료원 <span style='color:red;'>격리</span>",
-      title: "23번째 확진자",
       latlng: new naver.maps.LatLng(37.567122, 127.005777)
     }
   ],
@@ -1464,21 +1160,17 @@ var positions = [
     {
       profile: "(28.남.한국)",
       tag: "#우한방문",
-      color: "rgb(146, 60, 45)",
       month: 1,
       day: 23,
       date: "1/23",
       address: "인천공항 도착",
-      title: "24번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "rgb(146, 60, 45)",
       month: 2,
       day: 7,
       date: "2/7",
       address: "국립중앙의료원 <span style='color:red;'>격리</span>",
-      title: "24번째 확진자",
       latlng: new naver.maps.LatLng(37.567152, 127.00567)
     }
   ],
@@ -1487,50 +1179,38 @@ var positions = [
       status: "완치",
       profile: "(73.여.한국)",
       tag: "#26,27번째 확진자의 가족",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>11명</span></span>",
-      color: "rgba(182, 46, 64, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "경기도 시흥시 소재 슈퍼마켓 방문",
-      title: "25번째 확진자",
       latlng: new naver.maps.LatLng(37.41733, 126.811396)
     },
     {
-      color: "rgba(182, 46, 64, 0.808)",
       month: 2,
       day: 7,
       date: "2/7",
       address: "시흥시 소재 의료기관(신천연합병원)방문",
-      title: "25번째 확진자",
       latlng: new naver.maps.LatLng(37.444478, 126.789562)
     },
     {
-      color: "rgba(182, 46, 64, 0.808)",
       month: 2,
       day: 7,
       date: "2/7",
       address: "경기도 시흥시 소재 슈퍼마켓 방문",
-      title: "25번째 확진자",
       latlng: new naver.maps.LatLng(37.438205, 126.796363)
     },
     {
-      color: "rgba(182, 46, 64, 0.808)",
       month: 2,
       day: 8,
       date: "2/8",
       address: "시흥시 소재 의료기관(신천연합병원)방문",
-      title: "25번째 확진자",
       latlng: new naver.maps.LatLng(37.444478, 126.789562)
     },
     {
-      color: "rgba(182, 46, 64, 0.808)",
       month: 2,
       day: 9,
       date: "2/9",
       address: "분당서울대병원 <span style='color:red;'>격리</span>",
-      title: "25번째 확진자",
       latlng: new naver.maps.LatLng(37.350625, 127.124515)
     }
   ],
@@ -1538,30 +1218,24 @@ var positions = [
     {
       profile: "(51.남.한국)",
       tag: "#광둥성방문",
-      color: "rgba(134, 182, 46, 0.808)",
       month: 2,
       day: 7,
       date: "2/7",
       address: "시흥시 소재 의료기관(신천연합병원)방문",
-      title: "26번째 확진자",
       latlng: new naver.maps.LatLng(37.444478, 126.789562)
     },
     {
-      color: "rgba(134, 182, 46, 0.808)",
       month: 2,
       day: 8,
       date: "2/8",
       address: "경기도 시흥시 소재 슈퍼마켓 방문",
-      title: "26번째 확진자",
       latlng: new naver.maps.LatLng(37.438205, 126.796363)
     },
     {
-      color: "rgba(134, 182, 46, 0.808)",
       month: 2,
       day: 9,
       date: "2/9",
       address: "경기도의료원 안성병원 <span style='color:red;'>격리</span>",
-      title: "26번째 확진자",
       latlng: new naver.maps.LatLng(37.0151039, 127.2569681)
     }
   ],
@@ -1569,650 +1243,482 @@ var positions = [
     {
       profile: "(37.여.중국)",
       tag: "#광둥성방문",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>37명</span></span>",
-      color: "rgba(80, 69, 59, 0.808)",
       month: 1,
       day: 31,
       date: "1/31",
       address: "인천공항 도착",
-      title: "27번째 확진자",
       latlng: new naver.maps.LatLng(37.460459, 126.44068)
     },
     {
-      color: "rgba(80, 69, 59, 0.808)",
       month: 2,
       day: 3,
       date: "2/3",
       address: "시흥시 소재 음식점 방문",
-      title: "27번째 확진자",
       latlng: new naver.maps.LatLng(37.432458, 126.80988)
     },
     {
-      color: "rgba(80, 69, 59, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "시흥시 소재 의료기관(신천연합병원)방문",
-      title: "27번째 확진자",
       latlng: new naver.maps.LatLng(37.444478, 126.789562)
     },
     {
-      color: "rgba(80, 69, 59, 0.808)",
       month: 2,
       day: 9,
       date: "2/9",
       address: "경기도의료원 안성병원 <span style='color:red;'>격리</span>",
-      title: "27번째 확진자",
       latlng: new naver.maps.LatLng(37.017297, 127.260422)
     }
   ],
   [
     {
       status: "완치",
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>1명</span></span>",
       profile: "(30.여.중국)",
       tag: "#3번째 확진자의 지인",
-      color: "rgba(182, 53, 48, 0.808)",
       month: 2,
       day: 11,
       date: "2/11",
       address:
         " 1월 26일부터 자가격리<br>명지병원 <span style='color:red;'>격리</span>",
-      title: "28번째 확진자",
       latlng: new naver.maps.LatLng(37.642092, 126.831264)
     }
   ],
   [
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 4,
       date: "2/4",
       address: "동묘앞역 출발",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.573067, 127.015951)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 4,
       date: "2/4",
       address: "신설동역 도착(15:53~15:57)",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.575981, 127.024678)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 4,
       date: "2/4",
       address: "신설동역 출발",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.575981, 127.024678)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 4,
       date: "2/4",
       address: "동묘앞역 도착(21:36~21:46)",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.573067, 127.015951)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "동대문역 출발",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.571721, 127.010896)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "녹양역 도착(11:41~12:41)",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.759448, 127.042167)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "녹양역 출발(11:41~12:41)",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.759448, 127.042167)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "동대문역 도착(12:43~13:38)",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.571721, 127.010896)
     },
 
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>115명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "서울시 종로구 소재 의료기관(신중호내과의원) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.575739, 127.015399)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "서울시 종로구 소재 약국(보람약국) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.57239, 127.013899)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 5,
       date: "2/5",
       address: "종로구 소재 의료기관(강북서울외과의원) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.572596, 127.01527)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 7,
       date: "2/7",
       address: "서울시 종로구 소재 의료기관(신중호내과의원) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.575739, 127.015399)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 7,
       date: "2/7",
       address: "소요산역 이동",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.948023, 127.061052)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 8,
       date: "2/8",
       address: "종로구 소재 의료기관(강북서울외과의원) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.572596, 127.01527)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 8,
       date: "2/8",
       address: "종로구 소재 약국(봄약국) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.573326, 127.015311)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "종로구 소재 의료기관(강북서울외과의원) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.572596, 127.01527)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "서울시 종로구 소재 약국(보람약국) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.57239, 127.013899)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "신설동역 출발",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.575879, 127.024495)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "덕정역 도착(14:04~14:53)",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.843309, 127.061543)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "덕정역 출발",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.843309, 127.061543)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "동묘앞역 도착(14:58~16:14)",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.572925, 127.015772)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 11,
       date: "2/11",
       address: "종로구 소재 의료기관(강북서울외과의원) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.572596, 127.01527)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 12,
       date: "2/12",
       address: "종로구 소재 의료기관(강북서울외과의원) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.572596, 127.01527)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 12,
       date: "2/12",
       address: "종로구 소재 약국(봄약국) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.573326, 127.015311)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 12,
       date: "2/14",
       address: "창신역 - 봉화산역 왕복이동",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.579471, 127.015224)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>114명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 12,
       date: "2/14",
       address: "창신역 - 봉화산역 왕복이동",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.617076, 127.091603)
     },
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>117명</span></span>",
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 15,
       date: "2/15",
       address: "종로구 소재 의료기관(강북서울외과의원) 방문",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.572596, 127.01527)
     },
     {
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 15,
       date: "2/15",
       address: "고려대안암 병원에서 검사 후 양성판정",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.587055, 127.02683)
     },
     {
       profile: "(82.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(48, 91, 182, 0.808)",
       month: 2,
       day: 16,
       date: "2/16",
       address: "서울대 병원 <span style='color:red;'>격리</span>",
-      title: "29번째 확진자",
       latlng: new naver.maps.LatLng(37.579678, 126.998945)
     }
   ],
   [
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>27명</span></span>",
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 8,
       date: "2/8",
       address: "종로구 소재 의료기관(서울대학교병원 외래) 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.579541, 126.999305)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "종로구 소재 의료기관(강북서울외과의원) 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.572596, 127.01527)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "지인들과 함께 인천시 중구 용유도 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.423537, 126.421426)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "경인아라뱃길 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.570719, 126.675649)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 10,
       date: "2/10",
       address: "종로구 소재 약국(단골온누리약국) 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.574541, 127.015927)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 13,
       date: "2/13",
       address: "종로구 소재 식당(명륜진사갈비 서울동묘점) 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.572499, 127.013268)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 13,
       date: "2/13",
       address: "종로구 소재 카페(스타벅스 동묘앞역점) 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.572793, 127.015975)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 14,
       date: "2/14",
       address: "종로구 소재 의료기관(강북서울외과의원) 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.572596, 127.01527)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 14,
       date: "2/14",
       address: "종로구 소재 약국(단골온누리약국) 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.574541, 127.015927)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 15,
       date: "2/15",
       address: "29번째 확진자 간호를 위해 고려대 안암병원 방문",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.587055, 127.02683)
     },
     {
       profile: "(68.여.한국)",
       tag: "#29번째 확진자의 부인",
-      color: "rgba(230, 43, 183, 0.74)",
       month: 2,
       day: 16,
       date: "2/16",
       address: "서울대 병원 <span style='color:red;'>격리</span>",
-      title: "30번째 확진자",
       latlng: new naver.maps.LatLng(37.579678, 126.998945)
     }
   ],
   [
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>166명</span></span>",
       profile: "(61.여.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(233, 113, 15, 0.836)",
       month: 1,
       day: 29,
       address: "서울 대치동 C클럽 본사에서 열린 행사에 참석",
-      title: "31번째 확진자",
       latlng: new naver.maps.LatLng(37.505066, 127.047281)
     },
     {
       profile: "(61.여.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(233, 113, 15, 0.836)",
       month: 2,
       day: 6,
       date: "2/6 ~ 2/7",
       address: "동구소재 C클럽 직장 출근",
-      title: "31번째 확진자",
       latlng: new naver.maps.LatLng(35.875115, 128.627581)
     },
     {
       profile: "(61.여.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(233, 113, 15, 0.836)",
       month: 2,
       day: 7,
       date: "2/7",
       address: "대구 의료기관에서(새로난한방병원) 외래진료",
-      title: "31번째 확진자",
       latlng: new naver.maps.LatLng(35.858512, 128.635278)
     },
     {
       profile: "(61.여.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(233, 113, 15, 0.836)",
       month: 2,
       day: 9,
       date: "2/9",
       address: "신천지예수교회다대오지성전에서 예배",
-      title: "31번째 확진자",
       latlng: new naver.maps.LatLng(35.839821, 128.566553)
     },
     {
       profile: "(61.여.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(233, 113, 15, 0.836)",
       month: 2,
       day: 15,
       date: "2/15",
       address: "동구 소재 호텔(퀸벨호텔) 뷔페에서 점심 식사",
-      title: "31번째 확진자",
       latlng: new naver.maps.LatLng(35.882409, 128.662136)
     },
     {
       profile: "(61.여.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(233, 113, 15, 0.836)",
       month: 2,
       day: 16,
       date: "2/16",
       address: "신천지예수교회다대오지성전에서 예배",
-      title: "31번째 확진자",
       latlng: new naver.maps.LatLng(35.839821, 128.566553)
     },
     {
       profile: "(61.여.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(233, 113, 15, 0.836)",
       month: 2,
       day: 17,
       date: "2/17",
       address: "대구 수성구 보건소에서 검사 실시 후 양성",
-      title: "31번째 확진자",
       latlng: new naver.maps.LatLng(35.844728, 128.612261)
     },
     {
       profile: "(61.여.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(233, 113, 15, 0.836)",
       month: 2,
       day: 18,
       date: "2/18",
       address: "대구 의료원 <span style='color:red;'>격리</span>",
-      title: "31번째 확진자",
       latlng: new naver.maps.LatLng(35.859594, 128.540617)
     }
   ],
@@ -2220,12 +1726,10 @@ var positions = [
     {
       profile: "(11.여.한국)",
       tag: "#20번째 확진자의 딸",
-      color: "rgba(50, 55, 83, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "분당서울대병원 <span style='color:red;'>격리</span>",
-      title: "32번째 확진자",
       latlng: new naver.maps.LatLng(37.351384, 127.123507)
     }
   ],
@@ -2237,18 +1741,15 @@ var positions = [
       day: 15,
       date: "2/19",
       address: "현대백화점 대구점 방문(오후 1시경)",
-      title: "33번째 확진자",
       latlng: new naver.maps.LatLng(35.866696, 128.590597)
     },
     {
       profile: "(40.여.한국)",
       tag: "#31번째 확진자의 병원 접촉자",
-      color: "rgba(15, 66, 233, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "33번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2256,12 +1757,10 @@ var positions = [
     {
       profile: "(24.남.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(61, 52, 41, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "34번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2269,12 +1768,10 @@ var positions = [
     {
       profile: "(26.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(164, 15, 233, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "35번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2282,12 +1779,10 @@ var positions = [
     {
       profile: "(48.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(41, 61, 53, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "36번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2295,54 +1790,44 @@ var positions = [
     {
       profile: "(47.남.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(233, 84, 15, 0.836)",
       month: 2,
       day: 16,
       date: "2/16",
       address: "영천 금호의원 진료",
-      title: "37번째 확진자",
       latlng: new naver.maps.LatLng(35.932453, 128.872049)
     },
     {
       profile: "(47.남.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(233, 84, 15, 0.836)",
       month: 2,
       day: 17,
       date: "2/16",
       address: "김인환내과의원 진료",
-      title: "37번째 확진자",
       latlng: new naver.maps.LatLng(35.965198, 128.938671)
     },
     {
       profile: "(47.남.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(233, 84, 15, 0.836)",
       month: 2,
       day: 18,
       address: "김인환내과의원 재진료",
-      title: "37번째 확진자",
       latlng: new naver.maps.LatLng(35.965198, 128.938671)
     },
     {
       profile: "(47.남.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(233, 84, 15, 0.836)",
       month: 2,
       day: 18,
       address: "영제한의원 진료",
-      title: "37번째 확진자",
       latlng: new naver.maps.LatLng(35.961186, 128.927832)
     },
     {
       profile: "(47.남.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(233, 84, 15, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "경북대병원 <span style='color:red;'>격리</span>",
-      title: "37번째 확진자",
       latlng: new naver.maps.LatLng(35.866029, 128.60506)
     }
   ],
@@ -2350,12 +1835,10 @@ var positions = [
     {
       profile: "(56.여.한국)",
       tag: "-",
-      color: "rgba(15, 84, 233, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "경북대병원 <span style='color:red;'>격리</span>",
-      title: "38번째 확진자",
       latlng: new naver.maps.LatLng(35.866029, 128.60506)
     }
   ],
@@ -2363,25 +1846,20 @@ var positions = [
     {
       profile: "(61.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(233, 15, 135, 0.836)",
       month: 2,
       day: 19,
       address: "동국대경주병원 <span style='color:red;'>격리</span>",
-      title: "39번째 확진자",
       latlng: new naver.maps.LatLng(35.858249, 129.196778)
     }
   ],
   [
     {
-      memo:
-        "<span style='font-size:12px !important;'>  접촉자 <span style='color:red;'>8명</span></span>",
       profile: "(77.남.한국)",
       tag: "#해외 여행력 없음",
       month: 2,
       day: 10,
       date: "2/10",
       address: "이마트 성수점 방문",
-      title: "40번째 확진자",
       latlng: new naver.maps.LatLng(37.539848, 127.053015)
     },
     {
@@ -2390,7 +1868,6 @@ var positions = [
       month: 2,
       day: 14,
       address: "포보스 엔터식스 한양대점 방문",
-      title: "40번째 확진자",
       latlng: new naver.maps.LatLng(37.557378, 127.040081)
     },
     {
@@ -2400,7 +1877,6 @@ var positions = [
       day: 15,
       date: "2/18",
       address: "삼육서울병원 장례식장 방문",
-      title: "40번째 확진자",
       latlng: new naver.maps.LatLng(37.588233, 127.063556)
     },
     {
@@ -2410,7 +1886,6 @@ var positions = [
       day: 18,
       date: "2/18",
       address: "한양대병원 외래방문",
-      title: "40번째 확진자",
       latlng: new naver.maps.LatLng(37.559702, 127.04396)
     },
     {
@@ -2420,18 +1895,15 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "한양대병원 선별진료소에서 최종 양성<br>국가지정병원이송",
-      title: "40번째 확진자",
       latlng: new naver.maps.LatLng(37.559702, 127.04396)
     },
     {
       profile: "(77.남.한국)",
       tag: "#해외 여행력 없음",
-      color: "rgba(15, 182, 233, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "국립중앙의료원 <span style='color:red;'>격리</span>",
-      title: "40번째 확진자",
       latlng: new naver.maps.LatLng(37.567241, 127.005702)
     }
   ],
@@ -2439,12 +1911,10 @@ var positions = [
     {
       profile: "(70.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(161, 161, 115, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "동국대경주병원 <span style='color:red;'>격리</span>",
-      title: "41번째 확진자",
       latlng: new naver.maps.LatLng(35.858249, 129.196778)
     }
   ],
@@ -2452,12 +1922,10 @@ var positions = [
     {
       profile: "(28.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(40, 59, 42, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "42번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2465,12 +1933,10 @@ var positions = [
     {
       profile: "(58.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(55, 15, 233, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "계명대동산병원 <span style='color:red;'>격리</span>",
-      title: "43번째 확진자",
       latlng: new naver.maps.LatLng(35.854171, 128.480071)
     }
   ],
@@ -2478,12 +1944,10 @@ var positions = [
     {
       profile: "(46.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(59, 40, 54, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "경북대병원 <span style='color:red;'>격리</span>",
-      title: "44번째 확진자",
       latlng: new naver.maps.LatLng(35.866029, 128.60506)
     }
   ],
@@ -2491,12 +1955,10 @@ var positions = [
     {
       profile: "(53.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(233, 95, 15, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "45번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2504,12 +1966,10 @@ var positions = [
     {
       profile: "(28.남.한국)",
       tag: "#달서구 소재 병원 근무",
-      color: "rgba(150, 100, 71, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "46번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2517,12 +1977,10 @@ var positions = [
     {
       profile: "(63.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(150, 100, 71, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "47번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2530,12 +1988,10 @@ var positions = [
     {
       profile: "(72.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(150, 100, 71, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "칠곡경북대병원 <span style='color:red;'>격리</span>",
-      title: "48번째 확진자",
       latlng: new naver.maps.LatLng(35.956615, 128.564272)
     }
   ],
@@ -2543,12 +1999,10 @@ var positions = [
     {
       profile: "(58.여.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(150, 100, 71, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "경북대병원 <span style='color:red;'>격리</span>",
-      title: "49번째 확진자",
       latlng: new naver.maps.LatLng(35.86622, 128.60446)
     }
   ],
@@ -2556,12 +2010,10 @@ var positions = [
     {
       profile: "(76.남.한국)",
       tag: "#31번째 확진자 접촉자",
-      color: "rgba(150, 100, 71, 0.836)",
       month: 2,
       day: 19,
       date: "2/19",
       address: "영남대병원 <span style='color:red;'>격리</span>",
-      title: "50번째 확진자",
       latlng: new naver.maps.LatLng(35.84736, 128.584848)
     }
   ],
@@ -2572,7 +2024,6 @@ var positions = [
       month: 2,
       day: 19,
       address: "계명대동산병원 <span style='color:red;'>격리</span>",
-      title: "51번째 확진자",
       latlng: new naver.maps.LatLng(35.854171, 128.480071)
     }
   ],
@@ -2584,7 +2035,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "52번째 확진자",
       latlng: ""
     }
   ],
@@ -2596,7 +2046,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "대구의료원 <span style='color:red;'>격리</span>",
-      title: "53번째 확진자",
       latlng: new naver.maps.LatLng(35.859629, 128.540596)
     }
   ],
@@ -2607,7 +2056,6 @@ var positions = [
       month: 2,
       day: 19,
       address: "포항의료원 <span style='color:red;'>격리</span>",
-      title: "54번째 확진자",
       latlng: new naver.maps.LatLng(36.034762, 129.355059)
     }
   ],
@@ -2618,7 +2066,6 @@ var positions = [
       month: 2,
       day: 19,
       address: "포항의료원 <span style='color:red;'>격리</span>",
-      title: "55번째 확진자",
       latlng: new naver.maps.LatLng(36.034762, 129.355059)
     }
   ],
@@ -2630,7 +2077,6 @@ var positions = [
       day: 17,
       date: "2/17",
       address: "하니이비인후과 방문(2/6-2/17)",
-      title: "56번째 확진자",
       latlng: new naver.maps.LatLng(37.57642, 126.972759)
     },
     {
@@ -2640,7 +2086,6 @@ var positions = [
       day: 13,
       date: "2/20",
       address: "경희대병원에 진료를 받기 위해 내원",
-      title: "56번째 확진자",
       latlng: new naver.maps.LatLng(37.593919, 127.051291)
     },
     {
@@ -2650,7 +2095,6 @@ var positions = [
       day: 13,
       date: "2/19",
       address: "종로구 보건소에서 진료",
-      title: "56번째 확진자",
       latlng: new naver.maps.LatLng(37.581837, 126.969186)
     },
     {
@@ -2660,7 +2104,6 @@ var positions = [
       day: 19,
       date: "2/20",
       address: "서울의료원 <span style='color:red;'>격리</span>",
-      title: "56번째 확진자",
       latlng: new naver.maps.LatLng(37.612806, 127.098134)
     }
   ],
@@ -2672,7 +2115,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "57번째 확진자",
       latlng: ""
     }
   ],
@@ -2684,7 +2126,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "58번째 확진자",
       latlng: ""
     }
   ],
@@ -2696,7 +2137,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "59번째 확진자",
       latlng: ""
     }
   ],
@@ -2708,7 +2148,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "60번째 확진자",
       latlng: ""
     }
   ],
@@ -2720,7 +2159,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "61번째 확진자",
       latlng: ""
     }
   ],
@@ -2732,7 +2170,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "62번째 확진자",
       latlng: ""
     }
   ],
@@ -2804,7 +2241,7 @@ var positions = [
     //   day: 19,
     //   date: "2/19",
     //   address: "동선 확인중",
-    //   title: "63번째 확진자",
+    /
     //   latlng: ""
     // }
   ],
@@ -2816,7 +2253,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "64번째 확진자",
       latlng: ""
     }
   ],
@@ -2828,7 +2264,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "경북대병원 <span style='color:red;'>격리</span>",
-      title: "65번째 확진자",
       latlng: new naver.maps.LatLng(35.866029, 128.60506)
     }
   ],
@@ -2840,7 +2275,6 @@ var positions = [
       day: 19,
       date: "2/19",
       address: "동선 확인중",
-      title: "66번째 확진자",
       latlng: ""
     }
   ],
@@ -2852,7 +2286,6 @@ var positions = [
       day: 20,
       date: "2/19",
       address: "동선 확인중",
-      title: "67번째 확진자",
       latlng: ""
     }
   ],
@@ -2864,7 +2297,6 @@ var positions = [
       day: 20,
       date: "2/20",
       address: "동선 확인중",
-      title: "68번째 확진자",
       latlng: ""
     }
   ],
@@ -2875,7 +2307,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "69번째 확진자",
       latlng: ""
     }
   ],
@@ -2886,7 +2317,6 @@ var positions = [
       month: 2,
       day: 17,
       address: "동선 확인중",
-      title: "70번째 확진자",
       latlng: new naver.maps.LatLng(35.83678, 128.55786)
     }
   ],
@@ -2897,7 +2327,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "71번째 확진자",
       latlng: ""
     }
   ],
@@ -2908,7 +2337,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "72번째 확진자",
       latlng: ""
     }
   ],
@@ -2919,7 +2347,6 @@ var positions = [
       month: 2,
       day: 19,
       address: "혜화연합의원(옥곡동) 내원 후 보건소 선별진료소 방문",
-      title: "73번째 확진자",
       latlng: new naver.maps.LatLng(35.813036, 128.732551)
     },
     {
@@ -2928,7 +2355,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "포항의료원 격리",
-      title: "73번째 확진자",
       latlng: new naver.maps.LatLng(36.034762, 129.355059)
     }
   ],
@@ -2939,7 +2365,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "74번째 확진자",
       latlng: ""
     }
   ],
@@ -2950,7 +2375,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "75번째 확진자",
       latlng: ""
     }
   ],
@@ -2961,7 +2385,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "76번째 확진자",
       latlng: ""
     }
   ],
@@ -2972,7 +2395,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "77번째 확진자",
       latlng: ""
     }
   ],
@@ -2983,7 +2405,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "78번째 확진자",
       latlng: ""
     }
   ],
@@ -2994,7 +2415,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "79번째 확진자",
       latlng: ""
     }
   ],
@@ -3005,7 +2425,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "80번째 확진자",
       latlng: ""
     }
   ],
@@ -3016,7 +2435,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "81번째 확진자",
       latlng: ""
     }
   ],
@@ -3027,7 +2445,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "82번째 확진자",
       latlng: ""
     }
   ],
@@ -3038,7 +2455,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "동선 확인중",
-      title: "83번째 확진자",
       latlng: ""
     }
   ],
@@ -3052,7 +2468,6 @@ var positions = [
       name: "85번째",
       full: "85번째 확진자",
       address: "대구서부터미널에서 포항으로 이동(12:50)",
-      title: "85번째 확진자",
       latlng: new naver.maps.LatLng(35.83678, 128.55786)
     },
     {
@@ -3061,7 +2476,6 @@ var positions = [
       month: 2,
       day: 17,
       address: "대잠아델리아 방문(13:40)",
-      title: "85번째 확진자",
       latlng: new naver.maps.LatLng(36.017759, 129.345628)
     },
     // {
@@ -3070,7 +2484,7 @@ var positions = [
     //   month: 2,
     //   day: 17,
     //   address: "리플러스 장성점 마트 도착(22:03)",
-    //   title: "85번째 확진자",
+    /
     //   latlng: new naver.maps.LatLng(36.068822, 129.381296)
     // },
     {
@@ -3079,7 +2493,6 @@ var positions = [
       month: 2,
       day: 17,
       address: "자택 도착(22:08)",
-      title: "85번째 확진자",
       latlng: new naver.maps.LatLng(36.06938, 129.380109)
     },
     {
@@ -3088,7 +2501,6 @@ var positions = [
       month: 2,
       day: 18,
       address: "장성동에서 버스로 대잠동으로 이동",
-      title: "85번째 확진자",
       latlng: ""
     },
     {
@@ -3097,7 +2509,6 @@ var positions = [
       month: 2,
       day: 18,
       address: "북부해수욕장에서 101번 버스 탑승",
-      title: "85번째 확진자",
       latlng: ""
     },
     {
@@ -3106,7 +2517,6 @@ var positions = [
       month: 2,
       day: 18,
       address: "죽도시장에서 108번 버스 환승",
-      title: "85번째 확진자",
       latlng: ""
     },
     {
@@ -3115,7 +2525,6 @@ var positions = [
       month: 2,
       day: 18,
       address: "코아이빈후과 방문(14:22)",
-      title: "85번째 확진자",
       latlng: new naver.maps.LatLng(36.018148, 129.341997)
     },
     {
@@ -3124,7 +2533,6 @@ var positions = [
       month: 2,
       day: 18,
       address: "미래건강약국 방문(14:44)",
-      title: "85번째 확진자",
       latlng: new naver.maps.LatLng(36.018148, 129.341997)
     },
     {
@@ -3133,7 +2541,6 @@ var positions = [
       month: 2,
       day: 18,
       address: "자택 도착(15:30)",
-      title: "85번째 확진자",
       latlng: new naver.maps.LatLng(36.06938, 129.380109)
     },
     {
@@ -3142,7 +2549,6 @@ var positions = [
       month: 2,
       day: 18,
       address: "대잠동에서 장성동으로 오는 버스 이용(130번, 105번)",
-      title: "85번째 확진자",
       latlng: ""
     },
     {
@@ -3151,7 +2557,6 @@ var positions = [
       month: 2,
       day: 19,
       address: "개인차량으로 세명기독병원 방문<br>개인차량으로 자택 귀가",
-      title: "85번째 확진자",
       latlng: new naver.maps.LatLng(36.017839, 129.362102)
     },
     {
@@ -3160,7 +2565,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "자가격리 중 코로나19 확진 판정",
-      title: "85번째 확진자",
       latlng: ""
     },
     {
@@ -3169,7 +2573,6 @@ var positions = [
       month: 2,
       day: 20,
       address: "포항의료원 <span style='color:red;'>격리</span>",
-      title: "85번째 확진자",
       latlng: new naver.maps.LatLng(36.034762, 129.355059)
     }
   ],
@@ -3320,7 +2723,6 @@ var positions = [
       num: 112,
       // name: "상주시",
       full: "112번째 확진자",
-      title: "112번째 확진자",
       latlng: ""
     }
   ],
@@ -3331,7 +2733,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "84번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],
@@ -3342,7 +2744,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "85번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],
@@ -3353,7 +2755,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "86번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],
@@ -3364,7 +2766,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "87번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3374,7 +2776,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "88번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3384,7 +2786,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "89번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3394,7 +2796,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "90번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3404,7 +2806,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "91번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3414,7 +2816,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "92번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3424,7 +2826,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "93번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3434,7 +2836,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "94번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3444,7 +2846,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "95번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3454,7 +2856,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "96번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3464,7 +2866,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "97번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3474,7 +2876,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "98번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3484,7 +2886,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "99번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3494,7 +2896,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "100번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3504,7 +2906,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "101번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3514,7 +2916,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "102번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3524,7 +2926,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "103번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ],[
@@ -3534,7 +2936,7 @@ var positions = [
   //     month: 2,
   //     day: 20,
   //     address: "동선 확인중",
-  //     title: "104번째 확진자",
+  // 
   //     latlng: ""
   //   }
   // ]
@@ -3556,7 +2958,6 @@ var positions = [
       month: 2,
       day: 7,
       address: "동성로 술집 -> 북성로 음식점 -> 인근 모텔",
-      title: "113번째 확진자",
       latlng: ""
     },
     {
@@ -3566,7 +2967,6 @@ var positions = [
       day: 8,
       address:
         "수성구 음식점 -> PC방(14:00~16:00) -> 코인 노래방 -> 동성로 술집",
-      title: "113번째 확진자",
       latlng: ""
     },
     {
@@ -3575,7 +2975,6 @@ var positions = [
       month: 2,
       day: 9,
       address: "동대구 터미널(7:30-10:30) 이용",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.878286, 128.630244)
     },
     {
@@ -3584,7 +2983,6 @@ var positions = [
       month: 2,
       day: 9,
       address: "전주고속터미널 (11:00) 도착<br>도보로 서신동 빽다방 이용",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.835771, 127.129118)
     },
     {
@@ -3593,7 +2991,6 @@ var positions = [
       month: 2,
       day: 10,
       address: "팔복동 KS공업사 지하1층(14:00-15:00)",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.858123, 127.086091)
     },
     {
@@ -3602,7 +2999,6 @@ var positions = [
       month: 2,
       day: 10,
       address: "하가지구 푸라닭 이용(20:00-21:00)",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.84395, 127.110583)
     },
     {
@@ -3611,7 +3007,6 @@ var positions = [
       month: 2,
       day: 14,
       address: "송천동 원이비인후과 (16:00-17:00) 방문",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.861459, 127.121145)
     },
     {
@@ -3620,7 +3015,6 @@ var positions = [
       month: 2,
       day: 15,
       address: "효자동 CGV 이철헤어컷(20:00)",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.806854, 127.115566)
     },
     {
@@ -3629,7 +3023,6 @@ var positions = [
       month: 2,
       day: 15,
       address: "전북대 쓰리팝PC방 이용",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.843795, 127.127505)
     },
     {
@@ -3638,7 +3031,6 @@ var positions = [
       month: 2,
       day: 16,
       address: "전북대 쓰리팝PC방 이용(15:00-18:00)",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.843795, 127.127505)
     },
     {
@@ -3647,7 +3039,6 @@ var positions = [
       month: 2,
       day: 16,
       address: "송천동 스타벅스 방문",
-      title: "113번째 확진자",
       latlng: ""
     },
     {
@@ -3656,7 +3047,6 @@ var positions = [
       month: 2,
       day: 16,
       address: "아중리 청혜참치(19:30) 이용",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.826098, 127.176045)
     },
     {
@@ -3665,7 +3055,6 @@ var positions = [
       month: 2,
       day: 16,
       address: "송천롯데마트(20:00-20:30)",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.854273, 127.120135)
     },
     {
@@ -3674,7 +3063,6 @@ var positions = [
       month: 2,
       day: 19,
       address: "군산 대박주유소 방문",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.950936, 126.715354)
     },
     {
@@ -3683,7 +3071,6 @@ var positions = [
       month: 2,
       day: 19,
       address: "고래설렁탕 방문",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.962723, 126.697251)
     },
     {
@@ -3692,7 +3079,6 @@ var positions = [
       month: 2,
       day: 19,
       address: "전북대병원 <span style='color:red;'>격리</span>",
-      title: "113번째 확진자",
       latlng: new naver.maps.LatLng(35.847292, 127.140611)
     }
   ],
