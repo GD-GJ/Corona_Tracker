@@ -35,15 +35,13 @@ $.ajax({
 
         for(let person of Datas){
             //목록 추가
-            $(".top-panel").append('<a class="list-group-item list-group-item-action">' + person.id + ' </a>');
+            $(".top-panel").append('<a class="list-group-item list-group-item-action patient">' + person.id + ' </a>');
         }
         
         $(".patient").click(function(){
-            for(let person of Datas){
-                if($(this).text() == person.id){
-                    person.drawMarkerAndLine(map);
-                }
-            }
+            console.log(Datas)
+
+            Datas[$(this).text()].drawMarkerAndLine(map)
         })
 
         loadUserPaths();

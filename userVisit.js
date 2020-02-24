@@ -10,14 +10,15 @@ function checkMatched(userPath){
     const TIME_DANGER_LEVEL_1 = 6*60;       //6시간
     const TIME_DANGER_LEVEL_2 = 24*60;      //하루
     const TIME_DANGER_LEVEL_3 = 7*24*60;    //1주일
-    const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상'];
+    const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상', '시간정보가 없는 동선입니다'];
 
     var group_by_level = new Array();
     let level1 = new Array();
     let level2 = new Array();
     let level3 = new Array();
     let level4 = new Array();
-    group_by_level.push(level1, level2, level3, level4);
+    let level5 = new Array();
+    group_by_level.push(level1, level2, level3, level4, level5);
 
 
     for(let person of Datas){
@@ -38,28 +39,33 @@ function checkMatched(userPath){
 
             //시간 검증
             if(inNearBy || inSamePlace){
-                let timeDiff = timeDiff2Min(userPath, path);
-                if(timeDiff < 0){
-                    //음수일경우 고려x
-                    break;
+                let DangerLevel;
+
+                if(path.time != null){
+                    let timeDiff = timeDiff2Min(userPath, path);
+                    if(timeDiff < 0){
+                        //음수일경우 고려x
+                        break;
+                    }
+                    if(timeDiff < TIME_DANGER_LEVEL_1){
+                        // 6시간 이내로 동선이 겹칠경우
+                        DangerLevel = 0;
+                    }else if(timeDiff < TIME_DANGER_LEVEL_2){
+                        // 6시간 ~ 하루 이내로 동선이 겹칠경우
+                        DangerLevel = 1;
+                    }else if(timeDiff < TIME_DANGER_LEVEL_3){
+                        // 하루 ~ 일주일 이내로 동선이 겹칠경우
+                        DangerLevel = 2;
+                    }else{
+                        // 일주일 ~ 이상으로 동선이 겹칠경우
+                        DangerLevel = 3;
+                    }
+                    
+                }else{
+                    DangerLevel = 4;
                 }
 
-                let DangerLevel;
-                if(timeDiff < TIME_DANGER_LEVEL_1){
-                    // 6시간 이내로 동선이 겹칠경우
-                    DangerLevel = 0;
-                }else if(timeDiff < TIME_DANGER_LEVEL_2){
-                    // 6시간 ~ 하루 이내로 동선이 겹칠경우
-                    DangerLevel = 1;
-                }else if(timeDiff < TIME_DANGER_LEVEL_3){
-                    // 하루 ~ 일주일 이내로 동선이 겹칠경우
-                    DangerLevel = 2;
-                }else{
-                    // 일주일 ~ 이상으로 동선이 겹칠경우
-                    DangerLevel = 3;
-                }
                 group_by_level[DangerLevel].push(path);
-                
                 $(".search_view").css("display","none");
                 $(".add_view").css("display","none");
                 $(".result_view").css("display","block");
@@ -113,7 +119,7 @@ function newVisitedArea(){
     let placeName = $("#placeName").val();
     let method = $("#visitMethod").val();
 
-    let userPath = new path(date, time, placeName, method, userLat, userLng);
+    let userPath = new path(date, placeName, userLat, userLng, time, method);
     checkMatched(userPath);
     save(userPath);
 
@@ -224,7 +230,11 @@ function json2persons(toStore, dataArray){
         let newPaths = new Array();
 
         for(let p of i.paths){
-            newPaths.push(new path(p.date, p.name, p.lat, p.lng));
+            let newPath = new path(p.date, p.name, p.lat, p.lng);
+            if(p.time != ""){
+                newPath.time = p.time;
+            }
+            newPaths.push(newPath);
         }
         newPatient.setPaths(newPaths);
         toStore.push(newPatient);
