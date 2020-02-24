@@ -1,5 +1,5 @@
 //각각의 방문한 장소에 대한 정보를 가지는 객체
-function path(date, name, lat, lng, time='', method=''){
+function path(date, name, lat, lng, color='#CFE7FF', time='', method=''){
     this.date = date;
     this.time = time;
     this.name = name;
@@ -14,7 +14,7 @@ function path(date, name, lat, lng, time='', method=''){
         strokeColor: '#75B8FA', // 선의 색깔입니다
         strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: 'solid', // 선의 스타일 입니다
-        fillColor: '#CFE7FF', // 채우기 색깔입니다
+        fillColor: color, // 채우기 색깔입니다
         fillOpacity: 0.7  // 채우기 불투명도 입니다   
     }); 
     this.resizeCircle = function(rad){

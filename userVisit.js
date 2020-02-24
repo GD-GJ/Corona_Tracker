@@ -125,7 +125,7 @@ function newVisitedArea(){
     let placeName = $("#placeName").val();
     let method = $("#visitMethod").val();
 
-    let userPath = new path(date, placeName, userLat, userLng, time, method);
+    let userPath = new path(date, placeName, userLat, userLng, User.color, time, method);
     checkMatched(userPath);
     save(userPath);
 
@@ -175,9 +175,9 @@ function save(item) {
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadUserPaths() {
-    let pathArray = getRestoredPath();
-
     User = new person(0, null, null);
+
+    let pathArray = getRestoredPath();
     User.setPaths(pathArray);
     //마커, 라인 그리기
     User.drawMarkerAndLine(map);
@@ -191,9 +191,12 @@ function getRestoredPath() {
     let dataArray = getStoredArray();
     let restoredData = new Array();
 
+    let myColor = getRandomColor();
+    User.color = myColor;
+
     if (dataArray != null && dataArray != ""){
         for(let item of dataArray){
-            restoredData.push(new path(item.date, item.name, item.lat, item.lng, item.time, item.method));
+            restoredData.push(new path(item.date, item.name, item.lat, item.lng, myColor, item.time, item.method));
         }
     }
 	return restoredData;
@@ -235,14 +238,25 @@ function json2persons(toStore, dataArray){
         let newPatient = new person(i.id, i.description, i.date, i.hospital);
         let newPaths = new Array();
 
+        let color = getRandomColor();
+
         for(let p of i.paths){
-            let newPath = new path(p.date, p.name, p.lat, p.lng);
+            let newPath = new path(p.date, p.name, p.lat, p.lng, color);
             if(p.time != ""){
                 newPath.time = p.time;
             }
             newPaths.push(newPath);
         }
-        newPatient.setPaths(newPaths);
+        newPatient.setPaths(newPaths, color);
         toStore.push(newPatient);
     }
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
