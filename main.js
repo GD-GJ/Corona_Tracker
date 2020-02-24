@@ -25,6 +25,8 @@ $("#hide_urp").click(function(){
     })
 });
 
+loadUserPaths();
+
 var Datas = new Array();
 
 $.ajax({
@@ -32,25 +34,21 @@ $.ajax({
     dataType: 'json',
     success: function(received){
         json2persons(Datas, received);
+
+        for(let person of Datas){
+            //목록 추가
+            $(".top-panel").append('<a class="item horizontal patient">' + person.id + ' </a>');
+        }
+        
+        $(".patient").click(function(){
+            for(let person of Datas){
+                if($(this).text() == person.id){
+                    person.drawMarkerAndLine(map);
+                }
+            }
+        })
     },
     error: function(xhr, status, responseTxt){
         console.log(xhr);
     }
 });
-
-for(let person of Datas){
-    //목록 추가
-    $(".top-panel").append('<a class="item horizontal patient">' + person.id + ' </a>');
-}
-
-$(".patient").click(function(){
-    for(let person of Datas){
-        if($(this).text() == person.id){
-            person.drawMarkerAndLine(map);
-        }
-    }
-})
-
-//사용자 경로 그려주기
-loadUserPaths();
-
