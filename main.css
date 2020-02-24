@@ -29,7 +29,12 @@
 }
 
 .item {
+    padding : 10px 10px 10px 10px;
     border-radius: 4px;
     background-color: #fff;
     border: 1px solid black;
+}
+
+.horizontal {
+    float: left;
 }
