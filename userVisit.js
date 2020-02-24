@@ -208,3 +208,25 @@ function clearAll(){
     User.setPaths(emptyList);
     localStorage.setItem("visitedList", JSON.stringify(emptyList));
 }
+
+
+//JSON input
+
+//path 생성자?
+//path 배열?
+
+//return : person.setPaths(Array of path)
+//path(date, time, name, method, lat, lng)
+//person(id, date, hospital, isItOfficial)
+function jsonPathifier(json){
+    let dataArray = getStoredArray();
+    // let restoredData = new Array();
+    obj = JSON.parse(json)
+    
+    let _person = new person(obj.id, obj.date, obj.hospital);
+
+    
+    let _path = new Array();
+    _path.push(new path(obj.date, obj.time, obj.name, obj.description, obj.lat, obj.lng));
+    _person.setPaths(_path)
+}
