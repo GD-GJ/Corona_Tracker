@@ -28,7 +28,7 @@ $("#hide_urp").click(function(){
 var Datas = new Array();
 
 $.ajax({
-    url: '/data.json'
+    url: 'https://gd-gj.github.io/Corona_Tracker/data.json'
     , dataType: 'json'
     , success:function(received){
         json2persons(Datas, received);
