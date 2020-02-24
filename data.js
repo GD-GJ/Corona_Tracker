@@ -7,9 +7,16 @@ function path(date, time, name, method, lat, lng){
     this.lat = lat;
     this.lng = lng;
     this.LatLng = new kakao.maps.LatLng(lat, lng);
-    this.marker = new kakao.maps.Marker({
-        position: this.LatLng
-    });
+    this.marker = new kakao.maps.Circle({
+        center : this.LatLng,
+        radius: 50, // 미터 단위의 원의 반지름입니다 
+        strokeWeight: 5, // 선의 두께입니다 
+        strokeColor: '#75B8FA', // 선의 색깔입니다
+        strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'dashed', // 선의 스타일 입니다
+        fillColor: '#CFE7FF', // 채우기 색깔입니다
+        fillOpacity: 0.7  // 채우기 불투명도 입니다   
+    }); 
     this.infowindow = new kakao.maps.InfoWindow({
         //컨텐츠 ui 수정할것.
         content : '<div style="padding:5px;">'
