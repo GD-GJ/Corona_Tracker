@@ -27,7 +27,7 @@ $("#hide_urp").click(function(){
 
 for(let person of Datas){
     //목록 추가
-    $(".left-panel").append('<a class="item horizontal patient">' + person.id + ' </a>');
+    $(".top-panel").append('<a class="item horizontal patient">' + person.id + ' </a>');
 }
 $(".patient").click(function(){
     for(let person of Datas){
