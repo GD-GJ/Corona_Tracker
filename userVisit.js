@@ -5,8 +5,8 @@ var User;
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
 function checkMatched(userPath){
-    //위험지역 : 반경 500m
-    const DANGER_ZONE = 500;
+    //위험지역 : 반경 3000m
+    const DANGER_ZONE = 3000;
     const TIME_DANGER_LEVEL_1 = 6*60;       //6시간
     const TIME_DANGER_LEVEL_2 = 24*60;      //하루
     const TIME_DANGER_LEVEL_3 = 7*24*60;    //1주일
@@ -65,7 +65,7 @@ function checkMatched(userPath){
                     DangerLevel = 4;
                 }
 
-                group_by_level[DangerLevel].push(path);
+                group_by_level[DangerLevel].push(person);
                 $(".search_view").css("display","none");
                 $(".add_view").css("display","none");
                 $(".result_view").css("display","block");
@@ -75,8 +75,9 @@ function checkMatched(userPath){
 
     
     for(let level in group_by_level){
-        for(let path of group_by_level[level]){
-            path.marker.setMap(map);
+        for(let person of group_by_level[level]){
+            person.drawMarkerAndLine(map);
+
             $(".result_content").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
@@ -187,7 +188,7 @@ function getRestoredPath() {
 
     if (dataArray != null && dataArray != ""){
         for(let item of dataArray){
-            restoredData.push(new path(item.date, item.time, item.name, item.method, item.lat, item.lng));
+            restoredData.push(new path(item.date, item.name, item.lat, item.lng, item.time, item.method));
         }
     }
 	return restoredData;

@@ -17,7 +17,7 @@ kakao.maps.event.addListener(map, 'zoom_changed', function(){
     let level = map.getLevel();
     for(let person of Datas){
         for(let path of person.paths){
-            path.resizeCircle(level*30);
+            path.resizeCircle(level*level*10);
         }
     }
 });
