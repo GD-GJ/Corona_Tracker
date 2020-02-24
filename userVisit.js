@@ -225,8 +225,6 @@ function jsonPathifier(json){
     
     let _person = new person(obj.id, obj.date, obj.hospital);
 
-    
-    let _path = new Array();
-    _path.push(new path(obj.date, obj.time, obj.name, obj.description, obj.lat, obj.lng));
+    let _path = obj.paths
     _person.setPaths(_path)
 }

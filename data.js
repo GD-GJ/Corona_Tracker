@@ -1,5 +1,5 @@
 //각각의 방문한 장소에 대한 정보를 가지는 객체
-function path(date, time, name, method, lat, lng){
+function path(date, name, lat, lng, method='', time=''){
     this.date = date;
     this.time = time;
     this.name = name;
