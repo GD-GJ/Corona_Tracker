@@ -35,7 +35,7 @@ $.ajax({
 
         for(let person of Datas){
             //목록 추가
-            $(".top-panel").append('<a class="item horizontal patient">' + person.id + ' </a>');
+            $(".top-panel").append('<a class="list-group-item list-group-item-action">' + person.id + ' </a>');
         }
         
         $(".patient").click(function(){
