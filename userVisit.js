@@ -42,28 +42,36 @@ function checkMatched(userPath){
             if(inNearBy || inSamePlace){
                 let DangerLevel;
 
-                if(path.time != null){
-                    let timeDiff = timeDiff2Min(userPath, path);
-                    if(timeDiff < 0){
-                        //음수일경우 고려x
-                        break;
-                    }
-                    if(timeDiff < TIME_DANGER_LEVEL_1){
-                        // 6시간 이내로 동선이 겹칠경우
-                        DangerLevel = 0;
-                    }else if(timeDiff < TIME_DANGER_LEVEL_2){
-                        // 6시간 ~ 하루 이내로 동선이 겹칠경우
-                        DangerLevel = 1;
-                    }else if(timeDiff < TIME_DANGER_LEVEL_3){
-                        // 하루 ~ 일주일 이내로 동선이 겹칠경우
-                        DangerLevel = 2;
-                    }else{
-                        // 일주일 ~ 이상으로 동선이 겹칠경우
-                        DangerLevel = 3;
-                    }
-                    
+                let timeDiff;
+                if(path.time == null){
+                    let uDateArray = user.date.split("-");
+                    let userDate = new Date(uDateArray[0], Number(uDateArray[1]) -1, uDateArray[2]);
+
+                    let tDateArray = target.date.split("-");
+                    let targetDate = new Date(tDateArray[0], Number(tDateArray[1]) -1, tDateArray[2]);
+
+                    //유저 시간 - 대상 시간
+                    timeDiff = (userDate.getTime() - targetDate.getTime())/1000/60;
                 }else{
-                    DangerLevel = 4;
+                    timeDiff = timeDiff2Min(userPath, path);
+                }
+
+                if(timeDiff < 0){
+                    //음수일경우 고려x
+                    break;
+                }
+                if(timeDiff < TIME_DANGER_LEVEL_1){
+                    // 6시간 이내로 동선이 겹칠경우
+                    DangerLevel = 0;
+                }else if(timeDiff < TIME_DANGER_LEVEL_2){
+                    // 6시간 ~ 하루 이내로 동선이 겹칠경우
+                    DangerLevel = 1;
+                }else if(timeDiff < TIME_DANGER_LEVEL_3){
+                    // 하루 ~ 일주일 이내로 동선이 겹칠경우
+                    DangerLevel = 2;
+                }else{
+                    // 일주일 ~ 이상으로 동선이 겹칠경우
+                    DangerLevel = 3;
                 }
 
                 group_by_level[DangerLevel].push(path);
@@ -224,26 +232,19 @@ function clearAll(){
     localStorage.setItem("visitedList", JSON.stringify(emptyList));
 }
 
-
-//JSON input
-
-//path 생성자?
-//path 배열?
-
-//return : person.setPaths(Array of path)
-//path(date, time, name, method, lat, lng)
-//person(id, date, hospital, isItOfficial)
+//toStore에 person객체들을 만들어 저장합니다.
 function json2persons(toStore, dataArray){
-    for(let i of dataArray){
+    for(let patient of dataArray){
         let newPatient = new person(i.id, i.description, i.date, i.hospital);
-        let newPaths = new Array();
 
+        let newPaths = new Array();
         let color = getRandomColor();
 
-        for(let p of i.paths){
-            let newPath = new path(p.date, p.name, p.lat, p.lng, color);
-            if(p.time != ""){
-                newPath.time = p.time;
+        for(let path of patient.paths){
+            let newPath = new path(path.date, path.name, path.lat, path.lng, color);
+            
+            if(path.time != ""){
+                newPath.time = path.time;
             }
             newPaths.push(newPath);
         }
@@ -252,6 +253,7 @@ function json2persons(toStore, dataArray){
     }
 }
 
+//랜덤 컬러 제너레이터
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
