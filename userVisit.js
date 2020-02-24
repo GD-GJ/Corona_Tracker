@@ -218,13 +218,17 @@ function clearAll(){
 //return : person.setPaths(Array of path)
 //path(date, time, name, method, lat, lng)
 //person(id, date, hospital, isItOfficial)
-function jsonPathifier(json){
-    let dataArray = getStoredArray();
-    // let restoredData = new Array();
-    obj = JSON.parse(json)
+function json2persons(toStore, data){
+    let dataArray = JSON.parse(data)
     
-    let _person = new person(obj.id, obj.date, obj.hospital);
+    for(let i of dataArray){
+        let newPatient = new person(i.id, i.description, i.date, i.hospital);
+        let newPaths = new Array();
 
-    let _path = obj.paths
-    _person.setPaths(_path)
+        for(let p of i.paths){
+            newPaths.push(new path(p.date, p.name, p.lat, p.lng));
+        }
+        newPatient.setPaths(newPaths);
+        toStore.push(newPatient);
+    }
 }
