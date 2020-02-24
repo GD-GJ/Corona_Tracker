@@ -29,12 +29,6 @@ function path(date, time, name, method, lat, lng){
                 + '</div>',
         removable : true
       });
-    
-    this.setLatLng = function(lat, lng){
-        this.lat = lat;
-        this.lng = lng;
-    }
-    this.line = null;
 }
 
 //한명의 감염자에 대한 정보를 가지는 객체
