@@ -25,12 +25,17 @@ $("#hide_urp").click(function(){
     })
 });
 
-//모든 확진자 경로 그려주기
 for(let person of Datas){
-    person.drawMarkerAndLine(map);
     //목록 추가
-    $(".left-panel").append('<a class="item horizontal">' + person.id + '번 확진자 </a><br>');
+    $(".left-panel").append('<a class="item horizontal patient">' + person.id + ' </a>');
 }
+$(".patient").click(function(){
+    for(let person of Datas){
+        if($(this).text() == person.id){
+            person.draw(drawMarkerAndLine(map));
+        }
+    }
+})
 
 //사용자 경로 그려주기
 loadUserPaths();
