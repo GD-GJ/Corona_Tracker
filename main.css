@@ -18,11 +18,18 @@
 }
 
 .left-panel {
+    float: left;
     position: absolute;
     left: 0px;
-    top: 80px;
+    top: 70px;
     width:100%;
     height: 80px;
     z-index: 10;
     background-color: #fff;
+}
+
+.item {
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid black;
 }

@@ -28,6 +28,8 @@ $("#hide_urp").click(function(){
 //모든 확진자 경로 그려주기
 for(let person of Datas){
     person.drawMarkerAndLine(map);
+    //목록 추가
+    $(".left-panel").append('<a class="item">' + person.id + '번 확진자 </a><br>');
 }
 
 //사용자 경로 그려주기
