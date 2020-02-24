@@ -28,12 +28,12 @@ $("#hide_urp").click(function(){
 var Datas = new Array();
 
 $.ajax({
-    url: 'https://gd-gj.github.io/Corona_Tracker/data.json'
-    , dataType: 'json'
-    , success:function(received){
+    url: 'https://gd-gj.github.io/Corona_Tracker/data.json',
+    dataType: 'json',
+    success: function(received){
         json2persons(Datas, received);
-    }
-    , error: function(xhr, status, responseTxt){
+    },
+    error: function(xhr, status, responseTxt){
         console.log(xhr);
     }
 });

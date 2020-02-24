@@ -218,10 +218,7 @@ function clearAll(){
 //return : person.setPaths(Array of path)
 //path(date, time, name, method, lat, lng)
 //person(id, date, hospital, isItOfficial)
-function json2persons(toStore, data){
-    console.log(data);
-    let dataArray = JSON.parse(data);
-    
+function json2persons(toStore, dataArray){
     for(let i of dataArray){
         let newPatient = new person(i.id, i.description, i.date, i.hospital);
         let newPaths = new Array();
