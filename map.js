@@ -13,6 +13,14 @@ var geocoder = new kakao.maps.services.Geocoder();
 //카카오 플레이스
 var kakaoPlaces = new kakao.maps.services.Places();
 
+kakao.maps.event.addListener(map, 'zoom_changed', function(){
+    let level = map.getLevel();
+    for(let person of Datas){
+        for(let path of person.paths){
+            path.resizeCircle(level*30);
+        }
+    }
+});
 
 // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
 // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
