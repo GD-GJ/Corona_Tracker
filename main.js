@@ -32,7 +32,7 @@ for(let person of Datas){
 $(".patient").click(function(){
     for(let person of Datas){
         if($(this).text() == person.id){
-            person.draw(drawMarkerAndLine(map));
+            person.drawMarkerAndLine(map);
         }
     }
 })
