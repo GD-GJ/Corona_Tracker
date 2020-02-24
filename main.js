@@ -25,8 +25,6 @@ $("#hide_urp").click(function(){
     })
 });
 
-loadUserPaths();
-
 var Datas = new Array();
 
 $.ajax({
@@ -47,6 +45,8 @@ $.ajax({
                 }
             }
         })
+
+        loadUserPaths();
     },
     error: function(xhr, status, responseTxt){
         console.log(xhr);
