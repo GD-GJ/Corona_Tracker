@@ -16,3 +16,12 @@
     bottom: 10px;
     right: 10px;
 }
+
+.left-panel {
+    position: fixed;
+    left: 0px;
+    width:100px;
+    height: 100%;
+    z-index: 10;
+    background-color: #fff;
+}
