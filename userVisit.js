@@ -19,7 +19,8 @@ function checkMatched(userPath){
     let level4 = new Array();
     let level5 = new Array();
     group_by_level.push(level1, level2, level3, level4, level5);
-
+    
+    let matchedPatient = new Array();
 
     for(let person of Datas){
         for(let path of person.paths){
@@ -65,7 +66,9 @@ function checkMatched(userPath){
                     DangerLevel = 4;
                 }
 
-                group_by_level[DangerLevel].push(person);
+                group_by_level[DangerLevel].push(path);
+                matchedPatient.push(person);
+
                 $(".search_view").css("display","none");
                 $(".add_view").css("display","none");
                 $(".result_view").css("display","block");
@@ -73,10 +76,12 @@ function checkMatched(userPath){
         }
     }
 
+    for(let person of matchedPatient){
+        person.drawMarkerAndLine(map);
+    }
     
     for(let level in group_by_level){
-        for(let person of group_by_level[level]){
-            person.drawMarkerAndLine(map);
+        for(let path of group_by_level[level]){
 
             $(".result_content").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
