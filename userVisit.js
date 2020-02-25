@@ -224,7 +224,7 @@ function loadUserPaths() {
     $("#my_path_list").children().remove();
     for(let i in User.paths){
         $("#my_path_list").append(
-            '<button class="btn btn-outline-secondary" type="button">' + (i+1) + '</button>'
+            '<button class="btn btn-outline-secondary" type="button">' + (Number(i) + 1) + '</button>'
         );
         console.log(path);
     }
