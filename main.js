@@ -1,33 +1,35 @@
-//로컬스토리지 데이터 모두삭제
+//시작지점            
+$("#addNewPath").click(newVisitedArea);
 $("#clearAll").click(clearAll);
-
-//키워드 검색 결과 불러오기
 $("#btn_search_place").click(searchPlace);
 
-//메인 -> 장소검색하기
+//장소검색하기
 $("#show_search_page").click(function(){
     //주소 검색창 띄우기
     $(".page").css("display","none");
     $(".search").css("display","block")
 });
 
-//메인 -> 내위치에서 검색
+//내위치에서 검색
 $("#search_from_myloc").click(function(){
     //시간 입력 페이지 띄우기
     $(".page").css("display","none");
     $(".when").css("display","block")
-
-    navigator.geolocation.getCurrentPosition(function(position){
-        var lat = position.coords.latitude,
-            lng = position.coords.longitude;
-
-        // console.log(lat, lng);
-        
-
-        // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
-        
-        setUserLatLng(lat, lng);
-    })
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position){
+            var lat = position.coords.latitude,
+                lng = position.coords.longitude;
+    
+            // console.log(lat, lng);
+            
+    
+            // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
+            
+            setUserLatLng(lat, lng);
+        })
+    } else {
+        //geolocation을 못받아오면 실행되는 코드
+    }
 });
 
 //장소 선택하기
@@ -40,7 +42,7 @@ $("#btn_select_place").click(function(){
     $(".when").css("display","block")
 });
 
-//동선 검색하기
+//새 동선 추가
 $("#searchPath").click(function(){
     //결과 창 띄우기
     $(".page").css("display","none");
@@ -48,9 +50,6 @@ $("#searchPath").click(function(){
 
     $(".container").css("display","none");
     $(".result_path").css("display","block");
-
-    //검색하기
-    newVisitedArea();
 });
 
 //내 동선에 추가하기
