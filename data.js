@@ -1,5 +1,6 @@
 //각각의 방문한 장소에 대한 정보를 가지는 객체
-function path(date, name, lat, lng, color='#CFE7FF', time='', method=''){
+function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
+    this.person = who;
     this.date = date;
     this.time = time;
     this.name = name;

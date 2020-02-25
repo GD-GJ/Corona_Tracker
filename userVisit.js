@@ -127,7 +127,7 @@ function newVisitedArea(){
 
     let placeName = $("#placeName").val();
 
-    searchTarget = new path(date, placeName, userLat, userLng, User.color, time);
+    searchTarget = new path(null, date, placeName, userLat, userLng, User.color, time);
 
     removeAll();
 
@@ -138,7 +138,7 @@ function newVisitedArea(){
             $("#result_for_place").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
-                + path.description + '확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                + path.person.description + ' 확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
                 + path.distance + '</a></div>'
             );
 
@@ -249,7 +249,7 @@ function loadUserPaths() {
                 $("#result_for_userpaths").append(
                     '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                     + path.name + '</a><br><a class="itemDesc">'
-                    + path.description + '확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                    + path.person.description + ' 확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
                     + path.distance + '</a></div>'
                 );
                 
@@ -287,7 +287,7 @@ function getRestoredPath() {
 
     if (dataArray != null && dataArray != ""){
         for(let item of dataArray){
-            restoredData.push(new path(item.date, item.name, item.lat, item.lng, myColor, item.time, item.method));
+            restoredData.push(new path(User, item.date, item.name, item.lat, item.lng, myColor, item.time, item.method));
         }
     }
 	return restoredData;
@@ -324,7 +324,7 @@ function json2persons(toStore, dataArray){
         let color = getRandomColor();
 
         for(let p of patient.paths){
-            let newPath = new path(p.date, p.name, p.lat, p.lng, color);
+            let newPath = new path(newPatient, p.date, p.name, p.lat, p.lng, color);
             
             if(path.time != ""){
                 newPath.time = path.time;
