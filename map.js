@@ -124,7 +124,7 @@ function searchPlace(){
                         map.panTo(new kakao.maps.LatLng(place.y, place.x));
                         $("#placeName").val(place.place_name);
                         setUserLatLng(place.y, place.x);
-                        $("#select_place").css("display", "block");
+                        $("#btn_select_place").css("display", "block");
                     }
                 }
             });

@@ -77,9 +77,6 @@ function checkMatched(userPath){
                 group_by_level[DangerLevel].push(path);
                 matchedPatient.push(person);
 
-                $(".search_view").css("display","none");
-                $(".add_view").css("display","none");
-                $(".result_view").css("display","block");
             }
         }
     }
