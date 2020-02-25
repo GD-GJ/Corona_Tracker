@@ -8,6 +8,9 @@ $("#show_search_page").click(function(){
     //주소 검색창 띄우기
     $(".page").css("display","none");
     $(".search").css("display","block");
+
+    //장소 확정버튼 숨기기
+    $("#btn_select_place").css("display","none");
 });
 
 //내위치에서 검색

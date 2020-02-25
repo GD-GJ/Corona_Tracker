@@ -121,6 +121,7 @@ function newVisitedArea(){
 
     removeAll();
 
+    $("#result_for_place").children().remove();
     let result = checkMatched(searchTarget);
     for(let level in result){
         for(let path of result[level]){
@@ -208,6 +209,7 @@ function loadUserPaths() {
     displayed.push(User);
 
     //리스트에 동선들 추가하기
+    $("#my_path_list").children().remove();
     for(let i in User.paths){
         $("#my_path_list").append(
             '<button class="btn btn-outline-secondary" type="button">' + i + '</button>'
@@ -217,7 +219,6 @@ function loadUserPaths() {
 
     //내 동선중 하나 클릭시
     $(".btn-outline-secondary").click(function(){
-        $("#result_for_userpaths").children().remove();
         let idx = $(this).text()
         let thisPath = User.paths[idx]
 
@@ -226,6 +227,7 @@ function loadUserPaths() {
         //지도위 오브젝트 모두제거
         removeAll();
 
+        $("#result_for_userpaths").children().remove();
         let result = checkMatched(thisPath);
         for(let level in result){
             for(let path of result[level]){

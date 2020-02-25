@@ -43,6 +43,9 @@
 }
 
 .page {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
     height: 100%;
     padding : 10px 10px 10px 10px;
     border-radius: 4px;
