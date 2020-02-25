@@ -3,6 +3,7 @@ var userLat,
 var User;
 var searchTarget;
 var matchedPatient = new Array();
+var displayed = new Array();
 
 const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상', '시간정보가 없는 동선입니다'];
 
@@ -218,10 +219,14 @@ function loadUserPaths() {
     $(".btn-outline-secondary").click(function(){
         $("#result_for_userpaths").children().remove();
         let idx = $(this).text()
-        let result = checkMatched(User.paths[idx]);
+        let thisPath = User.paths[idx]
 
-        $("#path_name").html(User.paths[idx].name + '에 대한 검색결과입니다.');
+        $("#path_name").html(thisPath.name + '에 대한 검색결과입니다.');
 
+        //지도위 오브젝트 모두제거
+        removeAll();
+
+        let result = checkMatched(thisPath);
         for(let level in result){
             for(let path of result[level]){
                 $("#result_for_userpaths").append(
@@ -229,11 +234,26 @@ function loadUserPaths() {
                     + path.name + '</a><br><a class="itemDesc">'
                     + '확진자가 '+ DESCRIPTION[level] + ' 다녀간 지역입니다.' + '</a></div>'
                 );
+                path.marker.setMap(map);
+                displayed.push(path);
             }
         }
+
+        thisPath.marker.setMap(map);
+        displayed.push(thisPath);
     });
 
     return pathArray.length;
+}
+
+function removeAll(){
+    for(let item of displayed){
+        if(item instanceof person){
+            item.drawMarkerAndLine(null);
+        }else if (item instanceof path){
+            item.marker.setMap(null)
+        }    
+    }
 }
 
 //path 배열로 반환하는 함수
