@@ -8,7 +8,7 @@ $("#btn_search_place").click(searchPlace);
 $("#show_search_page").click(function(){
     //주소 검색창 띄우기
     $(".page").css("display","none");
-    $(".search").css("display","block")
+    $(".search").css("display","block");
 });
 
 //메인 -> 내위치에서 검색
@@ -37,25 +37,27 @@ $("#btn_select_place").click(function(){
     
     //시간 입력 페이지 띄우기
     $(".page").css("display","none");
-    $(".when").css("display","block")
+    $(".when").css("display","block");
 });
 
 //동선 검색하기
 $("#searchPath").click(function(){
+    //검색하기
+    console.log('동선 검색하기');
+    newVisitedArea();
+
     //결과 창 띄우기
     $(".page").css("display","none");
-    $(".result").css("display","block")
+    $(".result").css("display","block");
 
     $(".container").css("display","none");
     $(".result_path").css("display","block");
-
-    //검색하기
-    newVisitedArea();
 });
 
 //내 동선에 추가하기
 $("#btn_save_path").click(function(){
-    
+    console.log('내 동선에 추가하기');
+    save(searchTarget);
 });
 
 //홈으로
