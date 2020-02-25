@@ -33,17 +33,6 @@ $.ajax({
     success: function(received){
         json2persons(Datas, received);
 
-        for(let person of Datas){
-            //목록 추가
-            $(".top-panel").append('<a class="list-group-item list-group-item-action patient">' + person.id + ' </a>');
-        }
-        
-        $(".patient").click(function(){
-            console.log(Datas)
-
-            Datas[$(this).text()].drawMarkerAndLine(map)
-        })
-
         loadUserPaths();
     },
     error: function(xhr, status, responseTxt){

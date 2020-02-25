@@ -235,7 +235,7 @@ function clearAll(){
 //toStore에 person객체들을 만들어 저장합니다.
 function json2persons(toStore, dataArray){
     for(let patient of dataArray){
-        let newPatient = new person(i.id, i.description, i.date, i.hospital);
+        let newPatient = new person(patient.id, patient.description, patient.date, patient.hospital);
 
         let newPaths = new Array();
         let color = getRandomColor();
