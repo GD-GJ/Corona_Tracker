@@ -14,7 +14,6 @@ $("#show_search_page").click(function(){
 $("#search_from_myloc").click(function(){
     //시간 입력 페이지 띄우기
     $(".page").css("display","none");
-    $(".when").css("display","block")
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position){
             var lat = position.coords.latitude,
@@ -26,9 +25,12 @@ $("#search_from_myloc").click(function(){
             // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
             
             setUserLatLng(lat, lng);
+            $(".when").css("display","block")
         })
     } else {
         //geolocation을 못받아오면 실행되는 코드
+        $(".search").css('display','block');
+        $('.search p').html('장소 찾기 : 위치정보를 불러오지 못했습니다. ')
     }
 });
 
