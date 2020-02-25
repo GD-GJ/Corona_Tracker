@@ -57,13 +57,17 @@
         <form class="inputForm" action="index.html" method="post">
             <label>방문일</label>
             <input type="text" id="picker" class="form-control">
+            <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
             <script>
                 $('#picker').datetimepicker({
                     datepicker:true,
                     timepicker:true
                 })
+
+                $('#picker').change(function(){
+                    console.log($(this).val().split(' '))
+                })
             </script>
-            <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
         </form>
     </div>
 
