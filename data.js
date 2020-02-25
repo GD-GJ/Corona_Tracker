@@ -60,7 +60,6 @@ function person(id, desc, date, hospital, isItOfficial = false){
             r.push(path.LatLng);
             //마커 클릭리스너 등록
             kakao.maps.event.addListener(path.marker, 'click', function(mouseEvent) {  
-                console.log('')
                 // 마커 클릭시 인포윈도우 오픈
                 path.infowindow.open(map);      
             });

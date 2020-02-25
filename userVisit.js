@@ -31,7 +31,8 @@ function checkMatched(userPath){
             let inSamePlace = false;
 
             // 장소 검증
-            if(calcDistance(userPath.lat, userPath.lng, path.lat, path.lng) <= DANGER_ZONE){
+            let distance = calcDistance(userPath.lat, userPath.lng, path.lat, path.lng);
+            if(distance <= DANGER_ZONE){
                 //사용자의 방문지와 확진자의 방문지 거리가 DANGER_ZONE 이하일경우
                 inNearBy = true;
 
@@ -76,6 +77,7 @@ function checkMatched(userPath){
                     DangerLevel = 3;
                 }
 
+                path.distance = distance;
                 group_by_level[DangerLevel].push(path);
                 matchedPatient.push(person);
 
@@ -136,7 +138,8 @@ function newVisitedArea(){
             $("#result_for_place").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
-                + '확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a></div>'
+                + path.description + '확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                + path.distance + '</a></div>'
             );
 
             path.marker.setMap(map);
@@ -246,12 +249,15 @@ function loadUserPaths() {
                 $("#result_for_userpaths").append(
                     '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                     + path.name + '</a><br><a class="itemDesc">'
-                    + '확진자가 '+ DESCRIPTION[level] + ' 다녀간 지역입니다.' + '</a></div>'
+                    + path.description + '확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                    + path.distance + '</a></div>'
                 );
+                
                 path.marker.setMap(map);
                 displayed.push(path);
             }
         }
+
 
         map.panTo(thisPath.LatLng);
         thisPath.marker.setMap(map);
