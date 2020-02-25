@@ -42,10 +42,6 @@ function person(id, desc, date, hospital, isItOfficial = false){
     this.drawMarkerAndLine = function(map){
         for(let path of this.paths){
             path.marker.setMap(map);
-            kakao.maps.event.addListener(path.marker, 'click', function() {
-                // 마커 클릭시 인포윈도우 오픈
-                path.infowindow.open(map, path.marker);
-            });
         }
         if(this.lines != null){
             this.lines.setMap(map);
@@ -62,6 +58,11 @@ function person(id, desc, date, hospital, isItOfficial = false){
         let r = new Array();
         for(let path of paths){
             r.push(path.LatLng);
+            //마커 클릭리스너 등록
+            kakao.maps.event.addListener(path.marker, 'click', function(mouseEvent) {  
+                // 마커 클릭시 인포윈도우 오픈
+                path.infowindow.open(map, path.marker);      
+            });
         }
 
         this.lines = new kakao.maps.Polyline({
