@@ -38,10 +38,16 @@
     
     <div class="search page">
         <p>장소 찾기</p>
-        <form class="inputForm" action="index.html" method="post">
-            <input id="placeName" type="text" class="inputItems" value="" placeholder="방문지">
-            <input id="search_place" type="button" class="inputItems" value="검색">
-        </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <input id='patientSearch' class='form-control' type="search" placeholder="이동장소 검색" aria-label="이동장소 검색">
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-outline-warning" type="submit">검색</button>
+                </div>
+            </div>
+        </div>
 
         <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:35vh; overflow: auto;"></div>
 
