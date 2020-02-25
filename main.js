@@ -8,6 +8,14 @@ $("#show_search_page").click(function(){
     //주소 검색창 띄우기
     $(".page").css("display","none");
     $(".search").css("display","block")
+});
+
+//내위치에서 검색
+$("#search_from_myloc").click(function(){
+    //시간 입력 페이지 띄우기
+    $(".page").css("display","none");
+    $(".when").css("display","block")
+
     navigator.geolocation.getCurrentPosition(function(position){
         var lat = position.coords.latitude,
             lng = position.coords.longitude;
@@ -18,13 +26,6 @@ $("#show_search_page").click(function(){
     })
 });
 
-//내위치에서 검색
-$("#search_from_myloc").click(function(){
-    //시간 입력 페이지 띄우기
-    $(".page").css("display","none");
-    $(".when").css("display","block")
-});
-
 //장소 선택하기
 $("#btn_select_place").click(function(){
     //기존 목록 제거
@@ -33,8 +34,6 @@ $("#btn_select_place").click(function(){
     //시간 입력 페이지 띄우기
     $(".page").css("display","none");
     $(".when").css("display","block")
-
-
 });
 
 //새 동선 추가
