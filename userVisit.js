@@ -134,7 +134,7 @@ function newVisitedArea(){
 
     $("#result_for_place").children().remove();
     let result = checkMatched(searchTarget);
-    showResult(result);
+    showResult(result, "#result_for_place");
 
     map.panTo(searchTarget.LatLng);
     searchTarget.marker.setMap(map);
@@ -201,6 +201,7 @@ function save(item) {
 }
 
 //모든 동선그려주기
+//review page div에서 보여줄 결과입니다.
 function showAllUserPaths(){
     //초기화
     removeAll();
@@ -212,7 +213,7 @@ function showAllUserPaths(){
     //확진자 그려주기
     for(let thisPath of User.paths){
         let result = checkMatched(thisPath);
-        showResult(result);
+        showResult(result, "#result_for_userpaths");
     }
 }
 
@@ -239,13 +240,13 @@ function loadUserPaths() {
     //리스트에 동선들 추가하기
     for(let i in User.paths){
         $("#my_path_list").append(
-            '<button class="btn btn-outline-secondary user" type="button">' + (Number(i) + 1) + '</button>'
+            '<button class="btn btn-outline-secondary " id="user_path_listitem" type="button">' + (Number(i) + 1) + '</button>'
         );
         console.log(path);
     }
 
     //내 동선중 하나 클릭시
-    $(".btn-outline-secondary").click(function(){
+    $("#user_path_listitem").click(function(){
         let idx = Number($(this).text()) - 1; 
         let thisPath = User.paths[idx]
 
@@ -254,9 +255,8 @@ function loadUserPaths() {
         //지도위 오브젝트 모두제거
         removeAll();
 
-        $("#result_for_userpaths").children().remove();
         let result = checkMatched(thisPath);
-        showResult(result);
+        showResult(result, "#result_for_userpaths");
 
         map.panTo(thisPath.LatLng);
         thisPath.marker.setMap(map);
@@ -266,10 +266,14 @@ function loadUserPaths() {
     return pathArray.length;
 }
 
-function showResult(result){
+function showResult(result, attachTo){
+    //초기화
+    $(attachTo).children().remove();
+
+    //출력
     for(let level in result){
         for(let path of result[level]){
-            $("#result_for_userpaths").append(
+            $(attachTo).append(
                 '<div class="list-group-item list-group-item-action result_item"><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
                 + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
