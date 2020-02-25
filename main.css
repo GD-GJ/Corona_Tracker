@@ -41,3 +41,11 @@
     max-height:20vh; 
     overflow: auto;
 }
+
+.page {
+    height: 100%;
+    padding : 10px 10px 10px 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid black;
+}
