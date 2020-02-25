@@ -21,6 +21,9 @@ $("#search_from_myloc").click(function(){
         var lat = position.coords.latitude,
             lng = position.coords.longitude;
 
+        console.log(lat, lng);
+        
+
         // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
         
         setUserLatLng(lat, lng);
