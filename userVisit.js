@@ -214,8 +214,10 @@ function loadUserPaths() {
         console.log(path);
     }
 
+    //내 동선중 하나 클릭시
     $(".btn-outline-secondary").click(function(){
-        $("#my_path_list").remove();
+        $("#result_for_userpaths").remove();
+        console.log($(this).text());
         let result = checkMatched(User.paths[$(this).text()]);
 
         for(let level in result){
@@ -228,7 +230,7 @@ function loadUserPaths() {
             }
         }
     });
-    
+
     return pathArray.length;
 }
 
