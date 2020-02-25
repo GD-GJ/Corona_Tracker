@@ -240,13 +240,13 @@ function loadUserPaths() {
     //리스트에 동선들 추가하기
     for(let i in User.paths){
         $("#my_path_list").append(
-            '<button class="btn btn-outline-secondary " id="user_path_listitem" type="button">' + (Number(i) + 1) + '</button>'
+            '<button class="btn btn-outline-secondary user_path_listitem" type="button">' + (Number(i) + 1) + '</button>'
         );
         console.log(path);
     }
 
     //내 동선중 하나 클릭시
-    $("#user_path_listitem").click(function(){
+    $(".user_path_listitem").click(function(){
         let idx = Number($(this).text()) - 1; 
         let thisPath = User.paths[idx]
 
