@@ -138,7 +138,7 @@ function newVisitedArea(){
             $("#result_for_place").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
-                + path.person.description + ' 확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
                 + path.distance + '</a></div>'
             );
 
@@ -249,7 +249,7 @@ function loadUserPaths() {
                 $("#result_for_userpaths").append(
                     '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                     + path.name + '</a><br><a class="itemDesc">'
-                    + path.person.description + ' 확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                    + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
                     + path.distance + '</a></div>'
                 );
                 

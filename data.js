@@ -28,6 +28,7 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
                 + this.date + this.time + '<br>'
                 + this.method 
                 + '</div>',
+        position : this.LatLng,
         removable : true
       });
 }
