@@ -44,13 +44,13 @@ function checkMatched(userPath){
 
                 let timeDiff;
                 if(path.time == null){
-                    let uDateArray = user.date.split("-");
+                    //시간데이터 없을경우에는 일수만 계산한다
+                    let uDateArray = userPath.date.split("-");
                     let userDate = new Date(uDateArray[0], Number(uDateArray[1]) -1, uDateArray[2]);
 
-                    let tDateArray = target.date.split("-");
+                    let tDateArray = path.date.split("-");
                     let targetDate = new Date(tDateArray[0], Number(tDateArray[1]) -1, tDateArray[2]);
 
-                    //유저 시간 - 대상 시간
                     timeDiff = (userDate.getTime() - targetDate.getTime())/1000/60;
                 }else{
                     timeDiff = timeDiff2Min(userPath, path);
