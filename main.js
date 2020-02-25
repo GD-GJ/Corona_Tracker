@@ -18,7 +18,7 @@ $("#show_search_page").click(function(){
     $(".search").css("display","block")
     navigator.geolocation.getCurrentPosition(function(position){
         var lat = position.coords.latitude,
-        var lng = position.coords.longitude;
+            lng = position.coords.longitude;
 
         // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
         
