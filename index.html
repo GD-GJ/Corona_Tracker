@@ -63,22 +63,50 @@
         </form>
     </div>
 
-    <div class="result page" style="width:100%;overflow: auto;">
+    <div class="result page" style="width:100%; overflow: auto;">
         <p>검색 결과</p>
-        <div id='map' style="width: 100%; height: 40%;"></div>
+        <div id='map' style="width: 100%; height: 50%;"></div>
 
         <div class="result_path container">
-            <div class="list-group result_content">
-
-            </div>
+            <!-- 검색한 장소에 대한 결과페이지 -->
+            <div class="list-group result_content" style="max-height:45vh;"></div>
             <button type="button" id="btn_save_path" class="btn btn-primary" >동선 저장하기</button>
         </div>
 
         <div class="review container">
+            <!-- 사용자의 동선들에 대한 결과 페이지 -->
             <p>내 이동동선과 비교하기</p>
-            <div class="my_path_list"></div>
-            <div class="list-group result_content">
+
+            <div class="my_path_list">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend" id="button-addon3">
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                      <button class="btn btn-outline-secondary" type="button">Button</button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" aria-label="Example text with two button addons" aria-describedby="button-addon3">
+                  </div>
+                  
             </div>
+            <div class="list-group result_content"  style="max-height:40vh;"></div>
         </div>
     </div>
 
