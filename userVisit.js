@@ -232,7 +232,7 @@ function loadUserPaths() {
 
     //리스트에 전체보기 옵션추가
     $("#my_path_list").append(
-        '<button class="btn btn-outline-secondary " id="show_all_path" type="button">' + 전체 + '</button>'
+        '<button class="btn btn-outline-secondary " id="show_all_path" type="button">전체</button>'
     );
     $("#show_all_path").click(showAllUserPaths);
 
