@@ -8,6 +8,14 @@ $("#show_search_page").click(function(){
     //주소 검색창 띄우기
     $(".page").css("display","none");
     $(".search").css("display","block")
+    navigator.geolocation.getCurrentPosition(function(position){
+        var lat = position.coords.latitude,
+            lng = position.coords.longitude;
+
+        // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
+        
+        setUserLatLng(lat, lng);
+    })
 });
 
 //내위치에서 검색
@@ -25,6 +33,8 @@ $("#btn_select_place").click(function(){
     //시간 입력 페이지 띄우기
     $(".page").css("display","none");
     $(".when").css("display","block")
+
+
 });
 
 //새 동선 추가
