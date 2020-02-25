@@ -216,9 +216,11 @@ function loadUserPaths() {
 
     //내 동선중 하나 클릭시
     $(".btn-outline-secondary").click(function(){
-        $("#result_for_userpaths").remove();
-        console.log($(this).text());
-        let result = checkMatched(User.paths[$(this).text()]);
+        $("#result_for_userpaths").children().remove();
+        let idx = $(this).text()
+        let result = checkMatched(User.paths[idx]);
+
+        $("#path_name").html(User.paths[idx].name + '에 대한 검색결과입니다.');
 
         for(let level in result){
             for(let path of result[level]){
