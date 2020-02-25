@@ -128,7 +128,7 @@ function newVisitedArea(){
             $("#result_for_place").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
-                + '확진자가 '+ DESCRIPTION[level] + ' 다녀간 지역입니다.' + '</a></div>'
+                + '확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a></div>'
             );
 
             path.marker.setMap(map);
@@ -164,6 +164,10 @@ function rad2deg(rad) {
 function save(item) {    
     //경로들을 시간순으로 정렬해서 저장한다.
     let dataArray = getStoredArray();
+    // console.log(dataArray);
+    if (dataArray == null){
+        dataArray = new Array();
+    }
     let isOverlap = false;
     for(var i = 0; i < dataArray.length; i++){
         let timeDiff = timeDiff2Min(item, dataArray[i]);
