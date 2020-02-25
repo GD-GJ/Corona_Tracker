@@ -1,5 +1,5 @@
 //시작지점            
-$("#addNew").click(newVisitedArea);
+$("#addNewPath").click(newVisitedArea);
 $("#clearAll").click(clearAll);
 $("#btn_search_place").click(searchPlace);
 $("#btn_select_place").click(function(){
