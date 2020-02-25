@@ -69,7 +69,7 @@
 
         <div class="result_path container">
             <!-- 검색한 장소에 대한 결과페이지 -->
-            <div class="list-group result_content" style="max-height:45vh;"></div>
+            <div id="result_for_place" class="list-group result_content" style="max-height:45vh; overflow: auto;"></div>
             <button type="button" id="btn_save_path" class="btn btn-primary" >동선 저장하기</button>
         </div>
 
@@ -77,36 +77,13 @@
             <!-- 사용자의 동선들에 대한 결과 페이지 -->
             <p>내 이동동선과 비교하기</p>
 
-            <div class="my_path_list">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend" id="button-addon3" style="overflow-y:auto">
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                      <button class="btn btn-outline-secondary" type="button">Button</button>
-                    </div>
-                    <input type="text" class="form-control" placeholder="" aria-label="Example text with two button addons" aria-describedby="button-addon3">
-                  </div>
-                  
+            <div class="input-group mb-3">
+                <div class="input-group-prepend" id="my_path_list" style="overflow-y:auto">
+                  <button class="btn btn-outline-secondary" type="button">Button</button>
+                </div>
             </div>
-            <div class="list-group result_content"  style="max-height:40vh;"></div>
+
+            <div id="result_for_userpaths" class="list-group result_content"  style="max-height:40vh; overflow: auto;"></div>
         </div>
     </div>
 

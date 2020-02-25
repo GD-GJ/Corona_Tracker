@@ -4,6 +4,8 @@ var User;
 var searchTarget;
 var matchedPatient = new Array();
 
+const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상', '시간정보가 없는 동선입니다'];
+
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
 function checkMatched(userPath){
@@ -12,8 +14,7 @@ function checkMatched(userPath){
     const TIME_DANGER_LEVEL_1 = 6*60;       //6시간
     const TIME_DANGER_LEVEL_2 = 24*60;      //하루
     const TIME_DANGER_LEVEL_3 = 7*24*60;    //1주일
-    const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상', '시간정보가 없는 동선입니다'];
-
+    
     var group_by_level = new Array();
     let level1 = new Array();
     let level2 = new Array();
@@ -86,17 +87,8 @@ function checkMatched(userPath){
     for(let person of matchedPatient){
         person.drawMarkerAndLine(map);
     }
-    
-    for(let level in group_by_level){
-        for(let path of group_by_level[level]){
 
-            $(".result_content").append(
-                '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
-                + path.name + '</a><br><a class="itemDesc">'
-                + '확진자가 '+ DESCRIPTION[level] + ' 다녀간 지역입니다.' + '</a></div>'
-            );
-        }
-    }
+    return group_by_level;
 }
 
 //유저 시간 - 대상 시간을 분단위로 리턴하는 함수.
@@ -133,7 +125,18 @@ function newVisitedArea(){
 
     searchTarget = new path(date, placeName, userLat, userLng, User.color, time);
 
-    checkMatched(searchTarget);
+    let result = checkMatched(searchTarget);
+
+    for(let level in result){
+        for(let path of result[level]){
+
+            $("#result_for_place").append(
+                '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
+                + path.name + '</a><br><a class="itemDesc">'
+                + '확진자가 '+ DESCRIPTION[level] + ' 다녀간 지역입니다.' + '</a></div>'
+            );
+        }
+    }
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -189,6 +192,8 @@ function save(item) {
         //내 동선 창 띄우기
         $(".container").css("display","none");
         $(".review").css("display","block");
+
+        loadUserPaths();
     }
 }
 
@@ -201,10 +206,29 @@ function loadUserPaths() {
     User.setPaths(pathArray, User.color, 4);
     //마커, 라인 그리기
     User.drawMarkerAndLine(map);
-    for(let path of User.paths){
+
+    for(let i in User.paths){
+        $("#my_path_list").append(
+            '<button class="btn btn-outline-secondary" type="button">' + i + '</button>'
+        );
         console.log(path);
-        checkMatched(path);
     }
+
+    $(".btn-outline-secondary").click(function(){
+        $("#my_path_list").remove();
+        let result = checkMatched(User.paths[$(this).text()]);
+
+        for(let level in result){
+            for(let path of result[level]){
+                $("#result_for_userpaths").append(
+                    '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
+                    + path.name + '</a><br><a class="itemDesc">'
+                    + '확진자가 '+ DESCRIPTION[level] + ' 다녀간 지역입니다.' + '</a></div>'
+                );
+            }
+        }
+    });
+    
     return pathArray.length;
 }
 
