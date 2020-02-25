@@ -131,9 +131,9 @@ function newVisitedArea(){
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
     let placeName = $("#placeName").val();
-    let method = $("#visitMethod").val();
+    //let method = $("#visitMethod").val();
 
-    let userPath = new path(date, placeName, userLat, userLng, User.color, time, method);
+    let userPath = new path(date, placeName, userLat, userLng, User.color, time);
     checkMatched(userPath);
     save(userPath);
 
@@ -240,8 +240,8 @@ function json2persons(toStore, dataArray){
         let newPaths = new Array();
         let color = getRandomColor();
 
-        for(let path of patient.paths){
-            let newPath = new path(path.date, path.name, path.lat, path.lng, color);
+        for(let p of patient.paths){
+            let newPath = new path(p.date, p.name, p.lat, p.lng, color);
             
             if(path.time != ""){
                 newPath.time = path.time;

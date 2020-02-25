@@ -32,7 +32,7 @@
     
     <div class="main page">
         <p>검색하기</p>
-        <button type="button" id="hide_urp" class="btn btn-primary">현재내위치</button>
+        <button type="button" id="search_from_myloc" class="btn btn-primary">현재내위치</button>
         <button type="button" id="show_search_page" class="btn btn-primary">장소검색하기</button>
     </div>
     
@@ -51,7 +51,7 @@
 
         <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:70vh; overflow: auto;"></div>
 
-        <button type="button" id="select_place" class="btn btn-primary" style="display: none;">확인</button>
+        <button type="button" id="btn_select_place" class="btn btn-primary" style="display: none;">확인</button>
     </div>
 
     <div class="when page">
@@ -59,9 +59,8 @@
         <form class="inputForm" action="index.html" method="post">
             <label>방문일</label>
             <input id="visitDate" type="date" class="inputItems"  value="" placeholder="방문일">
-            <input id="visitTime" type="time" class="inputItems"  value="" placeholder="방문시간">
-            <input id="visitMethod" type="text" class="inputItems"  value="" placeholder="이동수단">
-            <input id="addNew" type="button" class="inputItems" value="추가">
+            <input id="visitTime" type="text" class="inputItems"  value="" placeholder="방문시간">
+            <input id="addNewPath" type="button" class="inputItems" value="검색">
             <input id="clearAll" type="button" class="inputItems" name="" value="모두삭제">
         </form>
     </div>
@@ -72,6 +71,7 @@
         <div class="list-group result_content">
 
         </div>
+        <button type="button" id="btn_save_path" class="btn btn-primary" >동선 저장하기</button>
     </div>
     
     <script src="map.js"></script>

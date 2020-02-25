@@ -2,28 +2,36 @@
 $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
 $("#btn_search_place").click(searchPlace);
-$("#select_place").click(function(){
-    //뷰 전환
-    $(".search_view").css("display","none");
-    $(".add_view").css("display","block");
-    $(".result_view").css("display","none");
-
+$("#btn_select_place").click(function(){
     //기존 목록 제거
     $(".list-group-item-action").remove();
+    
+    //시간 입력 페이지 띄우기
+    $(".page").css("display","none");
+    $(".when").css("display","block")
 });
-$("#show_urp").click(function(){
-    $("#user_route_panel").animate({bottom: "0px"}, 250, function(){
-        console.log("panel visible");
-    })
+
+//장소검색하기
+$("#show_search_page").click(function(){
+    //주소 검색창 띄우기
+    $(".page").css("display","none");
+    $(".search").css("display","block")
 });
-$("#hide_urp").click(function(){
-    $(".search_view").css("display","block");
-    $(".add_view").css("display","none");
-    $(".result_view").css("display","none");
-    $("#user_route_panel").animate({bottom: "-800px"}, 250, function(){
-        console.log("panel invisible");
-    })
+
+//내위치에서 검색
+$("#search_from_myloc").click(function(){
+    //결과 창 띄우기
+    $(".page").css("display","none");
+    $(".when").css("display","block")
 });
+
+//새 동선 추가
+$("#addNewPath").click(function(){
+    //결과 창 띄우기
+    $(".page").css("display","none");
+    $(".result").css("display","block")
+});
+
 
 var Datas = new Array();
 
