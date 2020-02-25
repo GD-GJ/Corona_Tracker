@@ -90,13 +90,13 @@ function checkMatched(userPath){
 //음수일경우 확진자가 다녀가기 전에 유저가 방문한 경우이므로 고려하지않음
 function timeDiff2Min(user, target){
     //유저 시간 -> 분
-    let uDateArray = user.date.split("-");
+    let uDateArray = user.date.split("/");
     let userHour = Number(user.time.substring(0, 2));
     let userMin = Number(user.time.substring(2, 4));
     let userDate = new Date(uDateArray[0], Number(uDateArray[1]) -1, uDateArray[2], userHour, userMin);
 
     //대상 시간 -> 분
-    var tDateArray = target.date.split("-");
+    var tDateArray = target.date.split("/");
     var targetHour = Number(target.time.substring(0, 2));
     var targetMin = Number(target.time.substring(2, 4));
     var targetDate = new Date(tDateArray[0], Number(tDateArray[1]) -1, tDateArray[2], targetHour, targetMin);
@@ -113,8 +113,16 @@ function setUserLatLng(lat, lng){
 
 //새로운 사용자 경로를 추가하는 함수.
 function newVisitedArea(){
-    let date = $("#visitDate").val();
-    let time = $("#visitTime").val();
+    let picker = $("#picker").val();
+    
+    
+    datetime = picker.split(' ');
+    let date = datetime[0];
+    let time = datetime[1];
+    time = time.substring(0,2) + time.substring(3,5);
+    // console.log(date, time);
+
+
     let placeName = $("#placeName").val();
 
     searchTarget = new path(date, placeName, userLat, userLng, User.color, time);
