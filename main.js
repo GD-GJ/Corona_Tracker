@@ -1,7 +1,7 @@
 //시작지점            
 $("#addNew").click(newVisitedArea);
 $("#clearAll").click(clearAll);
-$("#search_place").click(searchPlace);
+$("#btn_search_place").click(searchPlace);
 $("#select_place").click(function(){
     //뷰 전환
     $(".search_view").css("display","none");
