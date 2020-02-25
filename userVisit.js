@@ -231,7 +231,7 @@ function loadUserPaths() {
 
     //내 동선중 하나 클릭시
     $(".btn-outline-secondary").click(function(){
-        let idx = $(this).text()
+        let idx = Number($(this).text()) - 1; 
         let thisPath = User.paths[idx]
 
         $("#path_name").html(thisPath.name + '에 대한 검색결과입니다.');
