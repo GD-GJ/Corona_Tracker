@@ -78,5 +78,28 @@
     <script src="data.js"></script>
     <script src="userVisit.js"></script>
     <script src="main.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDjDAZAK3rzWkTT82-uWtvNZjE0VRpwJBI",
+        authDomain: "coronawhere.firebaseapp.com",
+        databaseURL: "https://coronawhere.firebaseio.com",
+        projectId: "coronawhere",
+        storageBucket: "coronawhere.appspot.com",
+        messagingSenderId: "1043365572724",
+        appId: "1:1043365572724:web:c5c7af753def6758a92121",
+        measurementId: "G-YT743B7BNY"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
 </body>
 </html>
