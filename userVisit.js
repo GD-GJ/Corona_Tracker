@@ -133,19 +133,7 @@ function newVisitedArea(){
 
     $("#result_for_place").children().remove();
     let result = checkMatched(searchTarget);
-    for(let level in result){
-        for(let path of result[level]){
-            $("#result_for_place").append(
-                '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
-                + path.name + '</a><br><a class="itemDesc">'
-                + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
-                + path.distance + 'km </a></div>'
-            );
-
-            path.marker.setMap(map);
-            displayed.push(path);
-        }
-    }
+    showResult(result);
 
     map.panTo(searchTarget.LatLng);
     searchTarget.marker.setMap(map);
@@ -211,6 +199,22 @@ function save(item) {
     }
 }
 
+//모든 동선그려주기
+function showAllUserPaths(){
+    //초기화
+    removeAll();
+
+    //유저 그려주기
+    User.drawMarkerAndLine(map);
+    displayed.push(User);
+
+    //확진자 그려주기
+    for(let thisPath of User.paths){
+        let result = checkMatched(thisPath);
+        showResult(result);
+    }
+}
+
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 //리턴 : 불러온 경로수 ( 0 == 기존테이터없음 )
 function loadUserPaths() {
@@ -220,14 +224,21 @@ function loadUserPaths() {
     User.setPaths(pathArray, User.color, 4);
 
     //마커, 라인 그리기
-    User.drawMarkerAndLine(map);
-    displayed.push(User);
+    showAllUserPaths();
+
+    //리스트 초기화
+    $("#my_path_list").children().remove();
+
+    //리스트에 전체보기 옵션추가
+    $("#my_path_list").append(
+        '<button class="btn btn-outline-secondary " id="show_all_path" type="button">' + 전체 + '</button>'
+    );
+    $("#show_all_path").click(showAllUserPaths);
 
     //리스트에 동선들 추가하기
-    $("#my_path_list").children().remove();
     for(let i in User.paths){
         $("#my_path_list").append(
-            '<button class="btn btn-outline-secondary" type="button">' + (Number(i) + 1) + '</button>'
+            '<button class="btn btn-outline-secondary user" type="button">' + (Number(i) + 1) + '</button>'
         );
         console.log(path);
     }
@@ -244,20 +255,7 @@ function loadUserPaths() {
 
         $("#result_for_userpaths").children().remove();
         let result = checkMatched(thisPath);
-        for(let level in result){
-            for(let path of result[level]){
-                $("#result_for_userpaths").append(
-                    '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
-                    + path.name + '</a><br><a class="itemDesc">'
-                    + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
-                    + path.distance + 'km </a></div>'
-                );
-                
-                path.marker.setMap(map);
-                displayed.push(path);
-            }
-        }
-
+        showResult(result);
 
         map.panTo(thisPath.LatLng);
         thisPath.marker.setMap(map);
@@ -265,6 +263,27 @@ function loadUserPaths() {
     });
 
     return pathArray.length;
+}
+
+function showResult(result){
+    for(let level in result){
+        for(let path of result[level]){
+            $("#result_for_userpaths").append(
+                '<div class="list-group-item list-group-item-action result_item"><a class="itemTitle">' 
+                + path.name + '</a><br><a class="itemDesc">'
+                + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                + path.distance + 'km </a></div>'
+            );
+            
+            path.marker.setMap(map);
+            displayed.push(path);
+        }
+    }
+
+    //만든 아이템 클릭리스너
+    $(".result_item").click(function(){
+        console.log($(this).text());
+    })
 }
 
 function removeAll(){
