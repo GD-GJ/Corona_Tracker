@@ -83,12 +83,6 @@ function checkMatched(userPath){
         }
     }
 
-    userPath.marker.setMap(map)
-
-    for(let person of matchedPatient){
-        person.drawMarkerAndLine(map);
-    }
-
     return group_by_level;
 }
 
@@ -119,25 +113,31 @@ function setUserLatLng(lat, lng){
 
 //새로운 사용자 경로를 추가하는 함수.
 function newVisitedArea(){
-    User.drawMarkerAndLine(null);
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
     let placeName = $("#placeName").val();
 
     searchTarget = new path(date, placeName, userLat, userLng, User.color, time);
 
-    let result = checkMatched(searchTarget);
+    removeAll();
 
+    let result = checkMatched(searchTarget);
     for(let level in result){
         for(let path of result[level]){
-
             $("#result_for_place").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
                 + '확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a></div>'
             );
+
+            path.marker.setMap(map);
+            displayed.push(path);
         }
     }
+
+    map.panTo(searchTarget.LatLng);
+    searchTarget.marker.setMap(map);
+    displayed.push(searchTarget);
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -180,10 +180,7 @@ function save(item) {
         //중복안되면 저장
 
         //지도에 있는것 모두 지우기
-        searchTarget.marker.setMap(null)
-        for(let person of matchedPatient){
-            person.drawMarkerAndLine(null);
-        }
+        removeAll();
 
         //데이터 저장
         dataArray.splice(i, 0, item);
@@ -205,9 +202,12 @@ function loadUserPaths() {
 
     let pathArray = getRestoredPath();
     User.setPaths(pathArray, User.color, 4);
+
     //마커, 라인 그리기
     User.drawMarkerAndLine(map);
+    displayed.push(User);
 
+    //리스트에 동선들 추가하기
     for(let i in User.paths){
         $("#my_path_list").append(
             '<button class="btn btn-outline-secondary" type="button">' + i + '</button>'
@@ -239,6 +239,7 @@ function loadUserPaths() {
             }
         }
 
+        map.panTo(thisPath.LatLng);
         thisPath.marker.setMap(map);
         displayed.push(thisPath);
     });
