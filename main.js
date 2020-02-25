@@ -1,16 +1,17 @@
-//시작지점            
-$("#addNewPath").click(newVisitedArea);
+//로컬스토리지 데이터 모두삭제
 $("#clearAll").click(clearAll);
+
+//키워드 검색 결과 불러오기
 $("#btn_search_place").click(searchPlace);
 
-//장소검색하기
+//메인 -> 장소검색하기
 $("#show_search_page").click(function(){
     //주소 검색창 띄우기
     $(".page").css("display","none");
     $(".search").css("display","block")
 });
 
-//내위치에서 검색
+//메인 -> 내위치에서 검색
 $("#search_from_myloc").click(function(){
     //시간 입력 페이지 띄우기
     $(".page").css("display","none");
@@ -36,7 +37,7 @@ $("#btn_select_place").click(function(){
     $(".when").css("display","block")
 });
 
-//새 동선 추가
+//동선 검색하기
 $("#searchPath").click(function(){
     //결과 창 띄우기
     $(".page").css("display","none");
@@ -44,6 +45,9 @@ $("#searchPath").click(function(){
 
     $(".container").css("display","none");
     $(".result_path").css("display","block");
+
+    //검색하기
+    newVisitedArea();
 });
 
 //내 동선에 추가하기
