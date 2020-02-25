@@ -10,8 +10,8 @@ const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주�
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
 function checkMatched(userPath){
-    //위험지역 : 반경 3000m
-    const DANGER_ZONE = 3000;
+    //위험지역 : 반경 3km
+    const DANGER_ZONE = 3;
     const TIME_DANGER_LEVEL_1 = 6*60;       //6시간
     const TIME_DANGER_LEVEL_2 = 24*60;      //하루
     const TIME_DANGER_LEVEL_3 = 7*24*60;    //1주일
@@ -139,7 +139,7 @@ function newVisitedArea(){
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
                 + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
-                + path.distance + '</a></div>'
+                + path.distance + 'km </a></div>'
             );
 
             path.marker.setMap(map);
@@ -161,7 +161,7 @@ function calcDistance(lat1, lon1, lat2, lon2){
     dist = rad2deg(dist);
     dist = dist * 60 * 1.1515;
     dist = dist * 1.609344;
-    return Number(dist*1000).toFixed(2);
+    return Number(dist*1000*1000).toFixed(2);
 }
 function deg2rad(deg) {
     return (deg * Math.PI / 180);
@@ -237,7 +237,7 @@ function loadUserPaths() {
         let idx = Number($(this).text()) - 1; 
         let thisPath = User.paths[idx]
 
-        $("#path_name").html(thisPath.name + '에 대한 검색결과입니다.');
+        $("#path_name").html(thisPath.date + ' 기준 ' + thisPath.name + '에 대한 검색결과입니다.');
 
         //지도위 오브젝트 모두제거
         removeAll();
@@ -250,7 +250,7 @@ function loadUserPaths() {
                     '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                     + path.name + '</a><br><a class="itemDesc">'
                     + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
-                    + path.distance + '</a></div>'
+                    + path.distance + 'km </a></div>'
                 );
                 
                 path.marker.setMap(map);
