@@ -163,6 +163,10 @@ function rad2deg(rad) {
 function save(item) {    
     //경로들을 시간순으로 정렬해서 저장한다.
     let dataArray = getStoredArray();
+    // console.log(dataArray);
+    if (dataArray == null){
+        dataArray = new Array();
+    }
     let isOverlap = false;
     for(var i = 0; i < dataArray.length; i++){
         let timeDiff = timeDiff2Min(item, dataArray[i]);
