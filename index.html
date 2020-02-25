@@ -56,54 +56,7 @@
             <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
             <button type="button" id="yesterday" class="btn btn-primary">어제</button>
             <button type="button" id="now" class="btn btn-primary">지금</button>
-            <script>
-                $('#picker').datetimepicker({
-                    datepicker:true,
-                    timepicker:true
-                })
-
-                $('#picker').change(function(){
-                    console.log($(this).val().split(' '))
-                })
-
-                $('#now').click(function(params) {
-                    var d = new Date();
-                    let dString = dateStringfier(d);
-                    $('#picker').val(dString);
-                })
-
-                $('#yesterday').click(function(){
-                    let d = new Date();
-                    let a = d.getTime()-(1 * 24 * 60 * 60 * 1000)
-                    d.setTime(a);
-                    let dString = dateStringfier(d);
-                    $('#picker').val(dString);
-                })
-                function dateStringfier(dAte){
-                    let year = dAte.getFullYear();
-                    let month = dAte.getMonth() + 1;
-                    if(month < 10){
-                        month = '0' + month;
-                    }
-                    let date = dAte.getDate()
-                    if (date < 10) {
-                        date = '0' + date;
-                    }
-
-                    let hour = dAte.getHours();
-                    if (hour < 10) {
-                        hour = '0' + hour;
-                    }
-
-                    let minute = dAte.getMinutes();
-                    if (minute < 10) {
-                        minute = '0' + minute
-                    }
-                    let dString = year + '/' + month + '/' + date + ' ' + hour + ':' + minute;
-                    return dString;
-                }
-                
-            </script>
+            
         </form>
     </div>
 
@@ -136,6 +89,7 @@
     <script src="data.js"></script>
     <script src="userVisit.js"></script>
     <script src="main.js"></script>
+    <script src="datepicker.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
 
