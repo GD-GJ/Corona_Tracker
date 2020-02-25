@@ -131,11 +131,13 @@ function newVisitedArea(){
     //let method = $("#visitMethod").val();
 
     let userPath = new path(date, placeName, userLat, userLng, User.color, time);
+
     checkMatched(userPath);
-    save(userPath);
+
+    //save(userPath);
 
     //테스트코드. 로직 최적화할것
-    User.drawMarkerAndLine(map);
+    //User.drawMarkerAndLine(map);
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -161,21 +163,28 @@ function rad2deg(rad) {
 function save(item) {    
     //경로들을 시간순으로 정렬해서 저장한다.
     let dataArray = getStoredArray();
-
+    let isOverlap = false;
     for(var i = 0; i < dataArray.length; i++){
         let timeDiff = timeDiff2Min(item, dataArray[i]);
 
         if(timeDiff < 0 ){
             break;
         }else if(timeDiff == 0){
+            isOverlap = true;
             alert("이미 동일한 시간대에 경로가 존재합니다.");
         }
     }
-    //동일한 시간대 문제 해결할것
-    dataArray.splice(i, 0, item);
+    if(isOverlap){
+        //초기화면으로
+    }else{
+        //중복안되면 저장
+        dataArray.splice(i, 0, item);
 
-    localStorage.setItem("visitedList", JSON.stringify(dataArray));
-    User.setPaths(getRestoredPath());
+        localStorage.setItem("visitedList", JSON.stringify(dataArray));
+        User.setPaths(getRestoredPath(), User.color, 4);
+
+        
+    }
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
@@ -183,7 +192,7 @@ function loadUserPaths() {
     User = new person(0, null, null);
 
     let pathArray = getRestoredPath();
-    User.setPaths(pathArray);
+    User.setPaths(pathArray, User.color, 4);
     //마커, 라인 그리기
     User.drawMarkerAndLine(map);
     for(let path of User.paths){

@@ -60,19 +60,30 @@
             <label>방문일</label>
             <input id="visitDate" type="date" class="inputItems"  value="" placeholder="방문일">
             <input id="visitTime" type="text" class="inputItems"  value="" placeholder="방문시간">
-            <input id="addNewPath" type="button" class="inputItems" value="검색">
             <input id="clearAll" type="button" class="inputItems" name="" value="모두삭제">
+            <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
         </form>
     </div>
 
     <div class="result page" style="width:100%;overflow: auto;">
         <p>검색 결과</p>
         <div id='map' style="width: 100%; height: 40%;"></div>
-        <div class="list-group result_content">
 
+        <div class="result_path container">
+            <div class="list-group result_content">
+
+            </div>
+            <button type="button" id="btn_save_path" class="btn btn-primary" >동선 저장하기</button>
         </div>
-        <button type="button" id="btn_save_path" class="btn btn-primary" >동선 저장하기</button>
+
+        <div class="review container">
+            <p>내 이동동선과 비교하기</p>
+            <div class="my_path_list"></div>
+            <div class="list-group result_content">
+            </div>
+        </div>
     </div>
+
     
     <script src="map.js"></script>
     <script src="data.js"></script>

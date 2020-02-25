@@ -10,8 +10,8 @@ function path(date, name, lat, lng, color='#CFE7FF', time='', method=''){
     this.marker = new kakao.maps.Circle({
         center : this.LatLng,
         radius: 50, // 미터 단위의 원의 반지름입니다 
-        strokeWeight: 5, // 선의 두께입니다 
-        strokeColor: '#75B8FA', // 선의 색깔입니다
+        strokeWeight: 1, // 선의 두께입니다 
+        strokeColor: color, // 선의 색깔입니다
         strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: 'solid', // 선의 스타일 입니다
         fillColor: color, // 채우기 색깔입니다
@@ -51,7 +51,7 @@ function person(id, desc, date, hospital, isItOfficial = false){
             this.lines.setMap(map);
         }
     }
-    this.setPaths = function(paths, lineColor='#db4040'){
+    this.setPaths = function(paths, lineColor='#db4040', sWeight = 1){
         this.paths = paths;
 
         if(paths.length < 2){
@@ -67,7 +67,7 @@ function person(id, desc, date, hospital, isItOfficial = false){
         this.lines = new kakao.maps.Polyline({
             endArrow : true,
             path: r,
-            strokeWeight : 3,
+            strokeWeight : sWeight,
             strokeColor : lineColor, //'#db4040'
             strokeOpacity : 1,
             strokeStyle : 'solid'
