@@ -1,5 +1,6 @@
 //각각의 방문한 장소에 대한 정보를 가지는 객체
-function path(date, name, lat, lng, color='#CFE7FF', time='', method=''){
+function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
+    this.person = who;
     this.date = date;
     this.time = time;
     this.name = name;
@@ -42,10 +43,6 @@ function person(id, desc, date, hospital, isItOfficial = false){
     this.drawMarkerAndLine = function(map){
         for(let path of this.paths){
             path.marker.setMap(map);
-            kakao.maps.event.addListener(path.marker, 'click', function() {
-                // 마커 클릭시 인포윈도우 오픈
-                path.infowindow.open(map, path.marker);
-            });
         }
         if(this.lines != null){
             this.lines.setMap(map);
@@ -62,6 +59,11 @@ function person(id, desc, date, hospital, isItOfficial = false){
         let r = new Array();
         for(let path of paths){
             r.push(path.LatLng);
+            //마커 클릭리스너 등록
+            kakao.maps.event.addListener(path.marker, 'click', function(mouseEvent) {  
+                // 마커 클릭시 인포윈도우 오픈
+                path.infowindow.open(map);      
+            });
         }
 
         this.lines = new kakao.maps.Polyline({

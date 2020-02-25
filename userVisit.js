@@ -31,7 +31,8 @@ function checkMatched(userPath){
             let inSamePlace = false;
 
             // 장소 검증
-            if(calcDistance(userPath.lat, userPath.lng, path.lat, path.lng) <= DANGER_ZONE){
+            let distance = calcDistance(userPath.lat, userPath.lng, path.lat, path.lng);
+            if(distance <= DANGER_ZONE){
                 //사용자의 방문지와 확진자의 방문지 거리가 DANGER_ZONE 이하일경우
                 inNearBy = true;
 
@@ -76,6 +77,7 @@ function checkMatched(userPath){
                     DangerLevel = 3;
                 }
 
+                path.distance = distance;
                 group_by_level[DangerLevel].push(path);
                 matchedPatient.push(person);
 
@@ -125,7 +127,7 @@ function newVisitedArea(){
 
     let placeName = $("#placeName").val();
 
-    searchTarget = new path(date, placeName, userLat, userLng, User.color, time);
+    searchTarget = new path(null, date, placeName, userLat, userLng, User.color, time);
 
     removeAll();
 
@@ -136,7 +138,8 @@ function newVisitedArea(){
             $("#result_for_place").append(
                 '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
-                + '확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a></div>'
+                + path.person.description + ' 확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                + path.distance + '</a></div>'
             );
 
             path.marker.setMap(map);
@@ -224,14 +227,14 @@ function loadUserPaths() {
     $("#my_path_list").children().remove();
     for(let i in User.paths){
         $("#my_path_list").append(
-            '<button class="btn btn-outline-secondary" type="button">' + i + '</button>'
+            '<button class="btn btn-outline-secondary" type="button">' + (Number(i) + 1) + '</button>'
         );
         console.log(path);
     }
 
     //내 동선중 하나 클릭시
     $(".btn-outline-secondary").click(function(){
-        let idx = $(this).text()
+        let idx = Number($(this).text()) - 1; 
         let thisPath = User.paths[idx]
 
         $("#path_name").html(thisPath.name + '에 대한 검색결과입니다.');
@@ -246,12 +249,15 @@ function loadUserPaths() {
                 $("#result_for_userpaths").append(
                     '<div class="list-group-item list-group-item-action "><a class="itemTitle">' 
                     + path.name + '</a><br><a class="itemDesc">'
-                    + '확진자가 '+ DESCRIPTION[level] + ' 다녀간 지역입니다.' + '</a></div>'
+                    + path.person.description + ' 확진자가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                    + path.distance + '</a></div>'
                 );
+                
                 path.marker.setMap(map);
                 displayed.push(path);
             }
         }
+
 
         map.panTo(thisPath.LatLng);
         thisPath.marker.setMap(map);
@@ -281,7 +287,7 @@ function getRestoredPath() {
 
     if (dataArray != null && dataArray != ""){
         for(let item of dataArray){
-            restoredData.push(new path(item.date, item.name, item.lat, item.lng, myColor, item.time, item.method));
+            restoredData.push(new path(User, item.date, item.name, item.lat, item.lng, myColor, item.time, item.method));
         }
     }
 	return restoredData;
@@ -318,7 +324,7 @@ function json2persons(toStore, dataArray){
         let color = getRandomColor();
 
         for(let p of patient.paths){
-            let newPath = new path(p.date, p.name, p.lat, p.lng, color);
+            let newPath = new path(newPatient, p.date, p.name, p.lat, p.lng, color);
             
             if(path.time != ""){
                 newPath.time = path.time;
