@@ -32,8 +32,8 @@ $("#search_from_myloc").click(function(){
         })
     } else {
         //geolocation을 못받아오면 실행되는 코드
-        $(".search").css('display','block');
-        $('.search p').html('장소 찾기 : 위치정보를 불러오지 못했습니다. ')
+        // $(".search").css('display','block');
+        // $('.search p').html('장소 찾기 : 위치정보를 불러오지 못했습니다. ')
     }
 });
 
