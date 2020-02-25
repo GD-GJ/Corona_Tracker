@@ -20,6 +20,9 @@ kakao.maps.event.addListener(map, 'zoom_changed', function(){
             path.resizeCircle(level*level*10);
         }
     }
+    for(let path of User.paths){
+        path.resizeCircle(level*level*10);
+    }
 });
 
 // 지도에 컨트롤을 추가해야 지도위에 표시됩니다

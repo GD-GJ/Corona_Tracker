@@ -1,6 +1,8 @@
 var userLat,
     userLng;
 var User;
+var searchTarget;
+var matchedPatient = new Array();
 
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
@@ -19,8 +21,6 @@ function checkMatched(userPath){
     let level4 = new Array();
     let level5 = new Array();
     group_by_level.push(level1, level2, level3, level4, level5);
-    
-    let matchedPatient = new Array();
 
     for(let person of Datas){
         for(let path of person.paths){
@@ -81,6 +81,8 @@ function checkMatched(userPath){
         }
     }
 
+    userPath.marker.setMap(map)
+
     for(let person of matchedPatient){
         person.drawMarkerAndLine(map);
     }
@@ -128,16 +130,10 @@ function newVisitedArea(){
     let date = $("#visitDate").val();
     let time = $("#visitTime").val();
     let placeName = $("#placeName").val();
-    //let method = $("#visitMethod").val();
 
-    let userPath = new path(date, placeName, userLat, userLng, User.color, time);
+    searchTarget = new path(date, placeName, userLat, userLng, User.color, time);
 
-    checkMatched(userPath);
-
-    //save(userPath);
-
-    //테스트코드. 로직 최적화할것
-    //User.drawMarkerAndLine(map);
+    checkMatched(searchTarget);
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -178,16 +174,26 @@ function save(item) {
         //초기화면으로
     }else{
         //중복안되면 저장
-        dataArray.splice(i, 0, item);
 
+        //지도에 있는것 모두 지우기
+        searchTarget.marker.setMap(null)
+        for(let person of matchedPatient){
+            person.drawMarkerAndLine(null);
+        }
+
+        //데이터 저장
+        dataArray.splice(i, 0, item);
         localStorage.setItem("visitedList", JSON.stringify(dataArray));
         User.setPaths(getRestoredPath(), User.color, 4);
 
-        
+        //내 동선 창 띄우기
+        $(".container").css("display","none");
+        $(".review").css("display","block");
     }
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
+//리턴 : 불러온 경로수 ( 0 == 기존테이터없음 )
 function loadUserPaths() {
     User = new person(0, null, null);
 
@@ -196,8 +202,10 @@ function loadUserPaths() {
     //마커, 라인 그리기
     User.drawMarkerAndLine(map);
     for(let path of User.paths){
+        console.log(path);
         checkMatched(path);
     }
+    return pathArray.length;
 }
 
 //path 배열로 반환하는 함수
