@@ -20,7 +20,12 @@ $("#search_from_myloc").click(function(){
     navigator.geolocation.getCurrentPosition(function(position){
         var lat = position.coords.latitude,
             lng = position.coords.longitude;
-        console.log(lat, lng);
+
+        // console.log(lat, lng);
+        
+
+        // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
+        
         setUserLatLng(lat, lng);
     })
 });
