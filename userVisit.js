@@ -141,7 +141,9 @@ function newVisitedArea(){
         + '</div>',
     );
     //클릭리스너 등록
-    kakao.maps.event.addListener(searchTarget.marker, 'click', searchTarget.clickListener);
+    kakao.maps.event.addListener(searchTarget.marker, 'click', function(mouseEvent){
+        searchTarget.infowindow.open(map);
+    });
 
     removeAll();
 
@@ -367,7 +369,9 @@ function getRestoredPath() {
                 + '</div>',
             );
             //클릭리스너 등록
-            kakao.maps.event.addListener(newItem.marker, 'click', newItem.clickListener);
+            kakao.maps.event.addListener(newItem.marker, 'click', function(mouseEvent){
+                newItem.infowindow.open(map);
+            });
             
             restoredData.push(newItem);
         }
@@ -417,7 +421,9 @@ function json2persons(toStore, dataArray){
             );
             
             //클릭리스너 등록
-            kakao.maps.event.addListener(newPath.marker, 'click', newPath.clickListener);
+            kakao.maps.event.addListener(newPath.marker, 'click', function(mouseEvent){
+                newPath.infowindow.open(map);
+            });
             
             //시간 있으면 추가
             if(path.time != ""){
