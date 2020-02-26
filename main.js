@@ -22,19 +22,19 @@ $("#search_from_myloc").click(function(){
             var lat = position.coords.latitude,
                 lng = position.coords.longitude;
 
-            var placeName = ''
+            
 
             var geocoder = new kakao.maps.services.Geocoder();
 
             var coord = new kakao.maps.LatLng(lat, lng);
             var callback = function(result, status) {
                 if (status === kakao.maps.services.Status.OK) {
-                    placeName = result[0].address.address_name;
+                    return result[0].address.address_name;
                 }
                 
             };
             
-            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+            placeName = geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
     
             // console.log(lat, lng);
             
@@ -42,7 +42,8 @@ $("#search_from_myloc").click(function(){
             // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
             
             setUserLatLng(lat, lng);
-            $(".when").css("display","block")
+            $(".when").css("display","block");
+            console.log(placeName);
             return placeName;
         })
     } else {
