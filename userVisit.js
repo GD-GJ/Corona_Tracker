@@ -148,7 +148,7 @@ function newVisitedArea(){
 
     removeAll();
 
-    $(".path_name").html(searchTarget.date + ' 기준 ' + searchTarget.name + '에 대한 검색결과입니다.');
+    $(".path_name").html(searchTarget.date + ' 기준 ' + searchTarget.name + '에 대한 검색 결과입니다.');
 
     let targetDiv = $("#result_for_place");
     let result = checkMatched(searchTarget);
@@ -261,7 +261,7 @@ function loadUserPaths() {
         $(".page").css("display","none");
         $(".result").css("display","block")
 
-        $(".container").css("display","none");
+        $(".inner").css("display","none");
         $(".review").css("display","block");
 
         //마커, 라인 그리기
@@ -289,7 +289,7 @@ function loadUserPaths() {
             let idx = Number($(this).text()) - 1; 
             let thisPath = User.paths[idx]
 
-            $(".path_name").html(thisPath.date + ' 기준 ' + thisPath.name + '에 대한 검색결과입니다.');
+            $(".path_name").html(thisPath.date + ' 기준 ' + thisPath.name + '에 대한 검색 결과입니다.');
 
             //지도위 오브젝트 모두제거
             removeAll();

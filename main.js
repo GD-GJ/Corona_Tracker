@@ -64,7 +64,7 @@ $("#searchPath").click(function(){
     $(".page").css("display","none");
     $(".result").css("display","block");
 
-    $(".container").css("display","none");
+    $(".inner").css("display","none");
     $(".result_path").css("display","block");
 });
 
