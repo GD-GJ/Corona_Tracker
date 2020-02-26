@@ -142,6 +142,7 @@ function newVisitedArea(){
     );
     //클릭리스너 등록
     kakao.maps.event.addListener(searchTarget.marker, 'click', function(mouseEvent){
+        searchTarget.infowindow.open(null);
         searchTarget.infowindow.open(map);
     });
 
