@@ -140,6 +140,8 @@ function newVisitedArea(){
         + searchTarget.date + '일 ' + searchTarget.time.substring(0, 2) + '시 ' + searchTarget.time.substring(2, 4) + '분<br><br>'
         + '</div>',
     );
+    //클릭리스너 등록
+    kakao.maps.event.addListener(searchTarget.marker, 'click', searchTarget.clickListener);
 
     removeAll();
 
@@ -150,10 +152,12 @@ function newVisitedArea(){
     showResult(result, targetDiv);
     
     searchTarget.marker.setMap(map);
+    searchTarget.infowindow.setMap(null);
     searchTarget.infowindow.setMap(map);
     displayed.push(searchTarget);
     //지도 중심점 이동
     setMapBounds();
+    
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -362,6 +366,9 @@ function getRestoredPath() {
                 + newItem.date + '일 ' + newItem.time.substring(0, 2) + '시 ' + newItem.time.substring(2, 4) + '분<br><br>'
                 + '</div>',
             );
+            //클릭리스너 등록
+            kakao.maps.event.addListener(newItem.marker, 'click', newItem.clickListener);
+            
             restoredData.push(newItem);
         }
     }
@@ -400,6 +407,7 @@ function json2persons(toStore, dataArray){
 
         for(let p of patient.paths){
             let newPath = new path(newPatient, p.date, p.name, p.lat, p.lng, color);
+            //인포윈도우 세팅
             newPath.infowindow.setContent(
                 '<div style="padding:5px;">'
                 + newPath.person.description + '<br>' 
@@ -407,6 +415,11 @@ function json2persons(toStore, dataArray){
                 + newPath.date + '일 ' + newPath.time.substring(0, 2) + '시 ' + newPath.time.substring(2, 4) + '분<br><br>'
                 + '</div>'
             );
+            
+            //클릭리스너 등록
+            kakao.maps.event.addListener(newPath.marker, 'click', newPath.clickListener);
+            
+            //시간 있으면 추가
             if(path.time != ""){
                 newPath.time = path.time;
             }

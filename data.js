@@ -25,12 +25,8 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
         position : this.LatLng,
         removable : true
       });
-    this.setClickListener = function(){
-        kakao.maps.event.addListener(this.marker, 'click', function(mouseEvent) {  
-            // 마커 클릭시 인포윈도우 오픈
-            console.log(this);
-            this.infowindow.open(map);      
-        });
+    this.clickListener = function(mouseEvent){
+        this.infowindow.open(map);
     }
 }
 
@@ -62,12 +58,12 @@ function person(id, desc, date, hospital, isItOfficial = false){
         let r = new Array();
         for(let path of paths){
             r.push(path.LatLng);
-            //마커 클릭리스너 등록
-            kakao.maps.event.addListener(path.marker, 'click', function(mouseEvent) {  
-                // 마커 클릭시 인포윈도우 오픈
-                console.log(this);
-                path.infowindow.open(map);      
-            });
+            // //마커 클릭리스너 등록
+            // kakao.maps.event.addListener(path.marker, 'click', function(mouseEvent) {  
+            //     // 마커 클릭시 인포윈도우 오픈
+            //     console.log(this);
+            //     path.infowindow.open(map);      
+            // });
         }
 
         this.lines = new kakao.maps.Polyline({
