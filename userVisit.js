@@ -218,7 +218,7 @@ function showAllUserPaths(){
     //지도 영역 설정
     let bounds = new kakao.maps.LatLngBounds();
     for(let obj of displayed){
-        if(obj instanceof paht){
+        if(obj instanceof path){
             bounds.extend(obj.LatLng);
         }
     }
