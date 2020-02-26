@@ -21,6 +21,17 @@ $("#search_from_myloc").click(function(){
         navigator.geolocation.getCurrentPosition(function(position){
             var lat = position.coords.latitude,
                 lng = position.coords.longitude;
+
+            var geocoder = new kakao.maps.services.Geocoder();
+
+            var coord = new kakao.maps.LatLng(lat, lng);
+            var callback = function(result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    console.log('그런 너를 마주칠까 ' + result[0].address.address_name + '을 못가');
+                }
+            };
+            
+            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
     
             // console.log(lat, lng);
             
