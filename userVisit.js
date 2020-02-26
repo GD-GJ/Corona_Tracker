@@ -122,14 +122,12 @@ function setUserLatLng(lat, lng){
 function newVisitedArea(){
     let picker = $("#picker").val();
     
-    
     datetime = picker.split(' ');
     let date = datetime[0];
     date = date.substring(0,4) + '-' + date.substring(5,7) + '-' + date.substring(8,10);
     let time = datetime[1];
     time = time.substring(0,2) + time.substring(3,5);
     console.log(date, time);
-
 
     let placeName = $("#placeName").val();
 
@@ -169,10 +167,7 @@ function calcDistance(lat1, lon1, lat2, lon2){
 function save(item) {    
     //경로들을 시간순으로 정렬해서 저장한다.
     let dataArray = getStoredArray();
-    // console.log(dataArray);
-    if (dataArray == null){
-        dataArray = new Array();
-    }
+    
     let isOverlap = false;
     for(var i = 0; i < dataArray.length; i++){
         let timeDiff = timeDiff2Min(item, dataArray[i]);
@@ -193,13 +188,10 @@ function save(item) {
         removeAll();
 
         //데이터 저장
+        console.log(item);
         dataArray.splice(i, 0, item);
+        console.log(dataArray);
         localStorage.setItem("visitedList", JSON.stringify(dataArray));
-        User.setPaths(getRestoredPath(), User.color, 4);
-
-        //내 동선 창 띄우기
-        $(".container").css("display","none");
-        $(".review").css("display","block");
 
         loadUserPaths();
     }
@@ -243,7 +235,6 @@ function setMapBounds(){
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
-//리턴 : 불러온 경로수 ( 0 == 기존테이터없음 )
 function loadUserPaths() {
     User = new person(0, '내가 방문한 장소', null, null);
 
