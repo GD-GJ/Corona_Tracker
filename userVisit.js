@@ -218,21 +218,20 @@ function showAllUserPaths(){
     //초기화
     removeAll();
 
-    //유저 그려주기
-    User.drawMarkerAndLine(map);
-    displayed.push(User);
-
-
-    for(let p of User.paths){
-        p.infowindow.setMap(map);
-        displayed.push(p);
-    }
-
     //확진자 그려주기
     for(let thisPath of User.paths){
         let targetDiv = $("#result_for_userpaths")
         let result = checkMatched(thisPath);
         showResult(result, targetDiv, true);
+    }
+
+    //유저 그려주기
+    User.drawMarkerAndLine(map);
+    displayed.push(User);
+
+    for(let p of User.paths){
+        p.infowindow.setMap(map);
+        displayed.push(p);
     }
 
     //지도 영역 설정
@@ -336,7 +335,15 @@ function showResult(result, attachTo, append=false){
 
     //만든 아이템 클릭리스너
     $(".result_item").click(function(){
-        console.log($(this).attr('id'))
+        let idx = Number($(this).attr('id').split("_")[1])
+        if(displayed[idx] instanceof path){
+            displayed[idx].infowindow.open(map)
+        }else{
+            console.log(displayed)
+            console.log(idx)
+            console.log("확진자 목록 클릭. path객체가 아님")
+        }
+       
     })
 }
 
