@@ -356,7 +356,7 @@ function getRestoredPath() {
 function getStoredArray() {
     let dataArray = localStorage.getItem("visitedList");
 
-    if (dataArray == null && dataArray == ""){
+    if (dataArray == null || dataArray == ""){
         dataArray = new Array();
     }else{
         dataArray = JSON.parse(dataArray);
