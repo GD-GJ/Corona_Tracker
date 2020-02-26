@@ -3,7 +3,7 @@ var userLat,
 var User;
 var searchTarget;
 var matchedPatient = [];
-var displayed = [];
+var displayed = new Array();
 
 const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상', '시간정보가 없는 동선입니다'];
 
@@ -208,8 +208,6 @@ function showAllUserPaths(){
     User.drawMarkerAndLine(map);
     displayed.push(User);
 
-    
-
     //확진자 그려주기
     for(let thisPath of User.paths){
         let targetDiv = $("#result_for_userpaths")
@@ -217,6 +215,7 @@ function showAllUserPaths(){
         showResult(result, targetDiv);
     }
 
+    //지도 영역 설정
     let bounds = new kakao.maps.LatLngBounds();
     for(let obj of displayed){
         if(obj instanceof paht){
@@ -234,6 +233,8 @@ function loadUserPaths() {
     let pathArray = getRestoredPath();
     User.setPaths(pathArray, User.color, 4);
 
+    //최적화할것
+    
     //마커, 라인 그리기
     showAllUserPaths();
 
@@ -310,7 +311,8 @@ function removeAll(){
             item.infowindow.open(null);
         }    
     }
-    displayed.clear();
+    //dispalyed 초기화
+    displayed = new Array();
 }
 
 //path 배열로 반환하는 함수
