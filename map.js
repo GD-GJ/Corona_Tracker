@@ -14,15 +14,15 @@ var geocoder = new kakao.maps.services.Geocoder();
 var kakaoPlaces = new kakao.maps.services.Places();
 
 kakao.maps.event.addListener(map, 'zoom_changed', function(){
-    let level = map.getLevel();
-    for(let person of Datas){
-        for(let path of person.paths){
-            path.resizeCircle(level*level*10);
-        }
-    }
-    for(let path of User.paths){
-        path.resizeCircle(level*level*10);
-    }
+    // let level = map.getLevel();
+    // for(let person of Datas){
+    //     for(let path of person.paths){
+    //         path.resizeCircle(level*level*10);
+    //     }
+    // }
+    // for(let path of User.paths){
+    //     path.resizeCircle(level*level*10);
+    // }
 });
 
 // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
