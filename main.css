@@ -48,11 +48,24 @@
     bottom: 0px;
     height: 100%;
     width: 100%;
-    border-radius: 4px;
     background-color: #fff;
-    border: 1px solid black;
 }
 
+.search_menu{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+
+.right-align{
+    position: absolute;
+    right: 0px;
+}
+
+.basic_container{
+    position: absolute;
+    top: 10%;
+}
 /* 
 @font-face {
     font-family: 'Glyphicons Halflings';

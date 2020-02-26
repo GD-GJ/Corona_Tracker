@@ -27,37 +27,43 @@
     </nav>
     
     <div class="main page">
-        <p>검색하기</p>
-        <button type="button" id="search_from_myloc" class="btn btn-primary">현재내위치</button>
-        <button type="button" id="show_search_page" class="btn btn-primary">장소검색하기</button>
+        <div class="search_menu">
+            <p>검색하기</p>
+            <button type="button" id="search_from_myloc" class="btn btn-primary">현재내위치</button>
+            <button type="button" id="show_search_page" class="btn btn-primary">장소검색하기</button>
+        </div>
     </div>
     
     <div class="search page">
-        <p>장소 찾기</p>
-        <div class="row">
-            <div class="col-9">
-                <input id='placeName' class='form-control' type="search" placeholder="이동장소 검색" aria-label="이동장소 검색">
+        <div class="basic_container">
+            <p>장소 찾기</p>
+            <div class="row">
+                <div class="col-9">
+                    <input id='placeName' class='form-control' type="search" placeholder="이동장소 검색" aria-label="이동장소 검색">
+                </div>
+                <div class="col-3">
+                    <button id="btn_search_place" class="btn btn-outline-warning" type="submit">검색</button>
+                </div>
             </div>
-            <div class="col-3">
-                <button id="btn_search_place" class="btn btn-outline-warning" type="submit">검색</button>
-            </div>
+    
+            <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;"></div>
+    
+            <button type="button" id="btn_select_place" class="btn btn-primary right-align" style="display: none;">확인</button>
         </div>
-
-        <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:70vh; overflow: auto;"></div>
-
-        <button type="button" id="btn_select_place" class="btn btn-primary" style="display: none;">확인</button>
     </div>
 
     <div class="when page">
-        <p>시간 입력</p>
-        <form class="inputForm" action="index.html" method="post">
-            <label>방문일</label>
-            <input type="text" id="picker" class="form-control">
-            <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
-            <button type="button" id="yesterday" class="btn btn-primary">어제</button>
-            <button type="button" id="now" class="btn btn-primary">지금</button>
-            
-        </form>
+        <div class="basic_container">
+            <p>시간 입력</p>
+            <form class="inputForm" action="index.html" method="post">
+                <label>방문일</label>
+                <input type="text" id="picker" class="form-control">
+                <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
+                <button type="button" id="yesterday" class="btn btn-primary">어제</button>
+                <button type="button" id="now" class="btn btn-primary">지금</button>
+                
+            </form>
+        </div>
     </div>
 
     <div class="result page" style="width:100%; overflow: auto;">
@@ -67,7 +73,7 @@
             <!-- 검색한 장소에 대한 결과페이지 -->
             <p class="path_name"></p>
             <div id="result_for_place" class="list-group result_content" style="max-height:35vh; overflow: auto;"></div>
-            <button type="button" id="btn_save_path" class="btn btn-primary" >동선 저장하기</button>
+            <button type="button" id="btn_save_path" class="btn btn-primary right-align" >동선 저장하기</button>
         </div>
 
         <div class="review container" style="display: none; max-height:50vh; overflow: auto;">
@@ -79,7 +85,7 @@
             </div>
             <p class="path_name"></p>
             <div id="result_for_userpaths" class="list-group result_content"  style="max-height:35vh; overflow: auto;"></div>
-            <button type="button" id="btn_delete_paths" class="btn btn-primary" >모두 삭제</button>
+            <button type="button" id="btn_delete_paths" class="btn btn-primary right-align" >모두 삭제</button>
         </div>
     </div>
 
