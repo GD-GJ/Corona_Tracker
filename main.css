@@ -54,15 +54,14 @@
 .search_menu{
     position: absolute;
     top: 30%;
-    left: 50%;
+    margin:auto;
 }
 
 .right-align{
-    position: absolute;
-    right: 0px;
+    float: right;
 }
 
-.basic_container{
+.basic{
     position: absolute;
     top: 10%;
 }
