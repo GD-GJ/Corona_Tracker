@@ -210,6 +210,12 @@ function showAllUserPaths(){
     User.drawMarkerAndLine(map);
     displayed.push(User);
 
+    //
+    //
+    //showResult 파라미터 수정하기@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //
+    //
+    //
     //확진자 그려주기
     for(let thisPath of User.paths){
         let result = checkMatched(thisPath);
