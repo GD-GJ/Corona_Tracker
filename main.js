@@ -37,7 +37,7 @@ $("#search_from_myloc").click(function(){
                 
             };
             
-            placeName = geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
     
             // console.log(lat, lng);
             
