@@ -130,6 +130,16 @@ function newVisitedArea(){
     let placeName = $("#placeName").val();
 
     searchTarget = new path(null, date, placeName, userLat, userLng, User.color, time);
+    searchTarget.infowindow = new kakao.maps.InfoWindow({
+        //컨텐츠 ui 수정할것.
+        content : '<div style="padding:5px;">'
+                + '내가 방문한 장소<br>' 
+                + this.name + '<br>' 
+                + this.date + this.time + '<br>'
+                + '</div>',
+        position : searchTarget.LatLng,
+        removable : true
+      });
 
     removeAll();
 
@@ -224,7 +234,7 @@ function showAllUserPaths(){
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 //리턴 : 불러온 경로수 ( 0 == 기존테이터없음 )
 function loadUserPaths() {
-    User = new person(0, null, null);
+    User = new person(0, '내가 방문한곳', null, null);
 
     let pathArray = getRestoredPath();
     User.setPaths(pathArray, User.color, 4);
@@ -301,7 +311,8 @@ function removeAll(){
         if(item instanceof person){
             item.drawMarkerAndLine(null);
         }else if (item instanceof path){
-            item.marker.setMap(null)
+            item.marker.setMap(null);
+            item.infowindow.open(null);
         }    
     }
 }

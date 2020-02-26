@@ -24,9 +24,9 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
     this.infowindow = new kakao.maps.InfoWindow({
         //컨텐츠 ui 수정할것.
         content : '<div style="padding:5px;">'
+                + this.person.description + '<br>' 
                 + this.name + '<br>' 
                 + this.date + this.time + '<br>'
-                + this.method 
                 + '</div>',
         position : this.LatLng,
         removable : true
