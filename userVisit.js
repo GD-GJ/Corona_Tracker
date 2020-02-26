@@ -153,7 +153,7 @@ function calcDistance(lat1, lon1, lat2, lon2){
     dist = rad2deg(dist);
     dist = dist * 60 * 1.1515;
     dist = dist * 1.609344;
-    return Number(dist*1000*1000).toFixed(2);
+    return Number(dist).toFixed(2);
 }
 
 
