@@ -2,8 +2,8 @@ var userLat,
     userLng;
 var User;
 var searchTarget;
-var matchedPatient = new Array();
-var displayed = new Array();
+var matchedPatient = [];
+var displayed = [];
 
 const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상', '시간정보가 없는 동선입니다'];
 
