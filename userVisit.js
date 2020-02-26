@@ -5,7 +5,11 @@ var searchTarget;
 var matchedPatient = [];
 var displayed = new Array();
 
-const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상', '시간정보가 없는 동선입니다'];
+const DESCRIPTION = ['6시간 이내에 이 장소를 방문했습니다.',
+                     '하루 이내에 이 장소를 방문했습니다.',
+                     '1주일 이내에 이 장소를 방문했습니다.' ,
+                     '이 장소를 방문한지 1주일이 지났습니다.',
+                     '시간정보가 없는 동선입니다'];
 
 //새로운 유저 경로가 추가될 때
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
@@ -137,10 +141,11 @@ function newVisitedArea(){
     let result = checkMatched(searchTarget);
     showResult(result, targetDiv);
 
-    map.panTo(searchTarget.LatLng);
     searchTarget.marker.setMap(map);
     searchTarget.infowindow.setMap(map);
     displayed.push(searchTarget);
+    //지도 중심점 이동
+    setMapBounds();
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -216,6 +221,10 @@ function showAllUserPaths(){
     }
 
     //지도 영역 설정
+    setMapBounds();
+}
+
+function setMapBounds(){
     let bounds = new kakao.maps.LatLngBounds();
     for(let obj of displayed){
         if(obj instanceof path){
@@ -269,9 +278,11 @@ function loadUserPaths() {
         let targetDiv = $("#result_for_userpaths");
         showResult(result, targetDiv);
 
-        map.panTo(thisPath.LatLng);
+        thisPath.infowindow.setMap(map);
         thisPath.marker.setMap(map);
         displayed.push(thisPath);
+        //지도 중심점 이동
+        setMapBounds();
     });
 
     return pathArray.length;
@@ -285,9 +296,9 @@ function showResult(result, attachTo){
     for(let level in result){
         for(let path of result[level]){
             attachTo.append(
-                '<div class="list-group-item list-group-item-action result_item"><a class="itemTitle">' 
+                '<div class="list-group-item list-group-item-action result_item" id="list_' + path.person.id + '"><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
-                + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
+                + path.person.description + '가 '+ DESCRIPTION[level] + '</a><br><a class="itemDist">'
                 + path.distance + 'km </a></div>'
             );
             
@@ -298,7 +309,9 @@ function showResult(result, attachTo){
 
     //만든 아이템 클릭리스너
     $(".result_item").click(function(){
-        console.log($(this).text());
+        let id = Number($(this).attr('id').split("_")[1]);
+        Datas[id].drawMarkerAndLine(map);
+        displayed.push(Datas[id]);
     })
 }
 
