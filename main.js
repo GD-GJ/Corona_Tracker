@@ -84,6 +84,13 @@ $(".navbar-brand").click(function(){
 //동선 모두삭제
 $("#btn_delete_paths").click(clearAll);
 
+
+
+//내 동선 확인하기
+$("#show_review_page").click(function(){
+    loadUserPaths();
+});
+
 var Datas = new Array();
 
 $.ajax({
@@ -112,9 +119,9 @@ $.ajax({
 });
 
 
-for(let obj of displayed){
-    kakao.maps.event.addListener(obj.marker, 'click', function(mouseEvent) {  
-        // 마커 클릭시 인포윈도우 오픈
-        obj.infowindow.open(map);      
-    });
-}
+// for(let obj of displayed){
+//     kakao.maps.event.addListener(obj.marker, 'click', function(mouseEvent) {  
+//         // 마커 클릭시 인포윈도우 오픈
+//         obj.infowindow.open(map);      
+//     });
+// }

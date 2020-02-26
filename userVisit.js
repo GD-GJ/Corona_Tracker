@@ -197,6 +197,9 @@ function save(item) {
     if(isOverlap){
         //초기화면으로
     }else{
+        //결과 보기 버튼 활성화
+        $("#show_review_page").css("display","block");
+
         //중복안되면 저장
 
         //지도에 있는것 모두 지우기
@@ -257,9 +260,11 @@ function loadUserPaths() {
 
     //기존 데이터 있을때만
     if(pathArray.length > 0){
+        //결과 보기 버튼 활성화
+        $("#show_review_page").css("display","block");
         //결과 창 띄우기
         $(".page").css("display","none");
-        $(".result").css("display","block")
+        $(".result").css("display","block");
 
         $(".inner").css("display","none");
         $(".review").css("display","block");
@@ -305,6 +310,8 @@ function loadUserPaths() {
             setMapBounds();
         });
     }else{
+        //결과 보기 버튼 비활성화
+        $("#show_review_page").css("display","none");
         //기존 데이터 없으면 검색창으로
         $(".page").css("display","none");
         $(".main").css("display","block")
@@ -409,6 +416,9 @@ function clearAll(){
     let emptyList = new Array();
     User.setPaths(emptyList);
     localStorage.setItem("visitedList", JSON.stringify(emptyList));
+    
+    //결과 보기 버튼 비활성화
+    $("#show_review_page").css("display","none");
 }
 
 //toStore에 person객체들을 만들어 저장합니다.
