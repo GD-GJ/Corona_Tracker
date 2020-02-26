@@ -82,15 +82,7 @@ $.ajax({
     success: function(received){
         json2persons(Datas, received);
 
-        let numUserPaths = loadUserPaths();
-        if(numUserPaths > 0){
-            //결과 창 띄우기
-            $(".page").css("display","none");
-            $(".result").css("display","block")
-
-            $(".container").css("display","none");
-            $(".review").css("display","block");
-        }
+        loadUserPaths();
     },
     error: function(xhr, status, responseTxt){
         console.log(xhr);

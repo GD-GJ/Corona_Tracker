@@ -250,50 +250,60 @@ function loadUserPaths() {
     let pathArray = getRestoredPath();
     User.setPaths(pathArray, User.color, 4);
 
-    //최적화할것
-    
-    //마커, 라인 그리기
-    showAllUserPaths();
+    //기존 데이터 있을때만
+    if(pathArray.length > 0){
+        //결과 창 띄우기
+        $(".page").css("display","none");
+        $(".result").css("display","block")
 
-    //리스트 초기화
-    $("#my_path_list").children().remove();
+        $(".container").css("display","none");
+        $(".review").css("display","block");
 
-    //리스트에 전체보기 옵션추가
-    $("#my_path_list").append(
-        '<button class="btn btn-outline-secondary " id="show_all_path" type="button">전체</button>'
-    );
-    $("#show_all_path").click(showAllUserPaths);
+        //마커, 라인 그리기
+        showAllUserPaths();
 
-    //리스트에 동선들 추가하기
-    for(let i in User.paths){
+        //리스트 초기화
+        $("#my_path_list").children().remove();
+
+        //리스트에 전체보기 옵션추가
         $("#my_path_list").append(
-            '<button class="btn btn-outline-secondary user_path_listitem" type="button">' + (Number(i) + 1) + '</button>'
+            '<button class="btn btn-outline-secondary " id="show_all_path" type="button">전체</button>'
         );
-        console.log(path);
+        $("#show_all_path").click(showAllUserPaths);
+
+        //리스트에 동선들 추가하기
+        for(let i in User.paths){
+            $("#my_path_list").append(
+                '<button class="btn btn-outline-secondary user_path_listitem" type="button">' + (Number(i) + 1) + '</button>'
+            );
+            console.log(path);
+        }
+
+        //내 동선중 하나 클릭시
+        $(".user_path_listitem").click(function(){
+            let idx = Number($(this).text()) - 1; 
+            let thisPath = User.paths[idx]
+
+            $(".path_name").html(thisPath.date + ' 기준 ' + thisPath.name + '에 대한 검색결과입니다.');
+
+            //지도위 오브젝트 모두제거
+            removeAll();
+
+            let result = checkMatched(thisPath);
+            let targetDiv = $("#result_for_userpaths");
+            showResult(result, targetDiv);
+
+            thisPath.infowindow.setMap(map);
+            thisPath.marker.setMap(map);
+            displayed.push(thisPath);
+            //지도 중심점 이동
+            setMapBounds();
+        });
+    }else{
+        //기존 데이터 없으면 검색창으로
+        $(".page").css("display","none");
+        $(".main").css("display","block")
     }
-
-    //내 동선중 하나 클릭시
-    $(".user_path_listitem").click(function(){
-        let idx = Number($(this).text()) - 1; 
-        let thisPath = User.paths[idx]
-
-        $(".path_name").html(thisPath.date + ' 기준 ' + thisPath.name + '에 대한 검색결과입니다.');
-
-        //지도위 오브젝트 모두제거
-        removeAll();
-
-        let result = checkMatched(thisPath);
-        let targetDiv = $("#result_for_userpaths");
-        showResult(result, targetDiv);
-
-        thisPath.infowindow.setMap(map);
-        thisPath.marker.setMap(map);
-        displayed.push(thisPath);
-        //지도 중심점 이동
-        setMapBounds();
-    });
-
-    return pathArray.length;
 }
 
 function showResult(result, attachTo){
