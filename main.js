@@ -30,11 +30,11 @@ $("#search_from_myloc").click(function(){
                     var placeName = result[0].address.address_name;
                     console.log(placeName);
                     $("#currentLocation").text(placeName);
+                    $(".when").css("display","block");
                 }
             });
 
             setUserLatLng(lat, lng);
-            $(".when").css("display","block");
             
         });
     } else {
