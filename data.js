@@ -25,6 +25,13 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
         position : this.LatLng,
         removable : true
       });
+    this.setClickListener = function(){
+        kakao.maps.event.addListener(this.marker, 'click', function(mouseEvent) {  
+            // 마커 클릭시 인포윈도우 오픈
+            console.log(this);
+            path.infowindow.open(map);      
+        });
+    }
 }
 
 //한명의 감염자에 대한 정보를 가지는 객체
