@@ -132,16 +132,14 @@ function newVisitedArea(){
     let placeName = $("#placeName").val();
 
     searchTarget = new path(null, date, placeName, userLat, userLng, User.color, time);
-    searchTarget.infowindow = new kakao.maps.InfoWindow({
-        //컨텐츠 ui 수정할것.
-        content : '<div style="padding:5px;">'
-                + this.person.description + '<br>' 
-                + this.name + '<br>' 
-                + this.date + '일 ' + this.time.substring(0, 2) + '시 ' + this.time.substring(2, 4) + '분<br><br>'
-                + '</div>',
-        position : this.LatLng,
-        removable : true
-      });
+    //인포윈도우 설정
+    searchTarget.infowindow.setContent(
+        '<div style="padding:5px;">'
+        + '내가 방문한 장소<br>' 
+        + searchTarget.name + '<br>' 
+        + searchTarget.date + '일 ' + searchTarget.time.substring(0, 2) + '시 ' + searchTarget.time.substring(2, 4) + '분<br><br>'
+        + '</div>',
+    );
 
     removeAll();
 
@@ -357,16 +355,13 @@ function getRestoredPath() {
     if (dataArray != null && dataArray != ""){
         for(let item of dataArray){
             let newItem = new path(null, item.date, item.name, item.lat, item.lng, myColor, item.time, item.method);
-            newItem.infowindow = new kakao.maps.InfoWindow({
-                //컨텐츠 ui 수정할것.
-                content : '<div style="padding:5px;">'
-                        + this.person.description + '<br>' 
-                        + this.name + '<br>' 
-                        + this.date + '일 ' + this.time.substring(0, 2) + '시 ' + this.time.substring(2, 4) + '분<br><br>'
-                        + '</div>',
-                position : this.LatLng,
-                removable : true
-              });
+            newItem.infowindow.setContent(
+                '<div style="padding:5px;">'
+                + '내가 방문한 장소<br>' 
+                + newItem.name + '<br>' 
+                + newItem.date + '일 ' + newItem.time.substring(0, 2) + '시 ' + newItem.time.substring(2, 4) + '분<br><br>'
+                + '</div>',
+            );
             restoredData.push(newItem);
         }
     }
