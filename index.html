@@ -29,8 +29,8 @@
     <div class="main page">
         <div class="search_menu container">
             <p>검색하기</p>
-            <button type="button" id="search_from_myloc" class="btn btn-primary">현재내위치</button>
-            <button type="button" id="show_search_page" class="btn btn-primary">장소검색하기</button>
+            <button type="button" id="search_from_myloc" class="btn btn-primary">현재내위치</button><br>
+            <button type="button" id="show_search_page" class="btn btn-primary">장소검색하기</button><br>
             <button type="button" id="show_review_page" class="btn btn-primary">내 동선 확인하기</button>
         </div>
     </div>
@@ -38,14 +38,9 @@
     <div class="search page">
         <div class="basic container">
             <p>장소 찾기</p>
-            <div class="row">
-                <div class="col-9">
-                    <input id='placeName' class='form-control' type="search" placeholder="이동장소 검색" aria-label="이동장소 검색">
-                </div>
-                <div class="col-3">
-                    <button id="btn_search_place" class="btn btn-outline-warning" type="submit">검색</button>
-                </div>
-            </div>
+
+            <input id='placeName' class='form-control' type="search" placeholder="이동장소 검색" aria-label="이동장소 검색">
+            <button id="btn_search_place" class="btn btn-outline-warning" type="submit">검색</button>
     
             <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;"></div>
     
