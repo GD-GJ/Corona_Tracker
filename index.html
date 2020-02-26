@@ -18,12 +18,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c2843379aea30a6a4e9269514e395d98&libraries=services,clusterer,drawing"></script>
     
-    <title>COVID-19 Tracker</title>
+    <title>Corona Where</title>
 </head>
 
 <body style="height: 100%;">
     <nav class="navbar navbar-light bg-light" style="width: 100%; z-index: 10;">
-        <a class="navbar-brand">COVID-19 Tracker</a>
+        <a class="navbar-brand">Corona Where</a>
     </nav>
     
     <div class="main page">
@@ -61,13 +61,12 @@
     </div>
 
     <div class="result page" style="width:100%; overflow: auto;">
-        <p>검색 결과</p>
         <div id='map' style="width: 100%; height: 50%;"></div>
 
-        <div class="result_path container">
+        <div class="result_path container" style="display: none;">
             <!-- 검색한 장소에 대한 결과페이지 -->
             <p class="path_name"></p>
-            <div id="result_for_place" class="list-group result_content" style="max-height:40vh; overflow: auto;"></div>
+            <div id="result_for_place" class="list-group result_content" style="max-height:35vh; overflow: auto;"></div>
             <button type="button" id="btn_save_path" class="btn btn-primary" >동선 저장하기</button>
         </div>
 
@@ -75,13 +74,13 @@
             <!-- 사용자의 동선들에 대한 결과 페이지 -->
             <p>내 이동동선과 비교하기</p>
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="display: none;">
                 <div class="input-group-prepend" id="my_path_list" style="overflow-y:auto">
                   <!--<button class="btn btn-outline-secondary" type="button">Button</button>-->
                 </div>
             </div>
             <p class="path_name"></p>
-            <div id="result_for_userpaths" class="list-group result_content"  style="max-height:40vh; overflow: auto;"></div>
+            <div id="result_for_userpaths" class="list-group result_content"  style="max-height:35vh; overflow: auto;"></div>
         </div>
     </div>
 
