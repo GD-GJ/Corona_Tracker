@@ -231,7 +231,7 @@ function showAllUserPaths(){
     for(let thisPath of User.paths){
         let targetDiv = $("#result_for_userpaths")
         let result = checkMatched(thisPath);
-        showResult(result, targetDiv);
+        showResult(result, targetDiv, true);
     }
 
     //지도 영역 설정
@@ -311,10 +311,12 @@ function loadUserPaths() {
     }
 }
 
-function showResult(result, attachTo){
+function showResult(result, attachTo, append=false){
     //초기화
-    attachTo.children().remove();
-
+    if(!append){
+        attachTo.children().remove();
+    }
+    
     //출력
     let idx = 0;
     for(let level in result){
