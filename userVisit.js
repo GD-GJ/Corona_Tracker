@@ -11,7 +11,7 @@ const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주�
 //기존 확진자의 동선과 겹치는 부분이 있는지 검사하는 함수입니다.
 function checkMatched(userPath){
     //위험지역 : 반경 3km
-    const DANGER_ZONE = 3;
+    const DANGER_ZONE = 3.0;
     const TIME_DANGER_LEVEL_1 = 6*60;       //6시간
     const TIME_DANGER_LEVEL_2 = 24*60;      //하루
     const TIME_DANGER_LEVEL_3 = 7*24*60;    //1주일
@@ -32,6 +32,7 @@ function checkMatched(userPath){
 
             // 장소 검증
             let distance = calcDistance(userPath.lat, userPath.lng, path.lat, path.lng);
+            console.log(distance);
             if(distance <= DANGER_ZONE){
                 //사용자의 방문지와 확진자의 방문지 거리가 DANGER_ZONE 이하일경우
                 inNearBy = true;
@@ -132,9 +133,9 @@ function newVisitedArea(){
 
     removeAll();
 
-    $("#result_for_place").children().remove();
+    let targetDiv = $("#result_for_place")
     let result = checkMatched(searchTarget);
-    showResult(result, "#result_for_place");
+    showResult(result, targetDiv);
 
     map.panTo(searchTarget.LatLng);
     searchTarget.marker.setMap(map);
@@ -214,8 +215,9 @@ function showAllUserPaths(){
     //
     //확진자 그려주기
     for(let thisPath of User.paths){
+        let targetDiv = $("#result_for_userpaths")
         let result = checkMatched(thisPath);
-        showResult(result, "#result_for_userpaths");
+        showResult(result, targetDiv);
     }
 }
 
@@ -258,7 +260,8 @@ function loadUserPaths() {
         removeAll();
 
         let result = checkMatched(thisPath);
-        showResult(result, "#result_for_userpaths");
+        let targetDiv = $("#result_for_userpaths");
+        showResult(result, targetDiv);
 
         map.panTo(thisPath.LatLng);
         thisPath.marker.setMap(map);
@@ -270,12 +273,12 @@ function loadUserPaths() {
 
 function showResult(result, attachTo){
     //초기화
-    $(attachTo).children().remove();
+    attachTo.children().remove();
 
     //출력
     for(let level in result){
         for(let path of result[level]){
-            $(attachTo).append(
+            attachTo.append(
                 '<div class="list-group-item list-group-item-action result_item"><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
                 + path.person.description + '가 이 지역을 다녀간 지'+ DESCRIPTION[level]  + '</a><br><a class="itemDist">'
