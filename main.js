@@ -22,13 +22,16 @@ $("#search_from_myloc").click(function(){
             var lat = position.coords.latitude,
                 lng = position.coords.longitude;
 
+            var placeName = ''
+
             var geocoder = new kakao.maps.services.Geocoder();
 
             var coord = new kakao.maps.LatLng(lat, lng);
             var callback = function(result, status) {
                 if (status === kakao.maps.services.Status.OK) {
-                    console.log('그런 너를 마주칠까 ' + result[0].address.address_name + '을 못가');
+                    placeName = result[0].address.address_name;
                 }
+                
             };
             
             geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
@@ -40,6 +43,7 @@ $("#search_from_myloc").click(function(){
             
             setUserLatLng(lat, lng);
             $(".when").css("display","block")
+            return placeName;
         })
     } else {
         //geolocation을 못받아오면 실행되는 코드
