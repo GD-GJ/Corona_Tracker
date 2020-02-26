@@ -247,7 +247,7 @@ function loadUserPaths() {
     User = new person(0, '내가 방문한 장소', null, null);
 
     let pathArray = getRestoredPath();
-    User.setPaths(pathArray, User.color, 4);
+    User.setPaths(pathArray, User.color, 5);
 
     //기존 데이터 있을때만
     if(pathArray.length > 0){
