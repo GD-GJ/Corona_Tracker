@@ -51,12 +51,6 @@
     background-color: #fff;
 }
 
-.search_menu{
-    position: absolute;
-    top:50%; left:50%;
-    transform: translate(-50%, -50%);
-}
-
 .right-align{
     float: right;
 }
@@ -64,6 +58,13 @@
 .basic{
     position: absolute;
     top: 10%;
+}
+
+.si{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 30px;
 }
 /* 
 @font-face {
