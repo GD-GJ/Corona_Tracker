@@ -26,7 +26,7 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
         content : '<div style="padding:5px;">'
                 + this.person.description + '<br>' 
                 + this.name + '<br>' 
-                + this.date + this.time + '<br>'
+                + this.date + '일 ' + this.time.substring(0, 2) + '시 ' + this.time.substring(2, 4) + '분<br><br>'
                 + '</div>',
         position : this.LatLng,
         removable : true
@@ -44,6 +44,7 @@ function person(id, desc, date, hospital, isItOfficial = false){
     this.drawMarkerAndLine = function(map){
         for(let path of this.paths){
             path.marker.setMap(map);
+
         }
         if(this.lines != null){
             this.lines.setMap(map);

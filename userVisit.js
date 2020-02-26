@@ -137,10 +137,12 @@ function newVisitedArea(){
     
     removeAll();
 
-    let targetDiv = $("#result_for_place")
+    $(".path_name").html(searchTarget.date + ' 기준 ' + searchTarget.name + '에 대한 검색결과입니다.');
+
+    let targetDiv = $("#result_for_place");
     let result = checkMatched(searchTarget);
     showResult(result, targetDiv);
-
+    
     searchTarget.marker.setMap(map);
     searchTarget.infowindow.setMap(map);
     displayed.push(searchTarget);
@@ -213,6 +215,12 @@ function showAllUserPaths(){
     User.drawMarkerAndLine(map);
     displayed.push(User);
 
+
+    for(let p of User.paths){
+        p.infowindow.setMap(map);
+        displayed.push(p);
+    }
+
     //확진자 그려주기
     for(let thisPath of User.paths){
         let targetDiv = $("#result_for_userpaths")
@@ -269,7 +277,7 @@ function loadUserPaths() {
         let idx = Number($(this).text()) - 1; 
         let thisPath = User.paths[idx]
 
-        $("#path_name").html(thisPath.date + ' 기준 ' + thisPath.name + '에 대한 검색결과입니다.');
+        $(".path_name").html(thisPath.date + ' 기준 ' + thisPath.name + '에 대한 검색결과입니다.');
 
         //지도위 오브젝트 모두제거
         removeAll();
@@ -293,10 +301,11 @@ function showResult(result, attachTo){
     attachTo.children().remove();
 
     //출력
+    let idx = 0;
     for(let level in result){
         for(let path of result[level]){
             attachTo.append(
-                '<div class="list-group-item list-group-item-action result_item" id="list_' + path.person.id + '"><a class="itemTitle">' 
+                '<div class="list-group-item list-group-item-action result_item" id="list_' + (idx++) + '"><a class="itemTitle">' 
                 + path.name + '</a><br><a class="itemDesc">'
                 + path.person.description + '가 '+ DESCRIPTION[level] + '</a><br><a class="itemDist">'
                 + path.distance + 'km </a></div>'
@@ -309,9 +318,7 @@ function showResult(result, attachTo){
 
     //만든 아이템 클릭리스너
     $(".result_item").click(function(){
-        let id = Number($(this).attr('id').split("_")[1]);
-        Datas[id].drawMarkerAndLine(map);
-        displayed.push(Datas[id]);
+        console.log($(this).attr('id'))
     })
 }
 
