@@ -4,9 +4,9 @@ $('#picker').datetimepicker({
     timepicker:true
 });
 
-$('#picker').change(function(){
-    console.log($(this).val().split(' '));
-});
+// $('#picker').change(function(){
+//     console.log($(this).val().split(' '));
+// });
 
 $('#now').click(function(params) {
     var d = new Date();
