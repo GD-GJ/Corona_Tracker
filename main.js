@@ -22,37 +22,27 @@ $("#search_from_myloc").click(function(){
             var lat = position.coords.latitude,
                 lng = position.coords.longitude;
 
-            
-
             var geocoder = new kakao.maps.services.Geocoder();
-
             var coord = new kakao.maps.LatLng(lat, lng);
-            var callback = function(result, status) {
-                if (status === kakao.maps.services.Status.OK) {
-                    placeName = result[0].address.address_name;
-                    return placeName;
-                    
-                }
                 
-            };
-            
-            placeName = geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
-    
-            // console.log(lat, lng);
-            
-    
-            // var locPosition = new kakaoPlaces.maps.LatLng(lat, lon),
-            
+            geocoder.coord2Address(coord.getLng(), coord.getLat(), function(result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    var placeName = result[0].address.address_name;
+                    console.log(placeName);
+                    $("#currentLocation").text(placeName);
+                    $(".when").css("display","block");
+                }
+            });
+
             setUserLatLng(lat, lng);
-            $(".when").css("display","block");
-            console.log(placeName);
-            return placeName;
-        })
+            
+        });
     } else {
         //geolocation을 못받아오면 실행되는 코드
         // $(".search").css('display','block');
         // $('.search p').html('장소 찾기 : 위치정보를 불러오지 못했습니다. ')
     }
+    
 });
 
 //장소 선택하기
