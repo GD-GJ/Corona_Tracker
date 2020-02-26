@@ -16,7 +16,7 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
         strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: 'solid', // 선의 스타일 입니다
         fillColor: color, // 채우기 색깔입니다
-        fillOpacity: 0.3  // 채우기 불투명도 입니다   
+        fillOpacity: 0.8  // 채우기 불투명도 입니다   
     }); 
     this.resizeCircle = function(rad){
         this.marker.setRadius(rad);

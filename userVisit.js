@@ -130,7 +130,7 @@ function newVisitedArea(){
     let placeName = $("#placeName").val();
 
     searchTarget = new path(User, date, placeName, userLat, userLng, User.color, time);
-
+    
     removeAll();
 
     let targetDiv = $("#result_for_place")
@@ -139,6 +139,7 @@ function newVisitedArea(){
 
     map.panTo(searchTarget.LatLng);
     searchTarget.marker.setMap(map);
+    searchTarget.infowindow.setMap(map);
     displayed.push(searchTarget);
 }
 
