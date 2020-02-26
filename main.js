@@ -29,7 +29,9 @@ $("#search_from_myloc").click(function(){
             var coord = new kakao.maps.LatLng(lat, lng);
             var callback = function(result, status) {
                 if (status === kakao.maps.services.Status.OK) {
-                    return result[0].address.address_name;
+                    placeName = result[0].address.address_name;
+                    return placeName;
+                    
                 }
                 
             };
