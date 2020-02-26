@@ -22,12 +22,6 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
         this.marker.setRadius(rad);
     }
     this.infowindow = new kakao.maps.InfoWindow({
-        //컨텐츠 ui 수정할것.
-        content : '<div style="padding:5px;">'
-                + this.person.description + '<br>' 
-                + this.name + '<br>' 
-                + this.date + '일 ' + this.time.substring(0, 2) + '시 ' + this.time.substring(2, 4) + '분<br><br>'
-                + '</div>',
         position : this.LatLng,
         removable : true
       });

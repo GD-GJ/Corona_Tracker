@@ -405,7 +405,13 @@ function json2persons(toStore, dataArray){
 
         for(let p of patient.paths){
             let newPath = new path(newPatient, p.date, p.name, p.lat, p.lng, color);
-            
+            newPath.infowindow.setContent(
+                '<div style="padding:5px;">'
+                + p.person.description + '<br>' 
+                + p.name + '<br>' 
+                + p.date + '일 ' + p.time.substring(0, 2) + '시 ' + p.time.substring(2, 4) + '분<br><br>'
+                + '</div>'
+            );
             if(path.time != ""){
                 newPath.time = path.time;
             }
