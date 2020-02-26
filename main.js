@@ -22,7 +22,7 @@ $("#search_from_myloc").click(function(){
             var lat = position.coords.latitude,
                 lng = position.coords.longitude;
 
-            
+            var placeName = ''
 
             var geocoder = new kakao.maps.services.Geocoder();
 
@@ -30,6 +30,7 @@ $("#search_from_myloc").click(function(){
             var callback = function(result, status) {
                 if (status === kakao.maps.services.Status.OK) {
                     placeName = result[0].address.address_name;
+                    console.log(placeName);
                     return placeName;
                     
                 }

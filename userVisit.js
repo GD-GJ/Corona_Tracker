@@ -36,7 +36,7 @@ function checkMatched(userPath){
 
             // 장소 검증
             let distance = calcDistance(userPath.lat, userPath.lng, path.lat, path.lng);
-            console.log(distance);
+            // console.log(distance);
             if(distance <= DANGER_ZONE){
                 //사용자의 방문지와 확진자의 방문지 거리가 DANGER_ZONE 이하일경우
                 inNearBy = true;
