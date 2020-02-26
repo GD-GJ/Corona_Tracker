@@ -29,7 +29,7 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
         kakao.maps.event.addListener(this.marker, 'click', function(mouseEvent) {  
             // 마커 클릭시 인포윈도우 오픈
             console.log(this);
-            path.infowindow.open(map);      
+            this.infowindow.open(map);      
         });
     }
 }
