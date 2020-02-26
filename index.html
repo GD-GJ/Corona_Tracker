@@ -63,24 +63,25 @@
     <div class="result page" style="width:100%; overflow: auto;">
         <div id='map' style="width: 100%; height: 50%;"></div>
 
-        <div class="result_path container" style="display: none;">
+        <div class="result_path container" style="display: none; max-height:50vh; overflow: auto;">
             <!-- 검색한 장소에 대한 결과페이지 -->
             <p class="path_name"></p>
             <div id="result_for_place" class="list-group result_content" style="max-height:35vh; overflow: auto;"></div>
             <button type="button" id="btn_save_path" class="btn btn-primary" >동선 저장하기</button>
         </div>
 
-        <div class="review container">
+        <div class="review container" style="display: none; max-height:50vh; overflow: auto;">
             <!-- 사용자의 동선들에 대한 결과 페이지 -->
             <p>내 이동동선과 비교하기</p>
 
-            <div class="input-group mb-3" style="display: none;">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend" id="my_path_list" style="overflow-y:auto">
                   <!--<button class="btn btn-outline-secondary" type="button">Button</button>-->
                 </div>
             </div>
             <p class="path_name"></p>
             <div id="result_for_userpaths" class="list-group result_content"  style="max-height:35vh; overflow: auto;"></div>
+            <button type="button" id="btn_delete_paths" class="btn btn-primary" >모두 삭제</button>
         </div>
     </div>
 

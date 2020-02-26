@@ -74,6 +74,9 @@ $(".navbar-brand").click(function(){
     $(".main").css("display","block")
 });
 
+//동선 모두삭제
+$(".btn_delete_paths").click(clearAll);
+
 var Datas = new Array();
 
 $.ajax({
