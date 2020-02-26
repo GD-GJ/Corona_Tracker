@@ -208,18 +208,22 @@ function showAllUserPaths(){
     User.drawMarkerAndLine(map);
     displayed.push(User);
 
-    //
-    //
-    //showResult 파라미터 수정하기@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    //
-    //
-    //
+    
+
     //확진자 그려주기
     for(let thisPath of User.paths){
         let targetDiv = $("#result_for_userpaths")
         let result = checkMatched(thisPath);
         showResult(result, targetDiv);
     }
+
+    let bounds = new kakao.maps.LatLngBounds();
+    for(let obj of displayed){
+        if(obj instanceof paht){
+            bounds.extend(obj.LatLng);
+        }
+    }
+    map.setBounds(bounds);
 }
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
@@ -306,6 +310,7 @@ function removeAll(){
             item.infowindow.open(null);
         }    
     }
+    displayed.clear();
 }
 
 //path 배열로 반환하는 함수
