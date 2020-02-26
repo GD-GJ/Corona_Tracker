@@ -334,7 +334,7 @@ function showResult(result, attachTo, append=false){
 
     //만든 아이템 클릭리스너
     $(".result_item").click(function(){
-        let idx = Number($(this).attr('id'))
+        let idx = Number($(this).attr('id').split("_")[1])
         if(displayed[idx] instanceof path){
             displayed[idx].infowindow.open(map)
         }else{
