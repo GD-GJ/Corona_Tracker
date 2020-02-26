@@ -28,7 +28,7 @@
     
     <div class="main page">
         <div class="search_menu container si">
-            <p>검색하기</p>
+            <p class="si">검색하기</p>
             <button type="button" id="search_from_myloc" class="btn btn-primary si">현재내위치</button><br>
             <button type="button" id="show_search_page" class="btn btn-primary si">장소검색하기</button>
             <button type="button" id="show_review_page" class="btn btn-primary si">내 동선 확인하기</button>
@@ -37,10 +37,12 @@
     
     <div class="search page">
         <div class="basic container">
-            <p>장소 찾기</p>
-
-            <input id='placeName' class='form-control' type="search" placeholder="이동장소 검색" aria-label="이동장소 검색">
-            <button id="btn_search_place" class="btn btn-outline-warning" type="submit">검색</button>
+            <div class="input-group mb-3">
+                <input id="placeName" type="text" class="form-control" placeholder="Recipient's username" aria-label="장소 검색" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button id="btn_search_place" class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
+                </div>
+            </div>
     
             <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;"></div>
     
@@ -54,6 +56,7 @@
             <form class="inputForm" action="index.html" method="post">
                 <label>방문일</label>
                 <input type="text" id="picker" class="form-control">
+
                 <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
                 <button type="button" id="yesterday" class="btn btn-primary">어제</button>
                 <button type="button" id="now" class="btn btn-primary">지금</button>
