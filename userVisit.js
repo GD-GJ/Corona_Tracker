@@ -2,8 +2,8 @@ var userLat,
     userLng;
 var User;
 var searchTarget;
-var matchedPatient = new Array();
-var displayed = new Array();
+var matchedPatient = [];
+var displayed = [];
 
 const DESCRIPTION = ['6시간 이내', '하루 이내', '1주일 이내' ,'1주일 이상', '시간정보가 없는 동선입니다'];
 
@@ -143,6 +143,8 @@ function newVisitedArea(){
 
 //두 위치 사이의 거리를 반환하는 함수.
 function calcDistance(lat1, lon1, lat2, lon2){
+    function deg2rad(deg) {return (deg * Math.PI / 180);}
+    function rad2deg(rad) {return (rad * 180 / Math.PI);}
     let theta = lon1 - lon2;
     dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1))
         * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
@@ -151,12 +153,6 @@ function calcDistance(lat1, lon1, lat2, lon2){
     dist = dist * 60 * 1.1515;
     dist = dist * 1.609344;
     return Number(dist*1000*1000).toFixed(2);
-}
-function deg2rad(deg) {
-    return (deg * Math.PI / 180);
-}
-function rad2deg(rad) {
-    return (rad * 180 / Math.PI);
 }
 
 
