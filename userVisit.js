@@ -138,7 +138,7 @@ function newVisitedArea(){
         + '내가 방문한 장소<br>' 
         + searchTarget.name + '<br>' 
         + searchTarget.date + '일 ' + searchTarget.time.substring(0, 2) + '시 ' + searchTarget.time.substring(2, 4) + '분<br><br>'
-        + '</div>',
+        + '</div>'
     );
     //클릭리스너 등록
     kakao.maps.event.addListener(searchTarget.marker, 'click', function(mouseEvent){

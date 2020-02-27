@@ -54,6 +54,7 @@ $("#btn_select_place").click(function(){
     
     //시간 입력 페이지 띄우기
     $("#placeMenu").css("display","none");
+    $('#resultMenu').css('display','block');
     //자기 자신 숨기기
     $(this).css('display','none');
     // $(".when").css("display","block");
@@ -69,7 +70,7 @@ $("#searchPath").click(function(){
 
     //결과 창 띄우기
     $('#resultMenu').css('display','block');
-    $(".page").css("display","none");
+    // $(".page").css("display","none");
     $(".result").css("display","block");
 
     $(".inner").css("display","none");

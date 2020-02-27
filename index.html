@@ -75,7 +75,9 @@
             <button type="button" class="btn btn-primary" id="returnToMenu">처음으로 돌아갈래요</button>
         </div>
 
-        <div id="map" style="width: 100%; height: 50%; "></div>
+        <!-- <div id="map" style="width: 100%; height: 50%; "></div> -->
+
+        <div id='map' style="width: 100%; height: 50%;"></div>
 
         <div class="result_path inner container" style="display: none; max-height:50vh; overflow: auto;">
             <!-- 검색한 장소에 대한 결과페이지 -->
@@ -96,34 +98,40 @@
             <button type="button" id="btn_delete_paths" class="btn btn-primary right-align" >모두 삭제</button>
         </div>
     </div>
-    <script src="map.js"></script>
-    <script src="data.js"></script>
-    <script src="userVisit.js"></script>
-    <script src="main.js"></script>
-    <script src="datepicker.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
 
-    <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyDjDAZAK3rzWkTT82-uWtvNZjE0VRpwJBI",
-        authDomain: "coronawhere.firebaseapp.com",
-        databaseURL: "https://coronawhere.firebaseio.com",
-        projectId: "coronawhere",
-        storageBucket: "coronawhere.appspot.com",
-        messagingSenderId: "1043365572724",
-        appId: "1:1043365572724:web:c5c7af753def6758a92121",
-        measurementId: "G-YT743B7BNY"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    </script>
-    <p id="currentLocation" style="display: none;"></p>
+
+
+    <div>
+        <script src="map.js"></script>
+        <script src="data.js"></script>
+        <script src="userVisit.js"></script>
+        <script src="main.js"></script>
+        <script src="datepicker.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+    
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDjDAZAK3rzWkTT82-uWtvNZjE0VRpwJBI",
+            authDomain: "coronawhere.firebaseapp.com",
+            databaseURL: "https://coronawhere.firebaseio.com",
+            projectId: "coronawhere",
+            storageBucket: "coronawhere.appspot.com",
+            messagingSenderId: "1043365572724",
+            appId: "1:1043365572724:web:c5c7af753def6758a92121",
+            measurementId: "G-YT743B7BNY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+        <p id="currentLocation" style="display: none;"></p>
+    </div>
 </body>
 </html>
