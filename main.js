@@ -47,31 +47,6 @@ $("#search_from_myloc").click(function(){
     
 });
 
-//장소 선택하기
-$("#btn_select_place").click(function(){
-    //기존 목록 제거
-    $(".list-group-item-action").remove();
-    
-    //시간 입력 페이지 띄우기
-    $('.Menu').css('display','none');
-    $('#timeMenu').css('display','block');
-});
-
-
-//검색하기
-$("#searchPath").click(function(){
-    //결과 창 띄우기
-    $('.Menu').css('display','none');
-    $('#resultMenu').css('display','block');
-    //검색결과 컨테이너 띄우기
-    $(".inner").css("display","none");
-    $(".result_path").css("display","block");
-
-    //검색하기
-    console.log('동선 검색하기');
-    newVisitedArea();
-});
-
 //내 동선에 추가하기
 $("#btn_save_path").click(function(){
     console.log('내 동선에 추가하기');

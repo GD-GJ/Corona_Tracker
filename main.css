@@ -13,7 +13,7 @@ body {
 }
 
 .inner {
-    height: 50%
+    height: 45%
 }
 
 .right-bottom{
@@ -31,4 +31,9 @@ body {
 .result_content{
     height: 60%;
     overflow: auto;
+}
+
+#placeName{
+    width: 50%;
+    float: left;
 }

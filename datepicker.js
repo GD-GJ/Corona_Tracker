@@ -8,20 +8,23 @@ $('#picker').datetimepicker({
 //     console.log($(this).val().split(' '));
 // });
 
-$('#now').click(function(params) {
+$('#now').click(selectNow);
+
+$('#yesterday').click(selectYesterDay);
+
+function selectNow() {
     var d = new Date();
     var dString = dateStringfier(d);
     $('#picker').val(dString);
-});
+}
 
-$('#yesterday').click(function(){
+function selectYesterDay(){
     var d = new Date();
     // 하루를 빼는 코드
     d.setTime(d.getTime()-(1 * 24 * 60 * 60 * 1000));
     var dString = dateStringfier(d);
     $('#picker').val(dString);
-});
-
+}
 
 function dateStringfier(dAte){
     var year = dAte.getFullYear();

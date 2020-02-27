@@ -81,9 +81,27 @@ function searchPlace(){
                 for(let place of places){
                     if(place.place_name == $(this).find(".itemTitle").text()){
                         map.panTo(new kakao.maps.LatLng(place.y, place.x));
+
                         $("#placeName").val(place.place_name);
                         setUserLatLng(place.y, place.x);
-                        $("#btn_select_place").css("display", "block");
+
+                        //기존 목록 제거
+                        $(".list-group-item-action").remove();
+
+                        //지금시간으로 설정
+                        selectNow();
+
+                        //결과 창 띄우기
+                        $('.Menu').css('display','none');
+                        $('#resultMenu').css('display','block');
+                        //검색결과 컨테이너 띄우기
+                        $(".inner").css("display","none");
+                        $(".result_path").css("display","block");
+                
+                        //검색하기
+                        console.log('동선 검색하기');
+                        newVisitedArea();
+
                     }
                 }
             });
