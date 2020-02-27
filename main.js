@@ -3,11 +3,11 @@ $("#addNewPath").click(newVisitedArea);
 $("#clearAll").click(clearAll);
 $("#btn_search_place").click(searchPlace);
 
+
+
 //장소검색하기
 $("#show_search_page").click(function(){
     //주소 검색창 띄우기
-    // $(".page").css("display","none");
-    // $(".search").css("display","block");
     $('#mainMenu').css('display','none');
     $('#placeMenu').css('display','block');
 
@@ -58,8 +58,6 @@ $("#btn_select_place").click(function(){
 
     //자기 자신 숨기기
     $(this).css('display','none');
-    // $(".when").css("display","block");
-    $(".result_path").css('display','block');
 });
 
 
@@ -70,12 +68,8 @@ $("#searchPath").click(function(){
     newVisitedArea();
 
     //결과 창 띄우기
+    $('#timeMenu').css('display','none');
     $('#resultMenu').css('display','block');
-    // $(".page").css("display","none");
-    $(".result").css("display","block");
-
-    $(".inner").css("display","none");
-    $(".result_path").css("display","block");
 });
 
 //내 동선에 추가하기
