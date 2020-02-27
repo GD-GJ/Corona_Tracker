@@ -28,7 +28,7 @@
         <a href="index_old.html">이전 홈페이지</a>
     </div>
 
-    <div class="container">
+    <div id='mainMenu' class="container">
         <div class="text-center">
             <h4>검색하기</h4>
         </div>
@@ -38,5 +38,63 @@
             <button type="button" class="col-sm m-2 btn btn-primary">내 동선 확인하기</button>
         </div>
     </div>
+    <div id="placeMenu" class="basic container">
+        <div class="text-center">
+            <h4>장소를 입력해주세요.</h4>
+        </div>
+        <div class="input-group mb-3">
+            <input id="placeName" type="text" class="form-control" placeholder="방문한 장소를 입력해주세요." aria-label="장소 검색" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button id="btn_search_place" class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
+            </div>
+        </div>
+        
+        <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;">
+            <!-- <p>Hello world!</p> -->
+        </div>
+    
+        <button type="button" id="btn_select_place" class="btn btn-primary right-align" style="display: none;">확인</button>
+        
+    </div>
+    <div id="timeMenu" class="container">
+        <div class="text-center">
+            <h4>시간을 입력해주세요</h4>
+        </div>
+        <div>
+            <input type="text" id='picker' class="form-control">
+            <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
+            <button type="button" id="yesterday" class="btn btn-primary">어제</button>
+            <button type="button" id="now" class="btn btn-primary">지금</button>
+        </div>
+    </div>
+    <script src="map.js"></script>
+    <script src="data.js"></script>
+    <script src="userVisit.js"></script>
+    <script src="main.js"></script>
+    <script src="datepicker.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDjDAZAK3rzWkTT82-uWtvNZjE0VRpwJBI",
+        authDomain: "coronawhere.firebaseapp.com",
+        databaseURL: "https://coronawhere.firebaseio.com",
+        projectId: "coronawhere",
+        storageBucket: "coronawhere.appspot.com",
+        messagingSenderId: "1043365572724",
+        appId: "1:1043365572724:web:c5c7af753def6758a92121",
+        measurementId: "G-YT743B7BNY"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+    <p id="currentLocation" style="display: none;"></p>
 </body>
 </html>
