@@ -226,6 +226,7 @@ function save(item) {
 function showAllUserPaths(){
     //초기화
     removeAll();
+    $("#result_for_userpaths").children().remove();
 
     //확진자 그려주기
     for(let thisPath of User.paths){
@@ -283,14 +284,14 @@ function loadUserPaths() {
 
         //리스트에 전체보기 옵션추가
         $("#my_path_list").append(
-            '<button class="btn btn-outline-secondary " id="show_all_path" type="button">전체</button>'
+            '<button type="button" class="btn btn-light " id="show_all_path">전체</button>'
         );
         $("#show_all_path").click(showAllUserPaths);
 
         //리스트에 동선들 추가하기
         for(let i in User.paths){
             $("#my_path_list").append(
-                '<button class="btn btn-outline-secondary user_path_listitem" type="button">' + (Number(i) + 1) + '</button>'
+                '<button type="button" class="btn btn-light user_path_listitem">' + (Number(i) + 1) + '</button>'
             );
             console.log(path);
         }
@@ -418,9 +419,12 @@ function getStoredArray() {
 //로컬스토리지내 데이터를 지우는 함수입니다.
 function clearAll(){
     removeAll();
+    //검색결과들 지우기
     $("#result_for_userpaths").children().remove();
     $("#result_for_place").children().remove();
-    
+    //경로 목록 지우기
+    $("#my_path_list").children().remove();
+
     let emptyList = new Array();
     User.setPaths(emptyList);
     localStorage.setItem("visitedList", JSON.stringify(emptyList));

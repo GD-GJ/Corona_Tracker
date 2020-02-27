@@ -30,9 +30,9 @@ $("#search_from_myloc").click(function(){
                 if (status === kakao.maps.services.Status.OK) {
                     var placeName = result[0].address.address_name;
                     $("#placeName").val(placeName);
-                    //주소 검색창 띄우기
+                    //시간 입력 페이지 띄우기
                     $('.Menu').css('display','none');
-                    $('#placeMenu').css('display','block');
+                    $('#timeMenu').css('display','block');
                 }
             });
 
@@ -55,9 +55,6 @@ $("#btn_select_place").click(function(){
     //시간 입력 페이지 띄우기
     $('.Menu').css('display','none');
     $('#timeMenu').css('display','block');
-
-    //자기 자신 숨기기
-    $(this).css('display','none');
 });
 
 
@@ -82,7 +79,7 @@ $("#btn_save_path").click(function(){
 });
 
 //홈으로
-$('go_home').click(function(){
+$(".go_home").click(function(){
     //장소 검색, 시간 입력 창 지우기
     $('.Menu').css('display','none');
     $('#searchMenu').css('display','block');

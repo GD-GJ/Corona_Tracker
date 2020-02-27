@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- stylesheet -->
-    <!-- <link rel="stylesheet" href="main.css"/> -->
+    <link rel="stylesheet" href="main.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
         
@@ -70,14 +70,8 @@
     </div>
 
     <div id="resultMenu" class="Menu container" style="display: none;">
-        <div class="text-center">
-            <h4>이곳이 결과페이지</h4>
-            <button type="button" class="btn btn-primary go_home" id="returnToMenu">처음으로 돌아갈래요</button>
-        </div>
-
-        <!-- <div id="map" style="width: 100%; height: 50%; "></div> -->
-
-        <div id='map' style="width: 100%; height: 500px;"></div>
+        
+        <div id='map' style="width: 100%; height: 50%;"></div>
 
         <div class="result_path inner container" style="display: none;">
             <!-- 검색한 장소에 대한 결과페이지 -->
@@ -88,15 +82,13 @@
 
         <div class="review inner container" style="display: none;">
             <!-- 사용자의 동선들에 대한 결과 페이지 -->
-            <div class="input-group mb-3">
-                <div class="input-group-prepend" id="my_path_list" style="overflow-y:auto">
-                  <!--<button class="btn btn-outline-secondary" type="button">Button</button>
-                 max-height:50vh; overflow: auto;-->
+            <div class="btn-toolbar" role="toolbar" aria-label="동선 목록">
+                <div id="my_path_list" class="btn-group mr-2" role="group" aria-label="" style="overflow-y:auto">
                 </div>
             </div>
             <p class="path_name"></p>
             <div id="result_for_userpaths" class="list-group result_content"  style="max-height:35vh; overflow: auto;"></div>
-            <button type="button" id="btn_delete_paths" class="btn btn-primary right-align" >모두 삭제</button>
+            <button type="button" id="btn_delete_paths" class="btn btn-primary " style="float: right; margin-top: 10px; margin-bottom: 20px;" >모두 삭제</button>
         </div>
     </div>
 

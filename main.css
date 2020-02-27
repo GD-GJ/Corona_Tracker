@@ -1,61 +1,17 @@
-.bottom-right {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
-
-.top-panel {
-    position: absolute;
-    left: 0px;
-    top: 58px;
-    width:100%;
-    z-index: 10;
-    background-color: white;
-}
-
-.item {
-    padding : 10px 10px 10px 10px;
-    border-radius: 4px;
-    background-color: #fff;
-    border: 1px solid black;
-}
-
-.horizontal {
-    float: left;
-}
-
-#patient_list {
-    max-height:20vh; 
-    overflow: auto;
-}
-
-.page {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
+.Menu {
     height: 100%;
     width: 100%;
     background-color: #fff;
 }
 
-.search_menu{
-    position: absolute;
-    top:30%;
+html {
+    height: 100%;
 }
 
-.right-align{
-    float: right;
+body {
+    height: 100%;
 }
 
-.basic{
-    position: absolute;
-    top: 10%;
+.inner {
+    height: 50%
 }
-
-.si{
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-    margin-bottom: 30px;
-}
-
