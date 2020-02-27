@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="main.css"/>
+    <!-- <link rel="stylesheet" href="main.css"/> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
         
@@ -20,103 +20,29 @@
     
     <title>Corona Where</title>
 </head>
-
-<body style="height: 100%;">
-    <nav class="navbar navbar-light bg-light" style="width: 100%; z-index: 10;">
-        <a class="navbar-brand">Corona Where</a>
-    </nav>
-    
-    <div class="main page">
-        <div class="search_menu container">
-            <p class="si">검색하기</p>
-            <button type="button" id="search_from_myloc" class="btn btn-primary si" style="top:45%;">현재내위치</button><br>
-            <button type="button" id="show_search_page" class="btn btn-primary si" style="top:55%;">장소검색하기</button><br>
-            <button type="button" id="show_review_page" class="btn btn-primary si" style="top:65%; display:none;">내 동선 확인하기</button>
-        </div>
-    </div>
-    
-    <div class="search page">
-        <div class="basic container">
-            <div class="input-group mb-3">
-                <input id="placeName" type="text" class="form-control" placeholder="Recipient's username" aria-label="장소 검색" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                  <button id="btn_search_place" class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
-                </div>
-            </div>
-    
-            <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;"></div>
-    
-            <button type="button" id="btn_select_place" class="btn btn-primary right-align" style="display: none;">확인</button>
-        </div>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Corona Where?</h1>
+        <h3>코로나 바이러스의 확진자의 동선과<br>
+        자신의 동선을 비교하여 오늘 하루중 코로나 감염자의 위치를 찾아주는 웹앱입니다.</h3>
+        <a href="index_old.html">이전 홈페이지</a>
     </div>
 
-    <div class="when page">
-        <div class="basic container">
-            <p>시간 입력</p>
-            <form class="inputForm" action="index.html" method="post">
-                <label>방문일</label>
-                <input type="text" id="picker" class="form-control">
-
-                <button type="button" id="searchPath" class="btn btn-primary" >검색</button>
-                <button type="button" id="yesterday" class="btn btn-primary">어제</button>
-                <button type="button" id="now" class="btn btn-primary">지금</button>
-                
-            </form>
+    <div class="container">
+        <div class="text-center">
+            <h4>검색하기</h4>
+        </div>
+        <div class="row">
+            <!-- <div class="col"> -->
+                <button type="button" class="col-sm m-2 btn btn-primary">현위치로 찾기</button>
+            <!-- </div> -->
+            <!-- <div class="col"> -->
+                <button type="button" class="col-sm m-2 btn btn-primary">장소명으로 찾기</button>
+            <!-- </div> -->
+            <!-- <div class="col"> -->
+                <button type="button" class="col-sm m-2 btn btn-primary">내 동선 확인하기</button>
+            <!-- </div> -->
         </div>
     </div>
-
-    <div class="result page" style="width:100%; overflow: auto;">
-        <div id='map' style="width: 100%; height: 50%;"></div>
-
-        <div class="result_path inner container" style="display: none; max-height:50vh; overflow: auto;">
-            <!-- 검색한 장소에 대한 결과페이지 -->
-            <p class="path_name"></p>
-            <div id="result_for_place" class="list-group result_content" style="max-height:35vh; overflow: auto;"></div>
-            <button type="button" id="btn_save_path" class="btn btn-primary right-align" >동선 저장하기</button>
-        </div>
-
-        <div class="review inner container" style="display: none; max-height:50vh; overflow: auto;">
-            <!-- 사용자의 동선들에 대한 결과 페이지 -->
-            <div class="input-group mb-3">
-                <div class="input-group-prepend" id="my_path_list" style="overflow-y:auto">
-                  <!--<button class="btn btn-outline-secondary" type="button">Button</button>-->
-                </div>
-            </div>
-            <p class="path_name"></p>
-            <div id="result_for_userpaths" class="list-group result_content"  style="max-height:35vh; overflow: auto;"></div>
-            <button type="button" id="btn_delete_paths" class="btn btn-primary right-align" >모두 삭제</button>
-        </div>
-    </div>
-
-    
-    <script src="map.js"></script>
-    <script src="data.js"></script>
-    <script src="userVisit.js"></script>
-    <script src="main.js"></script>
-    <script src="datepicker.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
-
-    <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyDjDAZAK3rzWkTT82-uWtvNZjE0VRpwJBI",
-        authDomain: "coronawhere.firebaseapp.com",
-        databaseURL: "https://coronawhere.firebaseio.com",
-        projectId: "coronawhere",
-        storageBucket: "coronawhere.appspot.com",
-        messagingSenderId: "1043365572724",
-        appId: "1:1043365572724:web:c5c7af753def6758a92121",
-        measurementId: "G-YT743B7BNY"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    </script>
-    <p id="currentLocation" style="display: none;"></p>
 </body>
 </html>
