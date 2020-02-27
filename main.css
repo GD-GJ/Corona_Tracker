@@ -15,3 +15,9 @@ body {
 .inner {
     height: 50%
 }
+
+.right-bottom{
+    float: right; 
+    margin-top: 10px; 
+    margin-bottom: 20px;
+}

@@ -284,14 +284,14 @@ function loadUserPaths() {
 
         //리스트에 전체보기 옵션추가
         $("#my_path_list").append(
-            '<button type="button" class="btn btn-light " id="show_all_path">전체</button>'
+            '<button type="button" class="btn btn-primary" id="show_all_path">전체</button>'
         );
         $("#show_all_path").click(showAllUserPaths);
 
         //리스트에 동선들 추가하기
         for(let i in User.paths){
             $("#my_path_list").append(
-                '<button type="button" class="btn btn-light user_path_listitem">' + (Number(i) + 1) + '</button>'
+                '<button type="button" class="btn btn-primary user_path_listitem">' + (Number(i) + 1) + '</button>'
             );
             console.log(path);
         }
