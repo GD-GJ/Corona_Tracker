@@ -8,7 +8,7 @@ $("#btn_search_place").click(searchPlace);
 //장소검색하기
 $("#show_search_page").click(function(){
     //주소 검색창 띄우기
-    $('#.search_option').css('display','none');
+    $('.search_option').css('display','none');
     $('#placeMenu').css('display','block');
 
     //장소 확정버튼 숨기기
@@ -31,7 +31,7 @@ $("#search_from_myloc").click(function(){
                     var placeName = result[0].address.address_name;
                     $("#placeName").val(placeName);
                     //주소 검색창 띄우기
-                    $('#.search_option').css('display','none');
+                    $('.search_option').css('display','none');
                     $('#placeMenu').css('display','block');
                 }
             });
@@ -53,7 +53,7 @@ $("#btn_select_place").click(function(){
     $(".list-group-item-action").remove();
     
     //시간 입력 페이지 띄우기
-    $('#.search_option').css('display','none');
+    $('.search_option').css('display','none');
     $('#timeMenu').css('display','block');
 
     //자기 자신 숨기기
@@ -84,7 +84,7 @@ $("#btn_save_path").click(function(){
 //홈으로
 $('#returnToMenu').click(function(){
     //장소 검색, 시간 입력 창 지우기
-    $('#.search_option').css('display','none');
+    $('.search_option').css('display','none');
 })
 
 //동선 모두삭제
