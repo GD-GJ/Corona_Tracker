@@ -8,8 +8,8 @@ $("#show_search_page").click(function(){
     //주소 검색창 띄우기
     // $(".page").css("display","none");
     // $(".search").css("display","block");
-    $('#placeMenu').css('display','block');
     $('#mainMenu').css('display','none');
+    $('#placeMenu').css('display','block');
 
     //장소 확정버튼 숨기기
     $("#btn_select_place").css("display","none");
@@ -54,11 +54,12 @@ $("#btn_select_place").click(function(){
     
     //시간 입력 페이지 띄우기
     $("#placeMenu").css("display","none");
-    $('#resultMenu').css('display','block');
+    $('#timeMenu').css('display','block');
+
     //자기 자신 숨기기
     $(this).css('display','none');
     // $(".when").css("display","block");
-
+    $(".result_path").css('display','block');
 });
 
 
