@@ -30,4 +30,5 @@ body {
 
 .result_content{
     height: 60%;
+    overflow: auto;
 }
