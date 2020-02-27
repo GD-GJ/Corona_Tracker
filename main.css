@@ -21,3 +21,13 @@ body {
     margin-top: 10px; 
     margin-bottom: 20px;
 }
+
+#map{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.result_content{
+    height: 60%;
+}
