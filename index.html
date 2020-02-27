@@ -34,37 +34,12 @@
         </div>
         <div class="row">
             <button type="button" id="search_from_myloc" class="col-sm m-2 btn btn-primary">현위치로 찾기</button>
-            <button type="button" id="show_search_page" class="col-sm m-2 btn btn-primary">장소명으로 찾기</button>
+            <!-- <button type="button" id="show_search_page" class="col-sm m-2 btn btn-primary">장소명으로 찾기</button> -->
             <button type="button" id="show_review_page" class="col-sm m-2 btn btn-primary" style="display: none;">내 동선 확인하기</button>
         </div>
     </div>
-    
-    <div id="placeMenu" class="Menu search_option container" style="display: none;">
-        <div class="text-center">
-            <h4>장소를 입력해주세요.</h4>
-        </div>
-        
-        <!-- <button type="button" id="btn_select_place" class="btn btn-primary center-align" style="display: none;">확인</button> -->
-        
-    </div>
 
-    <div id="timeMenu" class="Menu search_option container" style="display: none;">
-        <div class="text-center">
-            <h4>시간을 입력해주세요</h4>
-        </div>
-        <div>
-            
-            <!-- <div class="row">
-                
-                <button type="button" id="now" class="col-sm-2 m-2 btn btn-primary">지금</button>
-                <button type="button" id="searchPath" class="col-sm m-2 btn btn-primary" >검색</button>
-            </div> -->
-        </div>
-    </div>
-
-    
-
-    <div id="resultMenu" class="Menu container" style="display: none;">
+    <div id="resultMenu" class="Menu container">
         <div id="search_bar" class="container" style="top: 0; z-index: 20">
             <div class="input-group mb-3" style="width: 50%; float: left;">
                 <input id="placeName" type="text" class="form-control" placeholder="방문한 장소를 입력해주세요." aria-label="장소 검색" aria-describedby="button-addon2">
@@ -76,7 +51,7 @@
             <input type="text" id='picker' class="form-control" style="width: 30%; float: left;">
             <button type="button" id="yesterday" class="col-sm-2 m-2 btn btn-primary" style="width: 10%; float: left;">어제</button>
         </div>
-        
+
         <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;"></div>
 
         <div id='map' style="width: 100%; height: 45%;"></div>
