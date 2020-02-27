@@ -32,8 +32,3 @@ body {
     height: 60%;
     overflow: auto;
 }
-
-#placeName{
-    width: 50%;
-    float: left;
-}
