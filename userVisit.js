@@ -264,7 +264,7 @@ function loadUserPaths() {
         $("#show_review_page").css("display","block");
         //결과 창 띄우기
         $(".page").css("display","none");
-        $(".result").css("display","block");
+        $("#resultMenu").css("display","block");
 
         $(".inner").css("display","none");
         $(".review").css("display","block");
@@ -313,8 +313,8 @@ function loadUserPaths() {
         //결과 보기 버튼 비활성화
         $("#show_review_page").css("display","none");
         //기존 데이터 없으면 검색창으로
-        $(".page").css("display","none");
-        $(".main").css("display","block")
+        // $(".page").css("display","none");
+        // $(".main").css("display","block")
     }
 }
 

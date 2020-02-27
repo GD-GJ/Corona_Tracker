@@ -70,6 +70,9 @@ $("#searchPath").click(function(){
     //결과 창 띄우기
     $('#timeMenu').css('display','none');
     $('#resultMenu').css('display','block');
+    //검색결과 컨테이너 띄우기
+    $(".inner").css("display","none");
+    $(".result_path").css("display","block");
 });
 
 //내 동선에 추가하기
