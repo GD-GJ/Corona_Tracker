@@ -68,6 +68,11 @@ $("#show_review_page").click(function(){
     loadUserPaths();
 });
 
+$("#changeTime").click(function(){
+    //시간변경
+    newVisitedArea();
+})
+
 var Datas = new Array();
 
 $.ajax({
