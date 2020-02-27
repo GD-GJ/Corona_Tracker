@@ -112,8 +112,6 @@ $.ajax({
     success: function(received){
         json2persons(Datas, received);
 
-        map.relayout();
-        
         loadUserPaths();
 
         kakao.maps.event.addListener(map, 'zoom_changed', function(){
@@ -128,7 +126,7 @@ $.ajax({
             }
         });
 
-        
+        map.relayout();
     },
     error: function(xhr, status, responseTxt){
         console.log(xhr);

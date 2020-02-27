@@ -236,7 +236,6 @@ function showAllUserPaths(){
         p.infowindow.setMap(map);
         displayed.push(p);
     }
-
     //지도 영역 설정
     setMapBounds();
 }
@@ -323,7 +322,7 @@ function showResult(result, attachTo, append=false){
     if(!append){
         attachTo.children().remove();
     }
-    
+    map.relayout();
     //출력
     let idx = 0;
     for(let level in result){
@@ -339,7 +338,7 @@ function showResult(result, attachTo, append=false){
             displayed.push(path);
         }
     }
-
+    
     //만든 아이템 클릭리스너
     $(".result_item").click(function(){
         let idx = Number($(this).attr('id').split("_")[1])
