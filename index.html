@@ -22,62 +22,57 @@
 </head>
 <body>
     <div class="jumbotron text-center">
-        <h1>Corona Where?</h1>
+        <h1 class="go_home">Corona Where?</h1>
         <p>코로나 바이러스의 확진자의 동선과 자신의 동선을 비교하여<br>
              오늘 하루중 코로나 감염자의 위치를 찾아주는 웹앱입니다.</p>
         <a href="index_old.html">이전 홈페이지</a>
     </div>
 
-    <div id='searchMenu' class="container">
-
-        <div class="search_home">
-            <div class="text-center">
-                <h4>검색하기</h4>
-            </div>
-            <div class="row">
-                <button type="button" id="search_from_myloc" class="col-sm m-2 btn btn-primary">현위치로 찾기</button>
-                <button type="button" id="show_search_page" class="col-sm m-2 btn btn-primary">장소명으로 찾기</button>
-                <button type="button" id="show_review_page" class="col-sm m-2 btn btn-primary" style="display: none;">내 동선 확인하기</button>
-            </div>
+    <div id='searchMenu' class="Menu container">
+        <div class="text-center">
+            <h4>검색하기</h4>
         </div>
-
-        <div id="placeMenu" class="search_option container" style="display: none;">
-            <div class="text-center">
-                <h4>장소를 입력해주세요.</h4>
-            </div>
-            <div class="input-group mb-3">
-                <input id="placeName" type="text" class="form-control" placeholder="방문한 장소를 입력해주세요." aria-label="장소 검색" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                  <button id="btn_search_place" class="btn btn-outline-secondary" type="button">검색</button>
-                </div>
-            </div>
-            <button type="button" id="btn_select_place" class="btn btn-primary center-align" style="display: none;">확인</button>
-            <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;">
-                <!-- <p>Hello world!</p> -->
-            </div>
+        <div class="row">
+            <button type="button" id="search_from_myloc" class="col-sm m-2 btn btn-primary">현위치로 찾기</button>
+            <button type="button" id="show_search_page" class="col-sm m-2 btn btn-primary">장소명으로 찾기</button>
+            <button type="button" id="show_review_page" class="col-sm m-2 btn btn-primary" style="display: none;">내 동선 확인하기</button>
         </div>
-
-        <div id="timeMenu" class="search_option container" style="display: none;">
-            <div class="text-center">
-                <h4>시간을 입력해주세요</h4>
-            </div>
-            <div>
-                <input type="text" id='picker' class="form-control">
-                <div class="row">
-                    <button type="button" id="yesterday" class="col-sm-2 m-2 btn btn-primary">어제</button>
-                    <button type="button" id="now" class="col-sm-2 m-2 btn btn-primary">지금</button>
-                    <button type="button" id="searchPath" class="col-sm m-2 btn btn-primary" >검색</button>
-                </div>
-            </div>
-        </div>
-
     </div>
     
-   
-    <div id="resultMenu" class="container" style="display: none;">
+    <div id="placeMenu" class="Menu search_option container" style="display: none;">
+        <div class="text-center">
+            <h4>장소를 입력해주세요.</h4>
+        </div>
+        <div class="input-group mb-3">
+            <input id="placeName" type="text" class="form-control" placeholder="방문한 장소를 입력해주세요." aria-label="장소 검색" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button id="btn_search_place" class="btn btn-outline-secondary" type="button">검색</button>
+            </div>
+        </div>
+        <button type="button" id="btn_select_place" class="btn btn-primary center-align" style="display: none;">확인</button>
+        <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;">
+            <!-- <p>Hello world!</p> -->
+        </div>
+    </div>
+
+    <div id="timeMenu" class="Menu search_option container" style="display: none;">
+        <div class="text-center">
+            <h4>시간을 입력해주세요</h4>
+        </div>
+        <div>
+            <input type="text" id='picker' class="form-control">
+            <div class="row">
+                <button type="button" id="yesterday" class="col-sm-2 m-2 btn btn-primary">어제</button>
+                <button type="button" id="now" class="col-sm-2 m-2 btn btn-primary">지금</button>
+                <button type="button" id="searchPath" class="col-sm m-2 btn btn-primary" >검색</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="resultMenu" class="Menu container" style="display: none;">
         <div class="text-center">
             <h4>이곳이 결과페이지</h4>
-            <button type="button" class="btn btn-primary" id="returnToMenu">처음으로 돌아갈래요</button>
+            <button type="button" class="btn btn-primary go_home" id="returnToMenu">처음으로 돌아갈래요</button>
         </div>
 
         <!-- <div id="map" style="width: 100%; height: 50%; "></div> -->

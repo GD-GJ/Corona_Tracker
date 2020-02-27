@@ -418,7 +418,9 @@ function getStoredArray() {
 //로컬스토리지내 데이터를 지우는 함수입니다.
 function clearAll(){
     removeAll();
-
+    $("#result_for_userpaths").children().remove();
+    $("#result_for_place").children().remove();
+    
     let emptyList = new Array();
     User.setPaths(emptyList);
     localStorage.setItem("visitedList", JSON.stringify(emptyList));
