@@ -23,6 +23,7 @@ function path(who, date, name, lat, lng, color='#CFE7FF', time='', method=''){
     }
     this.infowindow = new kakao.maps.InfoWindow({
         position : this.LatLng,
+        disableAutoPan: true,
         removable : true
       });
     this.clickListener = function(mouseEvent){
