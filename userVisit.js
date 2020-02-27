@@ -120,6 +120,7 @@ function setUserLatLng(lat, lng){
 
 //새로운 사용자 경로를 추가하는 함수.
 function newVisitedArea(){
+    console.log("newVisitedArea call");
     let picker = $("#picker").val();
     
     datetime = picker.split(' ');
@@ -130,8 +131,9 @@ function newVisitedArea(){
     console.log(date, time);
 
     let placeName = $("#placeName").val();
-
+    
     searchTarget = new path(null, date, placeName, userLat, userLng, User.color, time);
+    console.log(searchTarget);
     //인포윈도우 설정
     searchTarget.infowindow.setContent(
         '<div style="padding:5px;">'
@@ -140,9 +142,10 @@ function newVisitedArea(){
         + searchTarget.date + '일 ' + searchTarget.time.substring(0, 2) + '시 ' + searchTarget.time.substring(2, 4) + '분<br><br>'
         + '</div>'
     );
+    console.log(searchTarget.infowindow);
+
     //클릭리스너 등록
     kakao.maps.event.addListener(searchTarget.marker, 'click', function(mouseEvent){
-        searchTarget.infowindow.open(null);
         searchTarget.infowindow.open(map);
     });
 
@@ -155,11 +158,13 @@ function newVisitedArea(){
     showResult(result, targetDiv);
     
     searchTarget.marker.setMap(map);
-    searchTarget.infowindow.setMap(null);
     searchTarget.infowindow.setMap(map);
     displayed.push(searchTarget);
+    console.log(displayed);
     //지도 중심점 이동
     setMapBounds();
+    console.log(map.getBounds());
+
     
 }
 
