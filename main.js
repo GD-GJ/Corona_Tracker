@@ -73,6 +73,7 @@ $("#searchPath").click(function(){
     //검색결과 컨테이너 띄우기
     $(".inner").css("display","none");
     $(".result_path").css("display","block");
+    map.relayout();
 });
 
 //내 동선에 추가하기
@@ -125,8 +126,6 @@ $.ajax({
                 path.resizeCircle(level*level*10);
             }
         });
-
-        map.relayout();
     },
     error: function(xhr, status, responseTxt){
         console.log(xhr);
