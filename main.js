@@ -114,17 +114,19 @@ $.ajax({
 
         loadUserPaths();
 
-        // kakao.maps.event.addListener(map, 'zoom_changed', function(){
-        //     let level = map.getLevel();
-        //     for(let person of Datas){
-        //         for(let path of person.paths){
-        //             path.resizeCircle(level*level*10);
-        //         }
-        //     }
-        //     for(let path of User.paths){
-        //         path.resizeCircle(level*level*10);
-        //     }
-        // });
+        kakao.maps.event.addListener(map, 'zoom_changed', function(){
+            let level = map.getLevel();
+            for(let person of Datas){
+                for(let path of person.paths){
+                    path.resizeCircle(level*level*10);
+                }
+            }
+            for(let path of User.paths){
+                path.resizeCircle(level*level*10);
+            }
+        });
+
+        map.relayout();
     },
     error: function(xhr, status, responseTxt){
         console.log(xhr);
