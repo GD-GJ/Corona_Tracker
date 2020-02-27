@@ -164,6 +164,7 @@ function newVisitedArea(){
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
+
 function calcDistance(lat1, lon1, lat2, lon2){
     function deg2rad(deg) {return (deg * Math.PI / 180);}
     function rad2deg(rad) {return (rad * 180 / Math.PI);}
@@ -252,6 +253,7 @@ function setMapBounds(){
 
 //프로그램 초기 단계에서 유저 경로를 불러온는 함수입니다.
 function loadUserPaths() {
+    map.relayout();
     User = new person(0, '내가 방문한 장소', null, null);
 
     let pathArray = getRestoredPath();
