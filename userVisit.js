@@ -9,7 +9,7 @@ var displayed = new Array();
 const DESCRIPTION = ['6시간 이내에 이 장소를 방문했습니다.',
                      '하루 이내에 이 장소를 방문했습니다.',
                      '1주일 이내에 이 장소를 방문했습니다.' ,
-                     '이 장소를 방문한지 1주일 이상입니다.',
+                     '이 장소를 방문한지 1주일 이상 지났습니다.',
                      '시간정보가 없는 동선입니다'];
 
 //새로운 유저 경로가 추가될 때
@@ -135,36 +135,32 @@ function newVisitedArea(){
     
     searchTarget = new path(null, date, placeName, userLat, userLng, User.color, time);
     setPath(searchTarget, '내가 방문한 장소');
-    ////인포윈도우 설정
-    // searchTarget.infowindow.setContent(
-    //     '<div style="padding:5px;">'
-    //     + '내가 방문한 장소<br>' 
-    //     + searchTarget.name + '<br>' 
-    //     + searchTarget.date + '일 ' + searchTarget.time.substring(0, 2) + '시 ' + searchTarget.time.substring(2, 4) + '분<br><br>'
-    //     + '</div>'
-    // );
-
-    // //클릭리스너 등록
-    // kakao.maps.event.addListener(searchTarget.marker, 'click', function(mouseEvent){
-    //     searchTarget.infowindow.open(map);
-    // });
 
     removeAll();
 
-    $(".path_name").html(searchTarget.date + ' 기준 ' + searchTarget.name + '에 대한 검색 결과입니다.');
-
     let targetDiv = $("#result_for_place");
-    showResult(searchTarget, targetDiv);
+    let result = checkMatched(searchTarget);
+    let itemCnt = showResult(result, targetDiv);
     
+    //결과 설명
+    $(".path_name").html('나의 방문지 근처 확진자가 방문한곳은 ' + itemCnt + '곳입니다.');
+
     searchTarget.marker.setMap(map);
     searchTarget.infowindow.setMap(map);
     displayed.push(searchTarget);
+
     //지도 중심점 이동
     setMapBounds();
 }
 
+function getTimeString(path){
+    let month = path.date.substring(5,7);
+    let day =  path.date.substring(8,10);
+    let hour = path.time.substring(0,2);
+    let min = path.time.substring(2,4);
+    return month + '월 ' + day + '일 ' + hour + '시 ' + min + '분 ';
+}
 //두 위치 사이의 거리를 반환하는 함수.
-
 function calcDistance(lat1, lon1, lat2, lon2){
     function deg2rad(deg) {return (deg * Math.PI / 180);}
     function rad2deg(rad) {return (rad * 180 / Math.PI);}
@@ -222,12 +218,24 @@ function showAllUserPaths(){
     //초기화
     removeAll();
     $("#result_for_userpaths").children().remove();
-
+    
+    //전체 검색하기
+    var result = new Array();
+    result.push(new Array(), new Array(), new Array(), new Array(), new Array());
     //확진자 그려주기
     for(let thisPath of User.paths){
-        let targetDiv = $("#result_for_userpaths")
-        showResult(thisPath, targetDiv, true);
+        let r = checkMatched(thisPath);
+        for(let i in [0, 1, 2, 3, 4]){
+            result[i].push(r[i]);
+        }
     }
+
+    //결과출력
+    let targetDiv = $("#result_for_userpaths");
+    let itemCnt = showResult(result, targetDiv, true);
+    
+    //결과 설명
+    $(".path_name").html(getTimeString(searchTarget) + ' 기준 ' + searchTarget.name + '근처 확진자 방문지는 ' + itemCnt + '곳입니다.');
 
     //유저 그려주기
     User.drawMarkerAndLine(map);
@@ -299,7 +307,11 @@ function loadUserPaths() {
             removeAll();
 
             let targetDiv = $("#result_for_userpaths");
-            showResult(thisPath, targetDiv);
+            let result = checkMatched(thisPath);
+            let itemCnt = showResult(result, targetDiv);
+
+            //결과 설명
+            $(".path_name").html(getTimeString(thisPath) + ' 기준 ' + thisPath.name + '근처 확진자 방문지는 ' + itemCnt + '곳입니다.');
 
             thisPath.infowindow.setMap(map);
             thisPath.marker.setMap(map);
@@ -316,9 +328,11 @@ function loadUserPaths() {
     }
 }
 
-function showResult(targetPath, attachTo, append=false){
-    let result = checkMatched(targetPath);
-    //출력
+function showResult(result, attachTo){
+
+    attachTo.children().remove();
+    
+    //결과 출력
     let itemCnt = 0;
     let idx = 0;
     for(let level in result){
@@ -330,18 +344,11 @@ function showResult(targetPath, attachTo, append=false){
                 + path.person.description + '가 '+ DESCRIPTION[level] + '</a><br><a class="itemDist">'
                 + path.distance + 'km </a></div>'
             );
-            
             path.marker.setMap(map);
             displayed.push(path);
         }
     }
     
-    if(!append){
-        attachTo.children().remove();
-        let t = targetPath.time.substring(0,2) + '시 ' + targetPath.time.substring(2,4) + '분 '
-        $(".path_name").html(targetPath.date + '일 ' + t + ' 기준 ' + targetPath.name + '근처 확진자 방문지는 ' + itemCnt + '건입니다.');
-    }
-
     if(itemCnt == 0){
         //검색결과 0
         attachTo.append(
@@ -357,6 +364,8 @@ function showResult(targetPath, attachTo, append=false){
             displayed[idx].infowindow.open(map)
         }
     })
+
+    return itemCnt;
 }
 
 function removeAll(){
@@ -384,18 +393,6 @@ function getRestoredPath() {
         for(let item of dataArray){
             let newItem = new path(null, item.date, item.name, item.lat, item.lng, myColor, item.time, item.method);
             setPath(newItem, '내가 방문한 장소');
-            // newItem.infowindow.setContent(
-            //     '<div style="padding:5px;">'
-            //     + '내가 방문한 장소<br>' 
-            //     + newItem.name + '<br>' 
-            //     + newItem.date + '일 ' + newItem.time.substring(0, 2) + '시 ' + newItem.time.substring(2, 4) + '분<br><br>'
-            //     + '</div>',
-            // );
-
-            // //클릭리스너 등록
-            // kakao.maps.event.addListener(newItem.marker, 'click', function(mouseEvent){
-            //     newItem.infowindow.open(map);
-            // });
             
             restoredData.push(newItem);
         }
@@ -468,19 +465,6 @@ function json2persons(toStore, dataArray){
         for(let p of patient.paths){
             let newPath = new path(newPatient, p.date, p.name, p.lat, p.lng, color);
             setPath(newPath, newPath.person.description);
-            // //인포윈도우 세팅
-            // newPath.infowindow.setContent(
-            //     '<div style="padding:5px;">'
-            //     + newPath.person.description + '<br>' 
-            //     + newPath.name + '<br>' 
-            //     + newPath.date + '일 ' + newPath.time.substring(0, 2) + '시 ' + newPath.time.substring(2, 4) + '분<br><br>'
-            //     + '</div>'
-            // );
-            
-            // //클릭리스너 등록
-            // kakao.maps.event.addListener(newPath.marker, 'click', function(mouseEvent){
-            //     newPath.infowindow.open(map);
-            // });
             
             //시간 있으면 추가
             if(path.time != ""){

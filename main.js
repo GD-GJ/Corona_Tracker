@@ -19,17 +19,25 @@ $("#search_from_myloc").click(function(){
                     var placeName = result[0].address.address_name;
                     //장소 설정
                     $("#placeName").val(placeName);
-                    //시간 지금으로 설정
+                    setUserLatLng(place.y, place.x);
+
+                    //기존 목록 제거
+                    $("#SelectPlace").children().remove();
+
+                    //지금시간으로 설정
                     selectNow();
 
-                    $(".Menu").css("display","none");
-                    $("#resultMenu").css("display","block");
-
+                    //결과 창 띄우기
+                    $('#main_container').css('display','block');
+                    //검색결과 컨테이너 띄우기
                     $(".inner").css("display","none");
                     $(".result_path").css("display","block");
-
-                    //결과 불러오기
+                    //시간 옵션 띄우기
+                    $(".input-group").css("width","50%");
+                    $("#picker").css("display","block");
+            
                     newVisitedArea();
+
                 }
             });
 
