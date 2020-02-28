@@ -1,5 +1,6 @@
 var userLat,
     userLng;
+    isReady = false;
 var User;
 var searchTarget;
 var matchedPatient = [];
@@ -116,6 +117,7 @@ function timeDiff2Min(user, target){
 function setUserLatLng(lat, lng){
     userLat = Number(lat);
     userLng = Number(lng);
+    isReady = true;
 }
 
 //새로운 사용자 경로를 추가하는 함수.
@@ -269,7 +271,7 @@ function loadUserPaths() {
     if(pathArray.length > 0){
         //결과 보기 버튼 활성화
         $("#show_review_page").css("display","block");
-        
+
         //결과 창 띄우기
         $("#main_container").css("display","block");
 

@@ -92,8 +92,7 @@ function searchPlace(){
                         selectNow();
 
                         //결과 창 띄우기
-                        $('.Menu').css('display','none');
-                        $('#resultMenu').css('display','block');
+                        $('#main_container').css('display','block');
                         //검색결과 컨테이너 띄우기
                         $(".inner").css("display","none");
                         $(".result_path").css("display","block");

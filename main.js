@@ -80,7 +80,7 @@ $("#show_review_page").click(function(){
 //date picker 리스너
 $('#picker').change(function(){
     console.log($(this).val());
-    if(true){
+    if(isReady){
         newVisitedArea();
     }else{
         alert("먼저 장소를 검색해 주세요.");
