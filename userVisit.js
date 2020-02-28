@@ -278,9 +278,6 @@ function loadUserPaths() {
         $(".inner").css("display","none");
         $(".review").css("display","block");
 
-        //마커, 라인 그리기
-        showAllUserPaths();
-
         //리스트 초기화
         $("#my_path_list").children().remove();
 
@@ -289,6 +286,9 @@ function loadUserPaths() {
             '<button type="button" class="btn btn-info" id="show_all_path">전체</button>'
         );
         $("#show_all_path").click(showAllUserPaths);
+
+        //마커, 라인 그리기
+        showAllUserPaths();
 
         //리스트에 동선들 추가하기
         for(let i in User.paths){
@@ -329,7 +329,7 @@ function loadUserPaths() {
 }
 
 function showResult(result, attachTo){
-
+    map.relayout();
     attachTo.children().remove();
     
     //결과 출력

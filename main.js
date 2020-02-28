@@ -13,14 +13,15 @@ $("#search_from_myloc").click(function(){
 
             var geocoder = new kakao.maps.services.Geocoder();
             var coord = new kakao.maps.LatLng(lat, lng);
-                
+        
+            setUserLatLng(lat, lng);
+
             geocoder.coord2Address(coord.getLng(), coord.getLat(), function(result, status) {
                 if (status === kakao.maps.services.Status.OK) {
                     var placeName = result[0].address.address_name;
                     //장소 설정
                     $("#placeName").val(placeName);
-                    setUserLatLng(place.y, place.x);
-
+                    
                     //기존 목록 제거
                     $("#SelectPlace").children().remove();
 
@@ -37,11 +38,10 @@ $("#search_from_myloc").click(function(){
                     $("#picker").css("display","block");
             
                     newVisitedArea();
-
                 }
             });
 
-            setUserLatLng(lat, lng);
+            
             
         });
     } else {
