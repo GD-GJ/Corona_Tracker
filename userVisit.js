@@ -141,9 +141,9 @@ function newVisitedArea(){
     let targetDiv = $("#result_for_place");
     let result = checkMatched(searchTarget);
     let itemCnt = showResult(result, targetDiv);
-    
+
     //결과 설명
-    $(".path_name").html('나의 방문지 근처 확진자가 방문한곳은 ' + itemCnt + '곳입니다.');
+    $(".path_name").html('<div class="alert alert-warning" role="alert">' + getTimeString(searchTarget) + ' 기준 ' + searchTarget.name + '근처 확진자 방문지는 ' + itemCnt + '곳입니다. </div>');
 
     searchTarget.marker.setMap(map);
     searchTarget.infowindow.setMap(map);
@@ -235,7 +235,7 @@ function showAllUserPaths(){
     let itemCnt = showResult(result, targetDiv, true);
     
     //결과 설명
-    $(".path_name").html(getTimeString(searchTarget) + ' 기준 ' + searchTarget.name + '근처 확진자 방문지는 ' + itemCnt + '곳입니다.');
+    $(".path_name").html('<div class="alert alert-warning" role="alert"> 나의 방문지 근처 확진자가 방문한곳은 ' + itemCnt + '곳입니다.</div>');
 
     //유저 그려주기
     User.drawMarkerAndLine(map);
@@ -311,7 +311,7 @@ function loadUserPaths() {
             let itemCnt = showResult(result, targetDiv);
 
             //결과 설명
-            $(".path_name").html(getTimeString(thisPath) + ' 기준 ' + thisPath.name + '근처 확진자 방문지는 ' + itemCnt + '곳입니다.');
+            $(".path_name").html('<div class="alert alert-warning" role="alert">' + getTimeString(thisPath) + ' 기준 ' + thisPath.name + '근처 확진자 방문지는 ' + itemCnt + '곳입니다.</div>');
 
             thisPath.infowindow.setMap(map);
             thisPath.marker.setMap(map);
