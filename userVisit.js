@@ -120,8 +120,9 @@ function setUserLatLng(lat, lng){
     isReady = true;
 }
 
-//새로운 사용자 경로를 추가하는 함수.
+//검색 하는 함수.
 function newVisitedArea(){
+
     let picker = $("#picker").val();
     
     datetime = picker.split(' ');
@@ -132,7 +133,7 @@ function newVisitedArea(){
     console.log(date, time);
 
     let placeName = $("#placeName").val();
-    
+
     searchTarget = new path(null, date, placeName, userLat, userLng, User.color, time);
     setPath(searchTarget, '내가 방문한 장소');
 

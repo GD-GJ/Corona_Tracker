@@ -100,6 +100,7 @@ function searchPlace(){
                         //시간 옵션 띄우기
                         $(".input-group").css("width","50%");
                         $("#picker").css("display","block");
+                        
                 
                         //검색하기
                         console.log('동선 검색하기');

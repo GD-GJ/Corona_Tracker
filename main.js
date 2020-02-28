@@ -1,6 +1,4 @@
 //시작지점            
-$("#addNewPath").click(newVisitedArea);
-$("#clearAll").click(clearAll);
 $("#btn_search_place").click(searchPlace);
 
 //내위치에서 검색
@@ -21,7 +19,7 @@ $("#search_from_myloc").click(function(){
                     var placeName = result[0].address.address_name;
                     //장소 설정
                     $("#placeName").val(placeName);
-                    
+
                     //기존 목록 제거
                     $("#SelectPlace").children().remove();
 
@@ -40,9 +38,6 @@ $("#search_from_myloc").click(function(){
                     newVisitedArea();
                 }
             });
-
-            
-            
         });
     } else {
         //geolocation을 못받아오면 실행되는 코드
@@ -63,6 +58,10 @@ $("#btn_delete_paths").click(clearAll);
 
 //date picker 리스너
 $('#picker').change(function(){
+    //검색결과 컨테이너 띄우기
+    $(".inner").css("display","none");
+    $(".result_path").css("display","block");
+    //검색
     newVisitedArea();
 });
 
