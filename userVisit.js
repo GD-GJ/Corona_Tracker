@@ -226,7 +226,7 @@ function showAllUserPaths(){
     for(let thisPath of User.paths){
         let r = checkMatched(thisPath);
         for(let i in [0, 1, 2, 3, 4]){
-            result[i].push(r[i]);
+            result[i] = result[i].concat(r[i]);
         }
     }
 
