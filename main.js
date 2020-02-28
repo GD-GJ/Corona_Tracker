@@ -82,8 +82,6 @@ $('#picker').change(function(){
     console.log($(this).val());
     if(isReady){
         newVisitedArea();
-    }else{
-        alert("먼저 장소를 검색해 주세요.");
     }
 });
 

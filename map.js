@@ -70,6 +70,7 @@ function searchPlace(){
             //기존 목록 제거
             $(".list-group-item-action").remove();
 
+            console.log(result);
             //목록 생성하기
             for(let place of result){
                 $("#SelectPlace").append('<div class="list-group-item list-group-item-action "><a class="itemTitle">' + place.place_name + '</a><br><a class="itemDesc">' + place.address_name + '</a></div>');
@@ -86,7 +87,7 @@ function searchPlace(){
                         setUserLatLng(place.y, place.x);
 
                         //기존 목록 제거
-                        $(".list-group-item-action").remove();
+                        $("#SelectPlace").children().remove();
 
                         //지금시간으로 설정
                         selectNow();

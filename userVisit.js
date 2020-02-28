@@ -122,7 +122,6 @@ function setUserLatLng(lat, lng){
 
 //새로운 사용자 경로를 추가하는 함수.
 function newVisitedArea(){
-    console.log("newVisitedArea call");
     let picker = $("#picker").val();
     
     datetime = picker.split(' ');
@@ -135,7 +134,6 @@ function newVisitedArea(){
     let placeName = $("#placeName").val();
     
     searchTarget = new path(null, date, placeName, userLat, userLng, User.color, time);
-    console.log(searchTarget);
     //인포윈도우 설정
     searchTarget.infowindow.setContent(
         '<div style="padding:5px;">'
@@ -144,7 +142,6 @@ function newVisitedArea(){
         + searchTarget.date + '일 ' + searchTarget.time.substring(0, 2) + '시 ' + searchTarget.time.substring(2, 4) + '분<br><br>'
         + '</div>'
     );
-    console.log(searchTarget.infowindow);
 
     //클릭리스너 등록
     kakao.maps.event.addListener(searchTarget.marker, 'click', function(mouseEvent){
@@ -162,12 +159,8 @@ function newVisitedArea(){
     searchTarget.marker.setMap(map);
     searchTarget.infowindow.setMap(map);
     displayed.push(searchTarget);
-    console.log(displayed);
     //지도 중심점 이동
     setMapBounds();
-    console.log(map.getBounds());
-
-    
 }
 
 //두 위치 사이의 거리를 반환하는 함수.
@@ -432,7 +425,7 @@ function clearAll(){
     localStorage.setItem("visitedList", JSON.stringify(emptyList));
     
     //결과 보기 버튼 비활성화
-    $("#show_review_page").css("display","none");
+    $("#main_container").css("display","none");
 }
 
 //toStore에 person객체들을 만들어 저장합니다.
