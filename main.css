@@ -32,3 +32,8 @@ body {
     height: 60%;
     overflow: auto;
 }
+
+.search-bar{
+    width: 50%;
+    float: left;
+}

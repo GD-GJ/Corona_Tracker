@@ -32,7 +32,7 @@
         <div class="text-center">
             <h4>검색하기</h4>
         </div>
-        <button type="button" id="search_from_myloc" class="btn btn-primary">현위치로 찾기</button>
+        
         <!-- <div class="row">
             <button type="button" id="show_search_page" class="col-sm m-2 btn btn-primary">장소명으로 찾기</button>
             <button type="button" id="show_review_page" class="col-sm m-2 btn btn-primary" style="display: none;">내 동선 확인하기</button>
@@ -41,6 +41,7 @@
 
     <div id="resultMenu" class="Menu container">
         <div id="search_bar" class="container" style="top: 0; z-index: 20">
+            <button type="button" id="search_from_myloc" class="btn btn-primary" style="width: 20%; float: left;">현위치로</button>
             <div class="input-group mb-3" style="width: 50%; float: left;">
                 <input id="placeName" type="text" class="form-control" placeholder="방문한 장소를 입력해주세요." aria-label="장소 검색" aria-describedby="button-addon2">
                 <div class="input-group-append">
@@ -52,7 +53,7 @@
         </div>
         <div id="SelectPlace" class="list-group" style="width:100%; margin-top:20px; max-height:50vh; overflow: auto;"></div>
         
-        <div id="main_container" style="width: 100%; display: none;">
+        <div id="main_container" class="container" style="height: 100%; display: none;">
             <div id='map' style="width: 100%; height: 45%;"></div>
 
             <div class="result_path inner container" style="display: none;">
