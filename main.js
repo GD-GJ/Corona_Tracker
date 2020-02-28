@@ -3,18 +3,6 @@ $("#addNewPath").click(newVisitedArea);
 $("#clearAll").click(clearAll);
 $("#btn_search_place").click(searchPlace);
 
-
-
-//장소검색하기
-$("#show_search_page").click(function(){
-    //주소 검색창 띄우기
-    $('.Menu').css('display','none');
-    $('#placeMenu').css('display','block');
-
-    //장소 확정버튼 숨기기
-    $("#btn_select_place").css("display","none");
-});
-
 //내위치에서 검색
 $("#search_from_myloc").click(function(){
     //시간 입력 페이지 띄우기
@@ -62,33 +50,13 @@ $("#btn_save_path").click(function(){
     save(searchTarget);
 });
 
-//홈으로
-$(".go_home").click(function(){
-    //장소 검색, 시간 입력 창 지우기
-    $('.Menu').css('display','none');
-    $('#searchMenu').css('display','block');
-})
-
 //동선 모두삭제
 $("#btn_delete_paths").click(clearAll);
 
-//내 동선 확인하기
-$("#show_review_page").click(function(){
-    loadUserPaths();
-});
-
 //date picker 리스너
 $('#picker').change(function(){
-    console.log($(this).val());
-    if(isReady){
-        newVisitedArea();
-    }
+    newVisitedArea();
 });
-
-// $("#changeTime").click(function(){
-//     //시간변경
-//     newVisitedArea();
-// })
 
 var Datas = new Array();
 
@@ -116,11 +84,3 @@ $.ajax({
         console.log(xhr);
     }
 });
-
-
-// for(let obj of displayed){
-//     kakao.maps.event.addListener(obj.marker, 'click', function(mouseEvent) {  
-//         // 마커 클릭시 인포윈도우 오픈
-//         obj.infowindow.open(map);      
-//     });
-// }

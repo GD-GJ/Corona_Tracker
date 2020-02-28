@@ -417,8 +417,13 @@ function clearAll(){
     //검색결과들 지우기
     $("#result_for_userpaths").children().remove();
     $("#result_for_place").children().remove();
+    
     //경로 목록 지우기
     $("#my_path_list").children().remove();
+
+    //시간 옵션 지우기
+    $("#picker").css("display","none");
+    $(".input-group").css("width","75%");
 
     let emptyList = new Array();
     User.setPaths(emptyList);
