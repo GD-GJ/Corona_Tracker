@@ -269,9 +269,9 @@ function loadUserPaths() {
     if(pathArray.length > 0){
         //결과 보기 버튼 활성화
         $("#show_review_page").css("display","block");
+        
         //결과 창 띄우기
-        $(".Menu").css("display","none");
-        $("#resultMenu").css("display","block");
+        $("#main_container").css("display","block");
 
         $(".inner").css("display","none");
         $(".review").css("display","block");

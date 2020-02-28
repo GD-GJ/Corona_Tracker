@@ -77,10 +77,20 @@ $("#show_review_page").click(function(){
     loadUserPaths();
 });
 
-$("#changeTime").click(function(){
-    //시간변경
-    newVisitedArea();
-})
+//date picker 리스너
+$('#picker').change(function(){
+    console.log($(this).val());
+    if(true){
+        newVisitedArea();
+    }else{
+        alert("먼저 장소를 검색해 주세요.");
+    }
+});
+
+// $("#changeTime").click(function(){
+//     //시간변경
+//     newVisitedArea();
+// })
 
 var Datas = new Array();
 

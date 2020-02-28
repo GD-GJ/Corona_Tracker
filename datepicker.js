@@ -4,11 +4,6 @@ $('#picker').datetimepicker({
     timepicker:true
 });
 
-$('#picker').change(function(){
-    console.log($(this).val());
-    newVisitedArea();
-});
-
 $('#now').click(selectNow);
 
 $('#yesterday').click(selectYesterDay);
