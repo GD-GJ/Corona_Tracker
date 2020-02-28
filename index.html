@@ -56,20 +56,20 @@
         <div id="main_container" class="container" style="height: 100%; display: none;">
             <div id='map' style="width: 100%; height: 45%;"></div>
 
-            <div class="result_path inner container" style="display: none;">
+            <div class="result_path inner" style="display: none;">
                 <!-- 검색한 장소에 대한 결과페이지 -->
-                <p class="path_name"></p>
+                <h4 class="path_name"></h4>
                 <div id="result_for_place" class="list-group result_content" ></div>
                 <button type="button" id="btn_save_path" class="btn btn-primary right-bottom" >동선 저장하기</button>
             </div>
     
-            <div class="review inner container" style="display: none;">
+            <div class="review inner" style="display: none;">
                 <!-- 사용자의 동선들에 대한 결과 페이지 -->
                 <div class="btn-toolbar" role="toolbar" aria-label="동선 목록" style="padding-top: 10px;">
                     <div id="my_path_list" class="btn-group mr-2" role="group" aria-label="" style="overflow-y:auto">
                     </div>
                 </div>
-                <p class="path_name"></p>
+                <h4 class="path_name"></h4>
                 <div id="result_for_userpaths" class="list-group result_content"></div>
                 <button type="button" id="btn_delete_paths" class="btn btn-primary right-bottom" >모두 삭제</button>
             </div>
