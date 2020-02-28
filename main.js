@@ -29,10 +29,19 @@ $("#search_from_myloc").click(function(){
             geocoder.coord2Address(coord.getLng(), coord.getLat(), function(result, status) {
                 if (status === kakao.maps.services.Status.OK) {
                     var placeName = result[0].address.address_name;
+                    //장소 설정
                     $("#placeName").val(placeName);
-                    //시간 입력 페이지 띄우기
-                    $('.Menu').css('display','none');
-                    $('#timeMenu').css('display','block');
+                    //시간 지금으로 설정
+                    selectNow();
+
+                    $(".Menu").css("display","none");
+                    $("#resultMenu").css("display","block");
+
+                    $(".inner").css("display","none");
+                    $(".result_path").css("display","block");
+
+                    //결과 불러오기
+                    newVisitedArea();
                 }
             });
 

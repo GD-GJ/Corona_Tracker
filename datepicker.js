@@ -4,9 +4,10 @@ $('#picker').datetimepicker({
     timepicker:true
 });
 
-// $('#picker').change(function(){
-//     console.log($(this).val().split(' '));
-// });
+$('#picker').change(function(){
+    console.log($(this).val());
+    newVisitedArea();
+});
 
 $('#now').click(selectNow);
 
